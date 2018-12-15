@@ -404,6 +404,32 @@ nav .active:hover {
           transform: scaleX(1);
 }
 
+.btn_reg {
+  width: 240px;
+  height: 30px;
+  display: inline-block;
+  padding: 5px 5px;
+  margin: 5px 2px;
+  text-decoration: none;
+  color: black;
+  background-color: #ECEFF1;
+  text-align: center;
+  border-radius: 0 8px 0 8px;
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+  position: relative;
+}
+
+.btn_reg span {
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
 main {
   margin: 0;
   padding: 0;
@@ -711,6 +737,13 @@ main .section {
   border-radius: 8px;
   border: 1px solid #BDBDBD;
   font-size: 1.1rem;
+}
+
+.container_register form .field input[type="submit"] {
+  width: 120px;
+  height: 30px;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
 }
 
 .container_register form .obl {

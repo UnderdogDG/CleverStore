@@ -5,15 +5,16 @@
 <div class="section">
   <div class="container_register">
     <div class="field">
-      <h2>¡Hey! Aun no tenemos tus datos</h2>
+      <h2>¡Hola!</h2>
+      <h3>Parece ser que aun no hay un Usuario activo</h3>
     </div>
 
     <div class="field">
-      <a href="<?= URL?>/user/register" class="btn-std">Quiero Registrarme</a>
+      <a href="<?= URL?>/user/register" class="btn_reg"><span>Quiero Registrarme</span></a>
     </div>
 
     <div class="field">
-      <a href="" class="btn-std">Ya tengo una cuenta</a>
+      <a href="" class="btn_reg"><span>Ya tengo una cuenta</span></a>
     </div>
   </div>
 </div>

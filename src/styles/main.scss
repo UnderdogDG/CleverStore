@@ -239,6 +239,28 @@ nav{
 .btn-std:hover:before{
   transform: scaleX(1);
 }
+
+.btn_reg{
+  @include wh(30px, 240px);
+  display: inline-block;
+  padding: 5px 5px;
+  margin: 5px 2px;
+  text-decoration: none;
+  color: black;
+  background-color: $white-lt;
+  text-align: center;
+  border-radius: 0 8px 0 8px;
+  transition: 0.5s ease-out;
+  position: relative;
+  span{
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
 // #endregion   ========================
 
 // #region [3] ======== ( CONTENT ) ========
@@ -421,16 +443,17 @@ main{
           font-size: 1.1rem;
         }
 
-        // input[type="submit"]{
-        //   @include wh(30px, 120px);
-        //   border: 1px solid $neutro-lt;
-        //   border-radius: 8px;
-        // }
+        input[type="submit"]{
+          @include wh(30px, 120px);
+          border: 1px solid $neutro-lt;
+          border-radius: 8px;
+        }
       }
 
       .obl{
         color:#FF1744;
       }
+
     }
   }
 
