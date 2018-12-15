@@ -1,0 +1,473 @@
+@import '_vars';
+@import '_mixins';
+
+body, main, nav, footer, div, input{
+  @include pm();
+  // @include content-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+// #region [1] ======== ( NAVIGATION ) ========
+nav{
+  // @include wh(initial);
+  @include center-flex(flex-start, center, column);
+  @include position-fixed();
+  @include pm(5px);
+  @include wh(auto, 100%);
+  @include content-box;
+  background: $neutro-lt url('../img/trama.png') center repeat;
+  
+    @include mediaSize($laptop){
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0 1%;
+    }
+
+  .logo{
+    @include center-flex();
+    @include wh(50px);
+    @include pm(0, 10px 0);
+    font-family: 'Libre Baskerville', serif;
+    text-decoration: none;
+
+      @include mediaSize($tablet){
+        max-width: 170px;
+      }
+    h1{
+      @include wh(30px, 110px);
+      @include pm(10px 15px);
+      background-color: black;
+      color: white;
+      font-weight: 400;
+      text-align: center;
+    }
+  }
+
+  .menu{
+    @include center-flex(space-around);
+    @include pm(0, 0 0 5px 0);
+    width: 100%;
+    flex-wrap: nowrap; //REVISAR!!!!
+
+      @include mediaSize($smartphone){
+        width: 96%;
+        max-width: 480px;
+      }
+
+      @include mediaSize($tablet){
+        width: 480px;
+        //@include pm(0, 10px 0);
+      }
+  }
+
+  .compress{
+    @include pm();
+    @include wh(initial, 94%);
+    @include center-flex(center, center, column);
+    border-radius: 5px;
+
+    @include mediaSize($smartphone){
+      width: 90%;
+      flex-direction: row;
+    };
+
+    @include mediaSize($laptop){
+      width: 500px;
+      justify-content: flex-end;
+    };
+
+    #buscar{
+      @include center-flex();
+      @include pm(0, 20px 0);
+      @include wh(30px, 90%);
+      @include content-box;
+
+        @include mediaSize($tablet){
+          max-width: 300px;
+          margin: 0 30px;
+        }
+
+      input[type="text"]{
+        @include wh(30px, 80%);
+        @include pm(0 10px);
+        border: 1px solid $neutro-md;
+        border-radius: 6px 0 0 6px;
+      }
+      
+      input[type="submit"]{
+        @include wh(30px, 20%);
+        max-width: 60px;
+        border: 1px solid $neutro-md;
+        border-left: none;
+        border-radius: 0 6px 6px 0;
+      }
+
+      input[type="submit"]:hover{
+        cursor: pointer;
+      }
+    }
+  }
+
+  .icon{
+    @include wh(50px, 92%);
+    @include pm(0, 0 4%);
+    @include center-flex();
+    @include content-box;
+    border-top: 1px solid $neutro-bk;
+    text-decoration: none;
+    color: $carbon;
+
+      @include mediaSize($smartphone){
+        max-width: 150px;
+        border-top: none;
+        margin: 0;
+      }
+
+      @include mediaSize($tablet){
+        width: 60px;
+        height: 60px;
+        margin: 0 5px;
+        border-radius: 50%;
+
+      }
+
+    svg{
+      max-height: 90%;
+    }
+    h2{
+      @include pm(0, 0 0 0 10px);
+      font-weight: 300;
+      font-family: 'Roboto', sans-serif;
+      display: block;
+      width: 80px;
+
+        @include mediaSize($tablet){
+          display: none;
+        }
+    }
+  }
+
+  .icon:last-child{
+    border-bottom: 1px solid $neutro-bk;
+    margin-bottom: 15px;
+
+      @include mediaSize($smartphone){
+        margin-bottom: 0;
+        border-bottom: none;
+      }
+  }
+
+  .icon:hover{
+    background-color: $neutro-md;
+  }
+
+  .car{
+    @include wh(44px, 44px);
+  }
+
+  .hamburguesa{
+    @include wh(40px, 40px);
+    @include pm();
+    @include center-flex();
+    @include content-box;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    border: 1px solid $neutro-bk;
+    background-color: $neutro-lt;
+    border-radius: 10px;
+    text-decoration: none;
+    color: $carbon;
+
+      @include mediaSize($laptop){
+        display: none  !important;
+      }
+  }
+
+  .active{
+    background-color: $neutro-md;
+  }
+
+  .active:hover{
+    background-color: $neutro-lt;
+  }
+}
+
+.btn-std{
+  display: inline-block;
+  padding: 5px 5px;
+  margin: 5px 2px;
+  text-decoration: none;
+  color: black;
+  background-color: $white-lt;
+  text-align: center;
+  border-radius: 0 8px 0 8px;
+  transition: 0.5s ease-out;
+  
+    @include mediaSize($smartphone){
+      @include content-box;
+      padding: 5px 8px;
+    }
+
+    @include mediaSize(500px){
+      width: 100px;
+    }
+}
+
+.btn-std:hover{
+  // background-color: $carbon;
+  color: white;
+  border-radius: 0 8px 0 8px;
+  transform: scale(1.2);
+
+}
+
+.btn-std:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $carbon;
+  transition: transform 0.5s ease-in;
+  transform-origin: center;
+  transform: scaleX(0);
+  z-index: -1;
+  border-radius: 0 8px 0 8px;
+}
+.btn-std:hover:before{
+  transform: scaleX(1);
+}
+// #endregion   ========================
+
+// #region [3] ======== ( CONTENT ) ========
+main{
+  @include pm();
+  width: 100%;
+  background-color: $white-lt;
+  .section{
+    @include content-box;
+    @include wh(100vh);
+    @include pm(145px 0 0 0, 0); /// padding no util para la segunda seccion que sinembargo hereda
+    @include center-flex(center, flex-start);
+
+      @include mediaSize($laptop){
+        padding-top: 90px;
+      }
+  }
+}
+
+.container{
+  &_main{
+    @include wh(96%, 90%);
+    @include center-flex(space-evenly);
+    @include content-box;
+    margin: auto;
+    background-color: black;
+    box-shadow: 8px 6px 2px #424242;
+    color: $white-lt;
+
+    &_item{
+      @include wh(44%, 90%);
+      @include center-flex();
+      // border: 1px solid $white-lt;
+
+        @include mediaSize($tablet){
+          @include wh(90%, 46%);
+        }
+      
+        h2{
+          @include pm(0, 5px);
+          // font-size: 2rem;
+          font-size: 1.6rem;
+          font-weight: 200;
+          margin-right: 30px;
+            @include mediaSize($smartphone){
+              font-size: 2rem;
+            }
+
+            @include mediaSize($laptop){
+              font-size: 2.6rem;
+            }
+        }
+
+        h3{
+          @include pm(0, 5px);
+          // font-size: 2.2rem;
+          font-size: 1.6rem;
+          font-weight: 400;
+          margin-left: 23px;
+            @include mediaSize($smartphone){
+              font-size: 2.2rem;
+            }
+
+            @include mediaSize($laptop){
+              font-size: 3.2rem;
+            }
+
+          span{
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 500;
+            position: relative;
+          }
+
+          span:before{
+            content: 'Clever';
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 500;
+            color: $carbon;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform-origin: center;
+            z-index: -1;
+          }
+
+          span:hover:before{ // Posible Borrado, no lo he podido posicionar
+            content: '';
+            background-color: $white-lt;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform-origin: center;
+            z-index: -3;
+          }
+        }
+    }
+
+    &_pleca{
+      @include wh(3px, 90%);
+      background-color: $pleca;
+      transform: rotate(-5deg);
+      transition: transform 0.5s ease-out;
+
+        @include mediaSize($tablet){
+          @include wh(90%, 3px);
+          transform: rotate(-10deg);
+        }
+    }
+  }
+
+  &_title{
+    @include wh(10%);
+    @include center-flex();
+    background-color: black;
+    color: $white-lt;
+  }
+
+  &_content{
+    @include wh(85%);
+    border: 1px solid white;
+  }
+
+  &_register{
+    @include wh(95%, 80%);
+    @include pm(40px 10px, auto);
+    @include content-box;
+    @include center-flex(center, center, column);
+    background-color: $carbon;
+    border-radius: 20px;
+    border: 1px solid $carbon;
+    max-width: 540px;
+    color: $neutro-lt;
+    box-shadow: 4px 4px 3px $neutro-bk;
+    text-align: center;
+    //revisar flex-box en ambos parent(register & forrm)
+    form{
+      @include center-flex(space-between, center, column);
+      @include wh();
+
+      .photo{
+        @include wh(200px, 200px);
+        border: 1px solid $neutro-md;
+        border-radius: 50%;
+      }
+      
+
+      .field{
+        width: 350px;
+        @include pm(0, 15px 0);
+
+        h2{
+          @include pm();
+          font-size: 2rem;
+        }
+
+        label{
+          @include pm(0, 0 5px);
+          display: inline-block;
+          font-size: 1.2rem;
+          font-weight: 300;
+          width: 30%;
+
+          sup{
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: red;
+          }
+        }
+
+        input[type="text"]{
+          width: 60%;
+          padding: 4px 8px;
+          height: 24px;
+          border-radius: 8px;
+          border: 1px solid $neutro-md;
+          font-size: 1.1rem;
+        }
+
+        // input[type="submit"]{
+        //   @include wh(30px, 120px);
+        //   border: 1px solid $neutro-lt;
+        //   border-radius: 8px;
+        // }
+      }
+
+      .obl{
+        color:#FF1744;
+      }
+    }
+  }
+
+}
+
+.fp-tableCell{
+  box-sizing: content-box !important;
+  max-height: 100% !important;
+  // padding-top: 140px !important;
+}
+
+.fp-section.fp-table, .fp-slide.fp-table{
+  display: flex !important;
+}
+// #endregion   ========================
+
+footer{
+  @include wh(60px);
+  background-color: $neutro-bk;
+}
+
+// #region [w] ======== ( !! ) ========
+.hidden{
+  display: none !important;
+  opacity: 1;
+
+    @include mediaSize($laptop){
+      display: flex !important;
+    }
+}
+
+.transition{
+  opacity: 1;
+  transition: opacity 0.5s 1s ease-in;
+}
+// #endregion   ========================
+
+// *{
+//   border: 1px solid red;
+// }

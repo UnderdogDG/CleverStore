@@ -1,0 +1,72 @@
+@import '_vars.scss';
+@import '_mixins.scss';
+
+body, main, nav, footer, div{
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+header{
+  @include wh(60px);
+  @include center-flex();
+  @include position-fixed();
+  background-color: $primario;
+  h1{
+    @include pm();
+    font-weight: 300;
+  }
+}
+
+main{
+  @include wh(100vh);
+  @include content-box;
+  @include pm(60px 0);
+  background-color: $neutro-md;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  nav{
+    @include wh(100%, 20%);
+    @include content-box;
+    @include pm(10px 0);
+    @include center-flex(flex-start, center, column);
+    background-color: $neutro-md;
+    .btn{
+      @include wh(60px);
+      @include content-box;
+      @include center-flex();
+      border-top: 1px solid $neutro-bk;
+      border-bottom: 1px solid $neutro-bk;
+      text-decoration: none;
+      color: $carbon;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+
+    .btn:first-child{
+      border-top: none;
+    }
+
+    .btn:last-child{
+      border-top: none;
+    }
+
+    .btn:hover{
+      background-color: $neutro-bk;
+      color: white;
+    }
+  }
+
+  .container{
+    @include wh(100%, 80%);
+    background-color: $neutro-lt;
+  }
+}
+
+footer{
+  @include wh(60px);
+  @include position-fixed(bottom);
+  background-color: $secundario;
+}

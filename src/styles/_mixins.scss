@@ -1,0 +1,55 @@
+@mixin wh($h: 100%, $w: 100%){
+  width: $w;
+  height: $h;
+}
+
+@mixin padding-top($value: 80px){
+  padding: $value 0;
+}
+
+@mixin content-box{
+  box-sizing: border-box;
+}
+
+@mixin pm($p: 0, $m: 0){
+  margin: $m;
+  padding: $p;
+}
+
+@mixin center-flex($espaciado_h: center, $espaciado_v: center, $direction: row){
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: $direction;
+  justify-content: $espaciado_h;
+  align-items: $espaciado_v;
+}
+
+@mixin position_fixed($position: top){
+  position: fixed;
+  @if($position == top){
+    top: 0;
+  }
+  @if($position == bottom){
+    bottom: 0;
+  }
+}
+
+// #region [w] ======== ( QUERYS ) ========
+@mixin media($orientation){
+  @media screen and (orientation: #{$orientation}) {
+      @content
+  }
+};
+
+@mixin mediaSize($size){
+  @media only screen and (min-width: #{$size}) {
+      @content
+  }
+};
+
+@mixin mediaSizeH($size){
+  @media only screen and (min-height: #{$size}) {
+      @content
+  }
+};
+// #endregion   ========================
