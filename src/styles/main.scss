@@ -284,6 +284,41 @@ nav{
 .btn-green:before{
   background-color: #57D507;
 }
+
+.btn-red{
+  @include wh(40px, 240px);
+  @include pm(0, 10px);
+  position: relative;
+  
+  span{
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.btn-red:before{
+  background-color: #FF1744;
+}
+
+.error{
+  border: 1px solid #B71C1C !important;
+  box-shadow: 2px 2px 4px red, -2px -2px 4px red;
+}
+
+// .success{
+//   margin-left: 10px;
+//   display: inline-block;
+//   width: 12px;
+//   height: 12px;
+//   border-radius: 50%;
+//   background-color: #AEEA00;
+//   border: 1px solid #33691E;
+//   box-shadow: 1px 1px 2px #1B1B1B;
+// }
 // #endregion   ========================
 
 // #region [3] ======== ( CONTENT ) ========

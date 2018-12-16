@@ -459,6 +459,34 @@ nav .active:hover {
   background-color: #57D507;
 }
 
+.btn-red {
+  width: 240px;
+  height: 40px;
+  margin: 10px;
+  padding: 0;
+  position: relative;
+}
+
+.btn-red span {
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.btn-red:before {
+  background-color: #FF1744;
+}
+
+.error {
+  border: 1px solid #B71C1C !important;
+  -webkit-box-shadow: 2px 2px 4px red, -2px -2px 4px red;
+          box-shadow: 2px 2px 4px red, -2px -2px 4px red;
+}
+
 main {
   margin: 0;
   padding: 0;

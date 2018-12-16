@@ -10,12 +10,10 @@
           <br>
           <hr>
         </div>
-
-        
         
         <div>
           <div class="field">
-            <label for="email">E-mail</label><input type="text" name="email" id="email" placeholder="tuEmail@ejemplo.com">
+            <label for="email">E-mail</label><input type="text" name="email" id="email" placeholder="tu_e-mail@ejemplo.com">
           </div>
           <div class="field">
             <label for="password">Contraseña</label><input type="text" name="password" id="password" placeholder="Tu contraseña">
