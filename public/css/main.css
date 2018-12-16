@@ -260,6 +260,8 @@ nav .icon {
 }
 
 nav .icon svg {
+  width: 50px;
+  height: 50px;
   max-height: 90%;
 }
 
@@ -335,6 +337,11 @@ nav .hamburguesa {
   nav .hamburguesa {
     display: none  !important;
   }
+}
+
+nav .hamburguesa svg {
+  width: 40px;
+  height: 40px;
 }
 
 nav .active {
@@ -430,6 +437,28 @@ nav .active:hover {
           transform: translate(-50%, -50%);
 }
 
+.btn-green {
+  width: 240px;
+  height: 40px;
+  margin: 10px;
+  padding: 0;
+  position: relative;
+}
+
+.btn-green span {
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.btn-green:before {
+  background-color: #57D507;
+}
+
 main {
   margin: 0;
   padding: 0;
@@ -456,9 +485,9 @@ main .section {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media only screen and (min-width: 1221px) {
@@ -646,7 +675,7 @@ main .section {
 
 .container_register {
   width: 80%;
-  height: 95%;
+  height: auto;
   margin: auto;
   padding: 40px 10px;
   -webkit-box-sizing: border-box;
@@ -674,6 +703,10 @@ main .section {
   -webkit-box-shadow: 4px 4px 3px #616161;
           box-shadow: 4px 4px 3px #616161;
   text-align: center;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .container_register form {
@@ -699,6 +732,8 @@ main .section {
 .container_register form .photo {
   width: 200px;
   height: 200px;
+  margin: 40px auto;
+  padding: 0;
   border: 1px solid #BDBDBD;
   border-radius: 50%;
 }

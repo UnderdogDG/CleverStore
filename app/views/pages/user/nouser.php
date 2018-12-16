@@ -10,11 +10,11 @@
     </div>
 
     <div class="field">
-      <a href="<?= URL?>/user/register" class="btn_reg"><span>Quiero Registrarme</span></a>
+      <a href="<?= URL?>/user/registro" class="btn-std btn-green"><span>Quiero Registrarme</span></a>
     </div>
 
     <div class="field">
-      <a href="" class="btn_reg"><span>Ya tengo una cuenta</span></a>
+      <a href="<?= URL?>/user/ingresar" class="btn-std btn-green"><span>Ya tengo una cuenta</span></a>
     </div>
   </div>
 </div>

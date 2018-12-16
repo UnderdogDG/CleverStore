@@ -132,6 +132,7 @@ nav{
       }
 
     svg{
+      @include wh(50px, 50px);
       max-height: 90%;
     }
     h2{
@@ -182,6 +183,10 @@ nav{
       @include mediaSize($laptop){
         display: none  !important;
       }
+
+    svg{
+      @include wh(40px, 40px);
+    }
   }
 
   .active{
@@ -215,7 +220,6 @@ nav{
 }
 
 .btn-std:hover{
-  // background-color: $carbon;
   color: white;
   border-radius: 0 8px 0 8px;
   transform: scale(1.2);
@@ -261,6 +265,25 @@ nav{
     transform: translate(-50%, -50%);
   }
 }
+
+.btn-green{
+  @include wh(40px, 240px);
+  @include pm(0, 10px);
+  position: relative;
+  
+  span{
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.btn-green:before{
+  background-color: #57D507;
+}
 // #endregion   ========================
 
 // #region [3] ======== ( CONTENT ) ========
@@ -272,7 +295,7 @@ main{
     @include content-box;
     @include wh(100vh);
     @include pm(145px 0 0 0, 0); /// padding no util para la segunda seccion que sinembargo hereda
-    @include center-flex(center, flex-start);
+    @include center-flex(center, center);
 
       @include mediaSize($laptop){
         padding-top: 90px;
@@ -388,7 +411,7 @@ main{
   }
 
   &_register{
-    @include wh(95%, 80%);
+    @include wh(auto, 80%);
     @include pm(40px 10px, auto);
     @include content-box;
     @include center-flex(center, center, column);
@@ -399,6 +422,9 @@ main{
     color: $neutro-lt;
     box-shadow: 4px 4px 3px $neutro-bk;
     text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
     //revisar flex-box en ambos parent(register & forrm)
     form{
       @include center-flex(space-between, center, column);
@@ -406,6 +432,7 @@ main{
 
       .photo{
         @include wh(200px, 200px);
+        @include pm(0, 40px auto);
         border: 1px solid $neutro-md;
         border-radius: 50%;
       }
