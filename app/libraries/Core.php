@@ -13,7 +13,6 @@
         unset($url[0]);
       }
 
-      // include_once './controllers/' . $this->control . '.php';
       include_once '../app/controllers/' . $this->control . '.php';
 
       $this->control = new $this->control;

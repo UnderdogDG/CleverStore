@@ -309,6 +309,12 @@ nav{
   box-shadow: 2px 2px 4px red, -2px -2px 4px red;
 }
 
+.aviso{
+  color: #FF1744;
+  font-weight: 200;
+  font-size: 0.8rem;
+}
+
 // .success{
 //   margin-left: 10px;
 //   display: inline-block;
@@ -441,8 +447,29 @@ main{
   }
 
   &_content{
-    @include wh(85%);
-    border: 1px solid white;
+    @include wh();
+    @include center-flex();
+
+    background-color: black;
+
+    .articulo{
+      @include wh(250px, 28%);
+      @include pm(5px 15px);
+      @include center-flex(space-between, flex-end, row-reverse);
+      @include content-box;
+      border: 1px solid $neutro-md;
+      border-radius: 10px;
+      background: $neutro-lt;
+      text-decoration: none;
+
+      h3, h2{
+        @include pm();
+        color: $carbon;
+      }
+      h2{
+        font-size: 2rem;
+      }
+    }
   }
 
   &_register{
@@ -461,62 +488,75 @@ main{
     top: 50%;
     transform: translateY(-50%);
     //revisar flex-box en ambos parent(register & forrm)
-    form{
-      @include center-flex(space-between, center, column);
-      @include wh();
+      form{
+        @include center-flex(space-between, center, column);
+        @include wh();
 
-      .photo{
-        @include wh(200px, 200px);
-        @include pm(0, 40px auto);
-        border: 1px solid $neutro-md;
-        border-radius: 50%;
-      }
-      
+        .img{
+          @include wh(200px, 200px);
+          @include pm(0, 40px auto);
+          display: block;
+          border: 1px solid $neutro-md;
+          border-radius: 50%;
+          background: url('http://localhost/store/public/img/anonimo.png') center / 100% no-repeat;
+          cursor: pointer;
 
-      .field{
-        width: 350px;
-        @include pm(0, 15px 0);
-
-        h2{
-          @include pm();
-          font-size: 2rem;
+          #img{
+            @include pm();
+            opacity: 0;
+          }
         }
+        
 
-        label{
-          @include pm(0, 0 5px);
-          display: inline-block;
-          font-size: 1.2rem;
-          font-weight: 300;
-          width: 30%;
+        .field{
+          width: 350px;
+          @include pm(0, 15px 0);
 
-          sup{
-            font-size: 1.1rem;
+          h2{
+            @include pm();
+            font-size: 2rem;
+          }
+
+          label{
+            @include pm(0, 0 5px);
+            display: inline-block;
+            font-size: 1.2rem;
             font-weight: 300;
-            color: red;
+            width: 30%;
+
+            sup{
+              font-size: 1.1rem;
+              font-weight: 300;
+              color: red;
+            }
+          }
+
+          input[type="text"]{
+            width: 60%;
+            padding: 4px 8px;
+            height: 24px;
+            border-radius: 8px;
+            border: 1px solid $neutro-md;
+            font-size: 1.1rem;
+          }
+
+          input[type="submit"]{
+            @include wh(30px, 120px);
+            border: 1px solid $neutro-lt;
+            border-radius: 8px;
           }
         }
 
-        input[type="text"]{
-          width: 60%;
-          padding: 4px 8px;
-          height: 24px;
-          border-radius: 8px;
-          border: 1px solid $neutro-md;
-          font-size: 1.1rem;
+        .obl{
+          color:#FF1744;
         }
 
-        input[type="submit"]{
-          @include wh(30px, 120px);
-          border: 1px solid $neutro-lt;
-          border-radius: 8px;
-        }
       }
 
-      .obl{
-        color:#FF1744;
+      .img_success{
+        @include wh(180px, 180px);
+        @include pm(0, 30px 0);
       }
-
-    }
   }
 
 }

@@ -24,15 +24,17 @@
   <!-- Es necesario un contenedor pincipal posible "container_main" -->
     <div class="container_title">
       <h2>Lo mas Vendido</h2>
-        <?php
-          foreach ($data as $key => $person) {
-            echo '<ol><li>'. $person["last_name"] .'</li>'.'<li>'.$person["first_name"].'</li></ol>';
-          }
-        ?>
     </div>
 
     <div class="container_content">
 
+      <?php foreach($data as $art) : ?>
+        <a href="#" class="articulo">
+          <h3><?= $art["name"]?></h3>
+          <h2>$<?= $art["price"]?></h2>
+        </a>
+      <?php endforeach; ?>
+      
     </div>
 
   </div>

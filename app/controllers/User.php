@@ -53,13 +53,37 @@
         'name' => validarReg($_POST["name"], '/\w{3,15}/'),
         'first_name' => validarReg($_POST['first_name'], '/\w{3,15}/'),
         'tel' => validarReg($_POST['tel'], '/\d\d-\d\d-\d\d-\d\d/'),
-        'email' => validarReg($_POST['email'], '/\w{8,}[@]\w{3,8}[.][a-z]{3,8}([.])?([a-z]{2,4})?/'),
+        'email' => validarReg($_POST['email'], '/^\w{6,}[@]\w{3,8}[.][a-z]{3,8}([.][a-z]{2,4})?$/'),
         'email_conf' => ($_POST["email_conf"] == $_POST['email']) ? $_POST["email_conf"] : "Error",
         'password' => validarReg($_POST["password"], '/.{8,}/'),
         'password_conf' => ($_POST["password_conf"] == $_POST['password']) ? $_POST["password_conf"] : "Error"
       ];
 
-      $this->view('user/registro', $data);
+      $model = $this->model('Users');
+      $user = ($model->searchEmail($data['email'])) ? "Error" : "";
+
+      if($user == "Error" || in_array('Error', $data)){
+        $this->view('user/registro', $data);
+      }else{
+        unset($data['email_conf']);
+        unset($data['password_conf']);
+        $model = $this->model('Users');
+        $model->addUser($data);
+        $this->view('user/agregado', $data);
+      }
+
+
+      
+    }
+
+    public function ajax(){
+      $email = trim($_POST["email"]);
+
+      $model = $this->model('Users');
+
+      $user = ($model->searchEmail($email)) ? "Error" : "";
+
+      echo $user;
     }
 
   }

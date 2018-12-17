@@ -13,11 +13,9 @@
   <div id="fullpage">
     <!-- #region [1] ======== ( NAV ) ======== -->
     <nav class="nav">
-    <!-- REVISAR ESTILOS -->
+      
       <a href="<?= URL ?>" class="logo">
-      <!-- <div class="logo"> -->
         <h1>CLEVER</h1>
-      <!-- </div> -->
       </a>
 
       <div class="menu">

@@ -28,7 +28,13 @@
 
     public function resultSet($param){
       $this->execute($param);
-      return pg_fetch_all($this->response);
+      $resultado = pg_fetch_all($this->response);
+      pg_close($this->dsn);
+      return  $resultado;
+    }
+
+    public function close(){
+      pg_close($this->dsn);
     }
   }
 

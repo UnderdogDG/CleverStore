@@ -9,7 +9,9 @@
           <h2>Registro</h2>
         </div>
 
-        <div class="photo">
+        <div class="img">
+          <label for="img"></label>
+          <input type="file" name="img" id="img" class="img">
         </div>
         
         <div>
@@ -27,7 +29,8 @@
           </div>
           <div class="field">
             <label for="email">E-mail<sup>*</sup></label>
-            <input type="text" name="email" id="email" class="<?= ($data["email"] == 'Error') ? "error" : ""; ?>" placeholder="ejemplo@exm.com" value="<?= ($data["email"] == 'Error') ? "" : $data["email"]; ?>">
+            <input type="text" name="email" id="email" class="<?= ($data["email"] == 'Error' OR $data["email_conf"] == 'Error') ? "error" : ""; ?>" placeholder="ejemplo@exm.com" value="<?= ($data["email"] == 'Error') ? "" : $data["email"]; ?>">
+            <span id="adv" class="aviso"></span>
           </div>
           <div class="field">
             <label for="email_conf">E-mail<sup>2</sup> </label>
@@ -35,7 +38,7 @@
           </div>
           <div class="field">
             <label for="password">Contraseña<sup>*</sup></label>
-            <input type="text" name="password" id="password" class="<?= ($data["password"] == 'Error') ? "error" : ""; ?>" placeholder="al menos 8 caracteres" value="<?= ($data["password"] == 'Error') ? "" : $data["password"]; ?>">
+            <input type="text" name="password" id="password" class="<?= ($data["password"] == 'Error' OR $data["password_conf"] == 'Error') ? "error" : ""; ?>" placeholder="al menos 8 caracteres" value="<?= ($data["password"] == 'Error') ? "" : $data["password"]; ?>">
           </div>
           <div class="field">
             <label for="password_conf">Contraseña<sup>2</sup> </label>
@@ -49,7 +52,6 @@
           <input class="btn-std" type="submit" value="Enviar">
         </div>
       </form>
-      <?= print_r($data); ?>
     </div>
   </div>
 

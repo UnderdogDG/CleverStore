@@ -1,5 +1,5 @@
 <?php
-  define('DB_NAME', 'world');
+  define('DB_NAME', 'CleverStore');
   define('USER', 'postgres');
   define('PASSWORD', '123');
   define('HOST', 'localhost');
