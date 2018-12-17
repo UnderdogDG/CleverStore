@@ -304,6 +304,10 @@ nav{
   background-color: #FF1744;
 }
 
+.bg-black{
+  background-color: black;
+}
+
 .error{
   border: 1px solid #B71C1C !important;
   box-shadow: 2px 2px 4px red, -2px -2px 4px red;
@@ -447,14 +451,16 @@ main{
   }
 
   &_content{
-    @include wh();
-    @include center-flex();
+    @include wh(auto);
+    @include center-flex(space-around);
+    @include pm(50px);
+    @include content-box;
 
     background-color: black;
 
     .articulo{
-      @include wh(250px, 28%);
-      @include pm(5px 15px);
+      @include wh(200px, 28%);
+      @include pm(5px 15px, 25px);
       @include center-flex(space-between, flex-end, row-reverse);
       @include content-box;
       border: 1px solid $neutro-md;

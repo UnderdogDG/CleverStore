@@ -5,7 +5,7 @@
 -- Dumped from database version 11.1
 -- Dumped by pg_dump version 11.1
 
--- Started on 2018-12-17 00:12:07
+-- Started on 2018-12-17 01:55:25
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -71,7 +71,7 @@ ALTER SEQUENCE public."User_id_seq" OWNED BY public.reg_users.id;
 
 CREATE TABLE public.art_store (
     sku integer NOT NULL,
-    name character varying(20) NOT NULL,
+    name character varying(50) NOT NULL,
     price integer NOT NULL,
     description character varying(120),
     rank integer
@@ -129,6 +129,14 @@ ALTER TABLE ONLY public.reg_users ALTER COLUMN id SET DEFAULT nextval('public."U
 
 COPY public.art_store (sku, name, price, description, rank) FROM stdin;
 1	Bolso Dama	250	Bolso para dama en varios colores	3
+2	Bolso para Dama azul	300	Bolso de mano en color azul	5
+3	Reloj Adidas	1200	Reloj adidas Original	5
+4	Reloj Adidas Performance ADP6093	1400	Reloj adidas Original Mod.ADP6093	4
+5	Aretes Butterfly Waba	400	Aretes Butterfly Waba con incrustaciones de piedras	4
+6	Arete Owner Oval Circles	800	Arete Owner Oval Circles Marca WABA de Oro 	4
+7	Anillo "Skull 46"	11200	Hecho de Paladio con incrustaciones de Oro Rosa	3
+8	Malnova Heart	800	Pendiente Malnova Heart colleción Amata	3
+9	Anillo Persiko	2800	Anillo de Paladio con incrustación de Safiro	4
 \.
 
 
@@ -142,6 +150,8 @@ COPY public.reg_users (id, name, first_name, email, password, tel, img) FROM std
 1	Gustavo	Barrera	sugarskullgb@gmail.com	abretesesamo	57-30-29-36	img/U01
 7	Alan	Mckay	alanmckay@hotmail.com	12345678	52-23-23-22	\N
 8	Gary	Simon	garycoursera@gmail.com	45678912	56-89-45-48	\N
+9	Jhon	Smith	ethicplot@yahoo.com	ethicplot12	56-99-12-14	\N
+10	Laura	Bhem	LauraBhem@gmail.com	Lbem&Under	68-85-78-44	\N
 \.
 
 
@@ -151,7 +161,7 @@ COPY public.reg_users (id, name, first_name, email, password, tel, img) FROM std
 -- Name: User_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."User_id_seq"', 8, true);
+SELECT pg_catalog.setval('public."User_id_seq"', 10, true);
 
 
 --
@@ -160,7 +170,7 @@ SELECT pg_catalog.setval('public."User_id_seq"', 8, true);
 -- Name: art_store_sku_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.art_store_sku_seq', 1, true);
+SELECT pg_catalog.setval('public.art_store_sku_seq', 9, true);
 
 
 --
@@ -190,7 +200,7 @@ ALTER TABLE ONLY public.reg_users
     ADD CONSTRAINT email UNIQUE (email);
 
 
--- Completed on 2018-12-17 00:12:07
+-- Completed on 2018-12-17 01:55:25
 
 --
 -- PostgreSQL database dump complete

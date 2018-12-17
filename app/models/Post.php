@@ -8,7 +8,7 @@
     }
 
     public function getPost(){
-      $this->db->query('SELECT * FROM art_store LIMIT 9');
+      $this->db->query('SELECT * FROM art_store ORDER BY rank ASC LIMIT 9');
       // $this->db->execute();
       return $this->db->resultSet([]);
     }

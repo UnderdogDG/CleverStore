@@ -20,7 +20,7 @@
         
   </div>
 
-  <div class="section">
+  <div class="section bg-black">
   <!-- Es necesario un contenedor pincipal posible "container_main" -->
     <div class="container_title">
       <h2>Lo mas Vendido</h2>
