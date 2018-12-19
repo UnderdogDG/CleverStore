@@ -27,7 +27,7 @@
 
       <div class="compress">
 
-        <form id="buscar" class="item hidden" action="" method="get">
+        <form id="buscar" class="item hidden" action="<?= URL?>/main/search" method="get">
           <input type="text" name="buscar" id="buscar" placeholder="Encuentra los mejores productos">
           <input type="submit" name="Buscar" value="Buscar">
         </form>

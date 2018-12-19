@@ -567,6 +567,77 @@ main{
 
 }
 
+.cart{
+  @include center-flex(center, space-between, column);
+
+  .title{
+    h1{
+      @include pm();
+      margin-bottom: 20px;
+    }
+  }
+
+  &_item{
+    @include wh(auto, 98%);
+    @include center-flex(center, center, row);
+    @include pm(0 1%);
+    background-color: $neutro-lt;
+    border: 1px solid $neutro-bk;
+    color: $carbon;
+
+    .img{
+      @include wh(0, 28%);
+      @include content-box;
+      @include pm(0, 1%);
+      border: 1px solid $neutro-md;
+      padding-bottom: 28%;
+      
+    }
+
+    .detail{
+      @include wh(auto, 70%);
+      @include pm(5px);
+      @include content-box;
+      .info{
+        @include wh(auto);
+        @include center-flex(space-between);
+
+        h2{
+          @include wh(auto, 96%);
+          margin-right: 4%;
+          display: inline-block;
+          text-align: right;
+        }
+      }
+
+      .options{
+        @include wh(auto);
+        @include center-flex(flex-end);
+
+        a.goto{
+          @include pm(5px 10px, 5px);
+          border-radius: 5px;
+          color: $white-lt;
+          display: block;
+          background-color: $neutro-md;
+          text-decoration: none;
+
+        }
+
+        a.delete{
+          @include pm(5px 10px, 5px);
+          border-radius: 5px;
+          color: $white-lt;
+          display: block;
+          background-color: #FF1744;
+          text-decoration: none;
+
+        }
+      }
+    }
+  }
+}
+
 .fp-tableCell{
   box-sizing: content-box !important;
   max-height: 100% !important;

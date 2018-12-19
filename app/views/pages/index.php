@@ -21,9 +21,9 @@
   </div>
 
   <div class="section bg-black">
-  <!-- Es necesario un contenedor pincipal posible "container_main" -->
+  
     <div class="container_title">
-      <h2>Lo mas Vendido</h2>
+      <h2>Lo más Vendido</h2>
     </div>
 
     <div class="container_content">
@@ -35,6 +35,14 @@
         </a>
       <?php endforeach; ?>
       
+    </div>
+
+  </div>
+
+  <div class="section bg-black">
+  
+    <div class="container_title">
+      <h2>BLOG</h2>
     </div>
 
   </div>
