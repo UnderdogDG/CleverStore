@@ -29,6 +29,8 @@ nav {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background: #E0E0E0 url("../img/trama.png") center repeat;
+  -webkit-box-shadow: 2px 0 8px #272727;
+          box-shadow: 2px 0 8px #272727;
 }
 
 @media only screen and (min-width: 1221px) {

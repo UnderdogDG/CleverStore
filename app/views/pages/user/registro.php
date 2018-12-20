@@ -4,7 +4,7 @@
 
   <div class="section">
     <div class="container_register">
-      <form action="<?= URL?>/user/validar" method="post">
+      <form action="<?= URL?>/user/signin" method="post">
         <div class="field">
           <h2>Registro</h2>
         </div>

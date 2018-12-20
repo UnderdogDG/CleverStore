@@ -6,13 +6,36 @@
     }
 
     public function index(){
-      $posts = $this->postModel->getPost();
+      $data = $this->postModel->getPost();
 
-      $this->view('index', $posts);
+      $this->view('index', $data);
     }
 
-    public function about(){
-      $this->view('about');
+    public function search(){
+      if(isset($_GET['search'])){
+        echo 'TRUE';
+        $search = $_GET['search'];
+        $this->view('search',$data);
+      }else{
+        echo 'FALSE';
+        $this->view('index');
+      }
+    }
+
+    public function section($section){
+      [0 => $class] = $section;
+
+      [$class=>$item] = [
+        'clothes'=>'clt', 
+        'shoes'=>'sho', 
+        'jewels'=>'jwl',
+        'props'=>'acc',
+      ];
+
+      $model = $this->model('Classes');
+      $data = $model->obtClase($item);
+
+      $this->view('class/test', $data);
     }
 
   }

@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title><?= SITE; ?></title>
+  <link rel="shortcut icon" href="img/clever_icon.ico" type="image/x-icon">
+  <link rel="icon" href="img/clever_icon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700|Raleway:100,200,300,400,500,600" rel="stylesheet"> 
   <link rel="stylesheet" type="text/css" href="<?= URL; ?>/public/css/fullpage.min.css">
   <link rel="stylesheet" type="text/css" href="<?= URL; ?>/public/css/main.css">
@@ -19,17 +21,17 @@
       </a>
 
       <div class="menu">
-        <a href="<?= URL?>/main/about" class="btn-std">Ropa</a>
-        <a href="#" class="btn-std">Zapatos</a>
-        <a href="#" class="btn-std">Joyería</a>
-        <a href="#" class="btn-std">Accesorios</a>
+        <a href="<?= URL?>/main/section/clothes" class="btn-std">Ropa</a>
+        <a href="<?= URL?>/main/section/shoes" class="btn-std">Zapatos</a>
+        <a href="<?= URL?>/main/section/jewels" class="btn-std">Joyería</a>
+        <a href="<?= URL?>/main/section/props" class="btn-std">Accesorios</a>
       </div>
 
       <div class="compress">
 
         <form id="buscar" class="item hidden" action="<?= URL?>/main/search" method="get">
-          <input type="text" name="buscar" id="buscar" placeholder="Encuentra los mejores productos">
-          <input type="submit" name="Buscar" value="Buscar">
+          <input type="text" name="search" id="buscar" placeholder="Encuentra los mejores productos">
+          <input type="submit" value="Buscar">
         </form>
 
         <a class="icon item hidden" href="<?= URL?>/user/nouser">

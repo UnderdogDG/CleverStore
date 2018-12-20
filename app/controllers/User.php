@@ -39,12 +39,12 @@
 
     // #region [1] ======== ( INGRESAR ) ========
     public function ingresar(){
-      $this->view('user/ingresar');
+      $this->view('user/ingresar', $data = ["email"=>"", "password"=>""]);
     }
     // #endregion   ========================
 
-    // #region [w] ======== ( TEST!!! ) ========
-    public function signin(){
+    // #region [6] ======== ( LOGIN ) ========
+    public function login(){
 
       $data = $this->validar();
 
@@ -52,9 +52,28 @@
       [$user] = $model->searchUser( $data['email'], $data['password'] );
 
       if(in_array('Error', $data) || !$user){
-        $this->view('user/test', array($user, $data));
+        $this->view('user/ingresar', $data);
       }else{
         $this->view('user/agregado', $user);
+      }
+    }
+    // #endregion   ========================
+
+    // #region [8] ======== ( SIGNIN ) ========
+    public function signin(){
+      $data = $this->validar();
+
+      $model = $this->model('Users');
+      $user = ($model->searchEmail($data['email'])) ? "Error" : "";
+
+      if($user == "Error" || in_array('Error', $data)){
+        $this->view('user/registro', $data);
+      }else{
+        unset($data['email_conf']);
+        unset($data['password_conf']);
+        $model = $this->model('Users');
+        $model->addUser($data);
+        $this->view('user/agregado', $data);
       }
     }
     // #endregion   ========================
@@ -87,21 +106,6 @@
           $data[trim($key)] = $this->validarReg(trim($value), $validators[trim($key)]);
         }
       }
-
-      //MOVER A OTRA FUNCION
-
-      // $model = $this->model('Users');
-      // $user = ($model->searchEmail($data['email'])) ? "Error" : "";
-
-      // if($user == "Error" || in_array('Error', $data)){
-      //   $this->view('user/registro', $data);
-      // }else{
-      //   unset($data['email_conf']);
-      //   unset($data['password_conf']);
-      //   $model = $this->model('Users');
-      //   $model->addUser($data);
-      //   $this->view('user/agregado', $data);
-      // }
 
       return $data;
       

@@ -26,7 +26,7 @@
 
       $this->params = $url ? array_values($url) : [];
 
-      call_user_func([$this->control, $this->method], $this->params); ///Buscar concepto
+      call_user_func([$this->control, $this->method], $this->params);
 
     }
 

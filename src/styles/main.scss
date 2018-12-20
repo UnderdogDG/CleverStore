@@ -16,6 +16,7 @@ nav{
   @include wh(auto, 100%);
   @include content-box;
   background: $neutro-lt url('../img/trama.png') center repeat;
+  box-shadow: 2px 0 8px $carbon;
   
     @include mediaSize($laptop){
       flex-direction: row;
