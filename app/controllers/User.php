@@ -61,9 +61,11 @@
 
     // #region [8] ======== ( SIGNIN ) ========
     public function signin(){
+      $img = "";
 
       if(isset($_FILES["img"])){
-        $this->validarImg($_FILES["img"]);
+        $file = $_FILES["img"];
+        $img = $this->validarImg($file);
       }else{
         $img = 'default'; 
       }
@@ -82,6 +84,8 @@
         // $model->addUser($data);
         // $this->view('user/agregado', $data);
         // $this->validarImg();
+        $info = pathinfo($_FILES["img"]["tmp_name"], PATHINFO_FILENAME);
+        echo $info;
         $data["img"] = $img;
         $this->view('user/test', $data);
       }
@@ -91,6 +95,17 @@
     // #region [2] ======== ( NOUSER ) ========
     public function nouser(){
       $this->view('user/nouser');
+    }
+    // #endregion   ========================
+
+    // #region [4] ======== ( AJAX ) ========
+    public function ajax(){
+      $email = trim($_POST["email"]);
+
+      $model = $this->model('Users');
+      $user = ($model->searchEmail($email)) ? "Error" : "";
+
+      echo $user;
     }
     // #endregion   ========================
 
@@ -110,27 +125,11 @@
       $data = [];
 
       foreach ($_POST as $key => $value){
-        // if($key == 'img'){
-        //   // $data[$key] = $this->validarImg($value);
-
-        // }else{
           $data[trim($key)] = $this->validarReg(trim($value), $validators[trim($key)]);
-        // }
       }
 
       return $data;
       
-    }
-    // #endregion   ========================
-
-    // #region [4] ======== ( AJAX ) ========
-    public function ajax(){
-      $email = trim($_POST["email"]);
-
-      $model = $this->model('Users');
-      $user = ($model->searchEmail($email)) ? "Error" : "";
-
-      echo $user;
     }
     // #endregion   ========================
 
@@ -141,14 +140,35 @@
     // #endregion   ========================
 
     public function validarImg($file){
-      echo"execute img-> ";
-      $filename = $file["name"];
-      $filetype = $file["type"];
-      $filesize = $file["size"];
-      $filetemp = $file["tmp_name"];
+      // echo"execute img-> ";
+      // print_r($file);
+      $img = "";
+      [
+        "name"=>$filename,
+        "type"=>$filetype,
+        "size"=>$filesize,
+        "tmp_name"=>$filetemp
+      ] = $file;
 
-      echo "$filetemp </br>";
-      var_dump(pathinfo($filename, PATHINFO_EXTENSION));
+      $maxsize = 2 * 1024 * 1024;
+      $permitidos = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "gif" => "image/gif", "png" => "image/png");
+
+      if($filesize < $maxsize){
+        if(!array_key_exists($ext, $permitidos) || !in_array($filetype, $permitidos)) {
+          $img = "Error: La Extensión debe ser: .jpg / .jpeg / .gif / .png.";
+        }else{
+          $img = pathinfo($filetemp, PATHINFO_FILENAME) . "." . pathinfo($filename, PATHINFO_EXTENSION);
+        }
+      }else{
+        $img = "Error: El tamaño del archivo es mayor a 2MB.";
+      }
+
+      
+
+      // echo "$filetemp </br>";
+      // var_dump(pathinfo($filename, PATHINFO_EXTENSION));
+
+      return pathinfo($filetemp, PATHINFO_FILENAME) . "." . pathinfo($filename, PATHINFO_EXTENSION);
     }
   }
 ?>

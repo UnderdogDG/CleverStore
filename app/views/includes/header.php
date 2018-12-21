@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title><?= SITE; ?></title>
   <link rel="shortcut icon" href="img/clever_icon.ico" type="image/x-icon">
-  <link rel="icon" href="img/clever_icon.ico" type="image/x-icon">
+  <link rel="icon" href="<?= URL; ?>/img/clever_icon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700|Raleway:100,200,300,400,500,600" rel="stylesheet"> 
   <link rel="stylesheet" type="text/css" href="<?= URL; ?>/public/css/fullpage.min.css">
   <link rel="stylesheet" type="text/css" href="<?= URL; ?>/public/css/main.css">
