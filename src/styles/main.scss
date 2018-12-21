@@ -3,7 +3,6 @@
 
 body, main, nav, footer, div, input{
   @include pm();
-  // @include content-box;
   font-family: 'Raleway', sans-serif;
 }
 

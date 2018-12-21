@@ -5,7 +5,7 @@
 -- Dumped from database version 11.1
 -- Dumped by pg_dump version 11.1
 
--- Started on 2018-12-17 01:55:25
+-- Started on 2018-12-20 20:53:22
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -74,7 +74,8 @@ CREATE TABLE public.art_store (
     name character varying(50) NOT NULL,
     price integer NOT NULL,
     description character varying(120),
-    rank integer
+    rank integer,
+    art_class character varying(16)
 );
 
 
@@ -127,16 +128,16 @@ ALTER TABLE ONLY public.reg_users ALTER COLUMN id SET DEFAULT nextval('public."U
 -- Data for Name: art_store; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.art_store (sku, name, price, description, rank) FROM stdin;
-1	Bolso Dama	250	Bolso para dama en varios colores	3
-2	Bolso para Dama azul	300	Bolso de mano en color azul	5
-3	Reloj Adidas	1200	Reloj adidas Original	5
-4	Reloj Adidas Performance ADP6093	1400	Reloj adidas Original Mod.ADP6093	4
-5	Aretes Butterfly Waba	400	Aretes Butterfly Waba con incrustaciones de piedras	4
-6	Arete Owner Oval Circles	800	Arete Owner Oval Circles Marca WABA de Oro 	4
-7	Anillo "Skull 46"	11200	Hecho de Paladio con incrustaciones de Oro Rosa	3
-8	Malnova Heart	800	Pendiente Malnova Heart colleción Amata	3
-9	Anillo Persiko	2800	Anillo de Paladio con incrustación de Safiro	4
+COPY public.art_store (sku, name, price, description, rank, art_class) FROM stdin;
+1	Bolso Dama	250	Bolso para dama en varios colores	3	acc
+2	Bolso para Dama azul	300	Bolso de mano en color azul	5	acc
+3	Reloj Adidas	1200	Reloj adidas Original	5	acc
+4	Reloj Adidas Performance ADP6093	1400	Reloj adidas Original Mod.ADP6093	4	acc
+5	Aretes Butterfly Waba	400	Aretes Butterfly Waba con incrustaciones de piedras	4	jwl
+6	Arete Owner Oval Circles	800	Arete Owner Oval Circles Marca WABA de Oro 	4	jwl
+7	Anillo "Skull 46"	11200	Hecho de Paladio con incrustaciones de Oro Rosa	3	jwl
+8	Malnova Heart	800	Pendiente Malnova Heart colleción Amata	3	jwl
+9	Anillo Persiko	2800	Anillo de Paladio con incrustación de Safiro	4	jwl
 \.
 
 
@@ -152,6 +153,9 @@ COPY public.reg_users (id, name, first_name, email, password, tel, img) FROM std
 8	Gary	Simon	garycoursera@gmail.com	45678912	56-89-45-48	\N
 9	Jhon	Smith	ethicplot@yahoo.com	ethicplot12	56-99-12-14	\N
 10	Laura	Bhem	LauraBhem@gmail.com	Lbem&Under	68-85-78-44	\N
+11	Julian	Khor	sugarskullgb@gmail.com.mx	12345698	51-24-38-66	\N
+12	Armin	Arleth	arminsnk@yahoo.com	abcdefgh	57-89-25-32	\N
+13	James	Jean	jamesjean@james.com	jamesjeanrules	78-89-63-66	\N
 \.
 
 
@@ -161,7 +165,7 @@ COPY public.reg_users (id, name, first_name, email, password, tel, img) FROM std
 -- Name: User_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."User_id_seq"', 10, true);
+SELECT pg_catalog.setval('public."User_id_seq"', 13, true);
 
 
 --
@@ -200,7 +204,7 @@ ALTER TABLE ONLY public.reg_users
     ADD CONSTRAINT email UNIQUE (email);
 
 
--- Completed on 2018-12-17 01:55:25
+-- Completed on 2018-12-20 20:53:22
 
 --
 -- PostgreSQL database dump complete
