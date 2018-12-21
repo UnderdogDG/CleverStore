@@ -61,6 +61,13 @@
 
     // #region [8] ======== ( SIGNIN ) ========
     public function signin(){
+
+      if(isset($_FILES["img"])){
+        $this->validarImg($_FILES["img"]);
+      }else{
+        $img = 'default'; 
+      }
+
       $data = $this->validar();
 
       $model = $this->model('Users');
@@ -69,11 +76,14 @@
       if($user == "Error" || in_array('Error', $data)){
         $this->view('user/registro', $data);
       }else{
-        unset($data['email_conf']);
-        unset($data['password_conf']);
-        $model = $this->model('Users');
-        $model->addUser($data);
-        $this->view('user/agregado', $data);
+        // unset($data['email_conf']);
+        // unset($data['password_conf']);
+        // $model = $this->model('Users');
+        // $model->addUser($data);
+        // $this->view('user/agregado', $data);
+        // $this->validarImg();
+        $data["img"] = $img;
+        $this->view('user/test', $data);
       }
     }
     // #endregion   ========================
@@ -100,11 +110,12 @@
       $data = [];
 
       foreach ($_POST as $key => $value){
-        if($key == 'img'){
+        // if($key == 'img'){
+        //   // $data[$key] = $this->validarImg($value);
 
-        }else{
+        // }else{
           $data[trim($key)] = $this->validarReg(trim($value), $validators[trim($key)]);
-        }
+        // }
       }
 
       return $data;
@@ -129,5 +140,15 @@
     }
     // #endregion   ========================
 
+    public function validarImg($file){
+      echo"execute img-> ";
+      $filename = $file["name"];
+      $filetype = $file["type"];
+      $filesize = $file["size"];
+      $filetemp = $file["tmp_name"];
+
+      echo "$filetemp </br>";
+      var_dump(pathinfo($filename, PATHINFO_EXTENSION));
+    }
   }
 ?>
