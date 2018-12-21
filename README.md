@@ -7,7 +7,7 @@
   <li>PostgreSQL</li>
   <li>HTML</li>
   <li>CSS/SASS</li>
-  <li>JavaScript</li>
+  <li>JavaScript/AJAX</li>
 </ul>
 
 <h2>Descripción</h2>
