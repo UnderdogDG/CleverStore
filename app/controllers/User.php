@@ -8,6 +8,7 @@
     private $email_conf = "";
     private $password_conf = "";
     private $tel;
+    private $img = "";
     
     // #region [8] ======== ( REGISTRO ) ========
     public function registro($data = []){
@@ -20,7 +21,8 @@
           'email'=>$this->email,
           'email_conf'=>$this->email_conf,
           'password'=>$this->password,
-          'password_conf'=>$this->password_conf
+          'password_conf'=>$this->password_conf,
+          'img'=>$this->img
 
         ] = $data;
       }
@@ -33,6 +35,7 @@
                                         "email_conf"=>$this->email_conf,
                                         "password"=>$this->password,
                                         "password_conf"=>$this->password_conf,
+                                        'img'=>$this->img
                                       ));
     }
     // #endregion   ========================
@@ -63,31 +66,36 @@
     public function signin(){
       $img = "";
 
-      if(isset($_FILES["img"])){
+      if($_FILES["img"]["error"] != 4){
         $file = $_FILES["img"];
         $img = $this->validarImg($file);
       }else{
-        $img = 'default'; 
+        $img = 'default.png'; 
       }
 
       $data = $this->validar();
+      $data["img"] = $img;
 
       $model = $this->model('Users');
       $user = ($model->searchEmail($data['email'])) ? "Error" : "";
 
-      if($user == "Error" || in_array('Error', $data)){
+      if($user == "Error" || in_array('Error', $data) || preg_match('/Error/', $img)){
+
         $this->view('user/registro', $data);
+
       }else{
-        // unset($data['email_conf']);
-        // unset($data['password_conf']);
-        // $model = $this->model('Users');
-        // $model->addUser($data);
-        // $this->view('user/agregado', $data);
-        // $this->validarImg();
-        $info = pathinfo($_FILES["img"]["tmp_name"], PATHINFO_FILENAME);
-        echo $info;
-        $data["img"] = $img;
-        $this->view('user/test', $data);
+
+        unset($data['email_conf']);
+        unset($data['password_conf']);
+        $model = $this->model('Users');
+        $model->addUser($data);
+
+        if($data["img"] != 'default.png'){
+          move_uploaded_file($_FILES["img"]["tmp_name"], "img/upload/" . $data["img"]);
+        }
+
+        $this->view('user/agregado', $data);
+        
       }
     }
     // #endregion   ========================
@@ -109,7 +117,7 @@
     }
     // #endregion   ========================
 
-    // #region [3] ======== ( VALIDAR ) ========
+    // #region [3] ======== ( VALIDAR-PARAMS ) ========
     public function validar($params = ''){
 
       $validators = [
@@ -133,15 +141,9 @@
     }
     // #endregion   ========================
 
-    // #region [5] ======== ( VALIDARREG ) ========
-    public function validarReg($cadena, $match){
-      return (preg_match($match, $cadena)) ? $cadena : "Error";
-    }
-    // #endregion   ========================
-
+    // #region [7] ======== ( VALIDAR-IMG ) ========
     public function validarImg($file){
-      // echo"execute img-> ";
-      // print_r($file);
+
       $img = "";
       [
         "name"=>$filename,
@@ -152,23 +154,29 @@
 
       $maxsize = 2 * 1024 * 1024;
       $permitidos = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "gif" => "image/gif", "png" => "image/png");
+      $ext = pathinfo($filename, PATHINFO_EXTENSION);
 
       if($filesize < $maxsize){
         if(!array_key_exists($ext, $permitidos) || !in_array($filetype, $permitidos)) {
           $img = "Error: La Extensión debe ser: .jpg / .jpeg / .gif / .png.";
         }else{
-          $img = pathinfo($filetemp, PATHINFO_FILENAME) . "." . pathinfo($filename, PATHINFO_EXTENSION);
+          preg_match('/(?![php]).*/', pathinfo($filetemp, PATHINFO_FILENAME), $matches);
+          $random = random_int(1, 999);
+          $random = ($random < 10) ? '00' . $random : (($random < 100) ? '0' . $random : $random);
+          $img = $random . $matches[0] . "." . pathinfo($filename, PATHINFO_EXTENSION);
         }
       }else{
         $img = "Error: El tamaño del archivo es mayor a 2MB.";
       }
 
-      
-
-      // echo "$filetemp </br>";
-      // var_dump(pathinfo($filename, PATHINFO_EXTENSION));
-
-      return pathinfo($filetemp, PATHINFO_FILENAME) . "." . pathinfo($filename, PATHINFO_EXTENSION);
+      return $img;
     }
+    // #endregion   ========================
+
+    // #region [5] ======== ( VALIDARREG ) ========
+    public function validarReg($cadena, $match){
+      return (preg_match($match, $cadena)) ? $cadena : "Error";
+    }
+    // #endregion   ========================
   }
 ?>

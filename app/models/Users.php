@@ -5,8 +5,7 @@
     }
 
     public function addUser($arr){
-      $this->db->query('INSERT INTO reg_users(name, first_name, tel, email, password) VALUES ($1, $2 , $3, $4, $5)');
-      print_r($arr);
+      $this->db->query('INSERT INTO reg_users(name, first_name, tel, email, password, img) VALUES ($1, $2 , $3, $4, $5, $6)');
       $resultado = $this->db->execute($arr);
     }
 

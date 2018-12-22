@@ -43,6 +43,7 @@
   
     <div class="container_title">
       <h2>BLOG</h2>
+      <a class="btn-std" href="<?= URL; ?>/public/blog/">Blog</a>
     </div>
 
   </div>

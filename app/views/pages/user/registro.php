@@ -12,6 +12,7 @@
         <div class="img">
           <label for="img"></label>
           <input type="file" name="img" id="img" class="img">
+          <span id="adv" class="aviso"><?= (preg_match('/Error/', $data["img"])) ? $data["img"] : ""; ?></span>
         </div>
         
         <div>
