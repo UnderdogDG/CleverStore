@@ -35,7 +35,8 @@
       $model = $this->model('Classes');
       $data = $model->obtClase($item);
 
-      $this->view('class/test', $data);
+      // $this->view('class/test', $data);
+      $this->view('search', $data);
     }
 
   }
