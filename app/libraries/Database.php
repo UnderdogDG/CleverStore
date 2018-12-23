@@ -33,6 +33,13 @@
       return  $resultado;
     }
 
+    public function resultSingle($param){
+      $this->execute($param);
+      $resultado = pg_fetch_assoc($this->response);
+      pg_close($this->dsn);
+      return  $resultado;
+    }
+
     public function close(){
       pg_close($this->dsn);
     }

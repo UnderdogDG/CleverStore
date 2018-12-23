@@ -52,12 +52,14 @@
       $data = $this->validar();
 
       $model = $this->model('Users');
-      [$user] = $model->searchUser( $data['email'], $data['password'] );
+      $user = $model->searchUser( $data['email'], $data['password'] );
 
       if(in_array('Error', $data) || !$user){
         $this->view('user/ingresar', $data);
       }else{
-        $this->view('user/agregado', $user);
+        $this->userSession($user);
+        header("Location: ". URL);
+        // echo 'user/ingresar';
       }
     }
     // #endregion   ========================
@@ -172,6 +174,14 @@
       return $img;
     }
     // #endregion   ========================
+
+    public function userSession($data){
+      // sesion_start();
+
+      $_SESSION["user"]=$data["id"];
+      $_SESSION["name"]=$data["name"];
+      $_SESION["img"]=$data["img"];
+    }
 
     // #region [5] ======== ( VALIDARREG ) ========
     public function validarReg($cadena, $match){

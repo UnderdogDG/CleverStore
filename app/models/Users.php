@@ -17,7 +17,7 @@
 
     public function searchUser($email, $password){
       $this->db->query('SELECT * FROM reg_users WHERE email=$1 AND password=$2');
-      $resultado = $this->db->resultSet(array( $email, $password));
+      $resultado = $this->db->resultSingle(array( $email, $password));
       return $resultado;
     }
   }
