@@ -14,7 +14,7 @@
       <div class="container_main_pleca"></div>
 
       <div class="container_main_item">
-
+        <img src="./img/bases/anillo_in.png" alt="">
       </div>
     </div>
         
@@ -39,11 +39,18 @@
 
   </div>
 
-  <div class="section bg-black">
+  <div class="section bg-black section-mod">
   
-    <div class="container_title">
-      <h2>BLOG</h2>
-      <a class="btn-std" href="<?= URL; ?>/public/blog/">Blog</a>
+    <div class="container_blog">
+      <div class="lat_izq">
+        <h1>CLEVER</h1>
+        <h2>BLOG</h2>
+        <p>Conoce las ultimas novedades</p>
+        <a class="btn-blog" href="<?= URL; ?>/public/blog/"><span>Entrar</span></a>
+      </div>
+      <div class="lat_der">
+        <!-- <img src="./img/bases/blog-bg2.png" alt=""> -->
+      </div>
     </div>
 
   </div>

@@ -484,7 +484,7 @@ nav .active:hover {
 }
 
 .bg-black {
-  background-color: black;
+  background: #272727 url("../img/bases/bg2.jpg") center/100px repeat;
 }
 
 .error {
@@ -503,7 +503,7 @@ main {
   margin: 0;
   padding: 0;
   width: 100%;
-  background-color: #ECEFF1;
+  background: #272727 url("../img/bases/bg2.jpg") center/100px repeat;
 }
 
 main .section {
@@ -533,6 +533,16 @@ main .section {
 @media only screen and (min-width: 1221px) {
   main .section {
     padding-top: 90px;
+  }
+}
+
+main .section-mod {
+  padding-top: 124px;
+}
+
+@media only screen and (min-width: 1221px) {
+  main .section-mod {
+    padding-top: 70px;
   }
 }
 
@@ -581,6 +591,7 @@ main .section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: hidden;
 }
 
 @media only screen and (min-width: 681px) {
@@ -703,7 +714,6 @@ main .section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: black;
   color: #ECEFF1;
 }
 
@@ -728,7 +738,6 @@ main .section {
   padding: 50px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-color: black;
 }
 
 .container_content .articulo {
@@ -767,6 +776,137 @@ main .section {
 
 .container_content .articulo h2 {
   font-size: 2rem;
+}
+
+.container_blog {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  background-color: black;
+  color: #ECEFF1;
+  position: relative;
+}
+
+.container_blog .lat_izq {
+  width: 30%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.container_blog .lat_izq h1 {
+  font-size: 3rem;
+  font-family: 'Libre Baskerville', serif;
+  margin-bottom: 15px;
+}
+
+.container_blog .lat_izq h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #ECEFF1;
+}
+
+.container_blog .lat_izq p {
+  margin: 60px auto;
+}
+
+.container_blog .lat_izq .btn-blog {
+  display: inline-block;
+  padding: 5px 5px;
+  margin: 5px 2px;
+  text-decoration: none;
+  color: #ECEFF1;
+  background-color: rgba(255, 171, 0, 0);
+  text-align: center;
+  border-radius: 0 8px 0 8px;
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+  border: 1px solid #FFAB00;
+  font-size: 1.5rem;
+}
+
+@media only screen and (min-width: 320px) {
+  .container_blog .lat_izq .btn-blog {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 5px 8px;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  .container_blog .lat_izq .btn-blog {
+    width: 150px;
+  }
+}
+
+.container_blog .lat_izq .btn-blog:hover {
+  background-color: #FFAB00;
+  color: black;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.container_blog .lat_der {
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: black url("../img/bases/blog-bg2.png") center/cover no-repeat;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+@media only screen and (min-width: 1221px) {
+  .container_blog .lat_der {
+    width: 70%;
+    height: 100%;
+  }
+}
+
+.container_blog .lat_der img {
+  width: 100%;
+  height: 100%;
 }
 
 .container_register {

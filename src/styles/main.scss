@@ -305,7 +305,8 @@ nav{
 }
 
 .bg-black{
-  background-color: black;
+  // background-color: black;
+  background: $carbon url('../img/bases/bg2.jpg') center / 100px repeat;
 }
 
 .error{
@@ -335,7 +336,8 @@ nav{
 main{
   @include pm();
   width: 100%;
-  background-color: $white-lt;
+  // background-color: $white-lt;
+  background: $carbon url('../img/bases/bg2.jpg') center / 100px repeat;
   .section{
     @include content-box;
     @include wh(100vh);
@@ -345,6 +347,13 @@ main{
       @include mediaSize($laptop){
         padding-top: 90px;
       }
+  }
+
+  .section-mod{
+    padding-top: 124px;
+    @include mediaSize($laptop){
+      padding-top: 70px;
+    }
   }
 }
 
@@ -361,6 +370,7 @@ main{
     &_item{
       @include wh(44%, 90%);
       @include center-flex();
+      overflow: hidden;
       // border: 1px solid $white-lt;
 
         @include mediaSize($tablet){
@@ -432,7 +442,7 @@ main{
 
     &_pleca{
       @include wh(3px, 90%);
-      background-color: $pleca;
+      background-color: $gold;
       transform: rotate(-5deg);
       transition: transform 0.5s ease-out;
 
@@ -446,7 +456,7 @@ main{
   &_title{
     @include wh(10%);
     @include center-flex();
-    background-color: black;
+    // background-color: black;
     color: $white-lt;
   }
 
@@ -456,7 +466,8 @@ main{
     @include pm(50px);
     @include content-box;
 
-    background-color: black;
+    // background-color: black;
+    // background: $carbon url('../img/bases/bg2.jpg') center / 100px repeat;
 
     .articulo{
       @include wh(200px, 28%);
@@ -474,6 +485,92 @@ main{
       }
       h2{
         font-size: 2rem;
+      }
+    }
+  }
+
+  &_blog{
+    @include wh();
+    @include pm();
+    @include center-flex();
+    flex-wrap: nowrap;
+    background-color: black;
+    color: $white-lt;
+    position: relative;
+
+    .lat_izq{
+      @include wh(100%, 30%);
+      @include content-box;
+      @include center-flex(center, center, column);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 99;
+      
+
+      background-color: rgba(0%, 0%, 0%, 0);
+
+      h1{
+        font-size: 3rem;
+        font-family: 'Libre Baskerville', serif;
+        margin-bottom: 15px;
+      }
+
+      h2{
+        @include pm();
+        font-size: 2.5rem;
+        font-weight: 400;
+        color: $white-lt;
+      }
+
+      p{
+        margin: 60px auto;
+      }
+
+      .btn-blog{
+        display: inline-block;
+        padding: 5px 5px;
+        margin: 5px 2px;
+        text-decoration: none;
+        color: $white-lt;
+        background-color: rgba(100%, 67.1%, 0%, 0);
+        text-align: center;
+        border-radius: 0 8px 0 8px;
+        transition: 0.5s ease-out;
+        border: 1px solid $gold;
+        font-size: 1.5rem;
+        
+          @include mediaSize($smartphone){
+            @include content-box;
+            padding: 5px 8px;
+          }
+      
+          @include mediaSize(500px){
+            width: 150px;
+          }
+      }
+
+      .btn-blog:hover{
+        background-color: $gold;
+        color: black;
+        transform: scale(1.1);
+      }
+    }
+
+    .lat_der{
+      @include wh(100%, 100%);
+      @include content-box;
+      background: black url("../img/bases/blog-bg2.png") center / cover no-repeat;
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      @include mediaSize($laptop){
+        @include wh(100%, 70%);
+      }
+
+      img{
+        @include wh();
       }
     }
   }
