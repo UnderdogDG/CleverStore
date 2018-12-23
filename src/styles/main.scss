@@ -306,7 +306,7 @@ nav{
 
 .bg-black{
   // background-color: black;
-  background: $carbon url('../img/bases/bg2.jpg') center / 100px repeat;
+  background: $carbon url('../img/bases/bg.jpg') center / 100px repeat;
 }
 
 .error{
@@ -337,7 +337,7 @@ main{
   @include pm();
   width: 100%;
   // background-color: $white-lt;
-  background: $carbon url('../img/bases/bg2.jpg') center / 100px repeat;
+  background: $carbon url('../img/bases/bg.jpg') center / 100px repeat;
   .section{
     @include content-box;
     @include wh(100vh);
@@ -364,7 +364,7 @@ main{
     @include content-box;
     margin: auto;
     background-color: black;
-    box-shadow: 8px 6px 2px #424242;
+    box-shadow: 8px 6px 2px rgba(0%, 0%, 0%, 0.6);
     color: $white-lt;
 
     &_item{

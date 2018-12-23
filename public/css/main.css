@@ -484,7 +484,7 @@ nav .active:hover {
 }
 
 .bg-black {
-  background: #272727 url("../img/bases/bg2.jpg") center/100px repeat;
+  background: #272727 url("../img/bases/bg.jpg") center/100px repeat;
 }
 
 .error {
@@ -503,7 +503,7 @@ main {
   margin: 0;
   padding: 0;
   width: 100%;
-  background: #272727 url("../img/bases/bg2.jpg") center/100px repeat;
+  background: #272727 url("../img/bases/bg.jpg") center/100px repeat;
 }
 
 main .section {
@@ -568,8 +568,8 @@ main .section-mod {
           box-sizing: border-box;
   margin: auto;
   background-color: black;
-  -webkit-box-shadow: 8px 6px 2px #424242;
-          box-shadow: 8px 6px 2px #424242;
+  -webkit-box-shadow: 8px 6px 2px rgba(0, 0, 0, 0.6);
+          box-shadow: 8px 6px 2px rgba(0, 0, 0, 0.6);
   color: #ECEFF1;
 }
 
