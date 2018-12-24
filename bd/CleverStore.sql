@@ -5,7 +5,7 @@
 -- Dumped from database version 11.1
 -- Dumped by pg_dump version 11.1
 
--- Started on 2018-12-20 20:53:22
+-- Started on 2018-12-23 21:25:44
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -156,6 +156,10 @@ COPY public.reg_users (id, name, first_name, email, password, tel, img) FROM std
 11	Julian	Khor	sugarskullgb@gmail.com.mx	12345698	51-24-38-66	\N
 12	Armin	Arleth	arminsnk@yahoo.com	abcdefgh	57-89-25-32	\N
 13	James	Jean	jamesjean@james.com	jamesjeanrules	78-89-63-66	\N
+14	Adam	Huges	adamhuges@gmail.com	adamrules	88-99-78-77	733F864.jpg
+15	Alex	Ross	Alexross@yahoo.com	alexrules	88-99-77-66	39926EA.jpg
+16	Stanley	Artgem	stanleyart@gmail.com	stanleyrules	79-79-79-79	default.png
+17	Ben	Templesmith	bentemple@gmail.com	benrules	55-66-77-12	341BA68.png
 \.
 
 
@@ -165,7 +169,7 @@ COPY public.reg_users (id, name, first_name, email, password, tel, img) FROM std
 -- Name: User_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."User_id_seq"', 13, true);
+SELECT pg_catalog.setval('public."User_id_seq"', 17, true);
 
 
 --
@@ -204,7 +208,7 @@ ALTER TABLE ONLY public.reg_users
     ADD CONSTRAINT email UNIQUE (email);
 
 
--- Completed on 2018-12-20 20:53:22
+-- Completed on 2018-12-23 21:25:44
 
 --
 -- PostgreSQL database dump complete

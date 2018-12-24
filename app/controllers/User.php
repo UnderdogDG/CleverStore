@@ -58,8 +58,6 @@
         $this->view('user/ingresar', $data);
       }else{
         $this->userSession($user);
-        header("Location: ". URL);
-        // echo 'user/ingresar';
       }
     }
     // #endregion   ========================
@@ -96,11 +94,26 @@
           move_uploaded_file($_FILES["img"]["tmp_name"], "img/upload/" . $data["img"]);
         }
 
-        $this->view('user/agregado', $data);
+        $model2 = $this->model('Users');
+        $user = $model2->searchUser( $data['email'], $data['password'] );
+        $this->userSession($user);
         
       }
     }
     // #endregion   ========================
+
+    public function perfil(){
+      $this->view('user/perfil');
+    }
+
+    public function logout(){
+      unset($_SESSION["user"]);
+      unset($_SESSION["name"]);
+      unset($_SESSION["img"]);
+      session_start();
+      session_destroy();
+      header("Location: http://localhost/store/");
+    }
 
     // #region [2] ======== ( NOUSER ) ========
     public function nouser(){
@@ -176,11 +189,18 @@
     // #endregion   ========================
 
     public function userSession($data){
-      // sesion_start();
+
+      session_start();
 
       $_SESSION["user"]=$data["id"];
       $_SESSION["name"]=$data["name"];
-      $_SESION["img"]=$data["img"];
+      $_SESSION["img"]=$data["img"];
+
+      // $this->postModel = $this->model('Post');
+      // $data2 = $this->postModel->getPost();
+      // $this->view('user/test', $data);
+      header("Location: http://localhost/store/");  //* */
+      // redirect("Location: ". URL);
     }
 
     // #region [5] ======== ( VALIDARREG ) ========

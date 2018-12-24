@@ -131,9 +131,17 @@ nav{
 
       }
 
-    svg{
+    .perfil{
       @include wh(50px, 50px);
       max-height: 90%;
+      overflow: hidden;
+
+      img{
+        width: 50px;
+        height: 50px;
+
+        border-radius: 50%;
+      }
     }
     h2{
       @include pm(0, 0 0 0 10px);
@@ -457,7 +465,8 @@ main{
     @include wh(10%);
     @include center-flex();
     // background-color: black;
-    color: $white-lt;
+    color: $carbon;
+    font-size: 2rem;
   }
 
   &_content{
