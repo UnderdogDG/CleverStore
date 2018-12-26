@@ -9,7 +9,7 @@
           <h2>Registro</h2>
         </div>
 
-        <div class="img">
+        <div class="img" id="container">
           <label for="img"></label>
           <input type="file" name="img" id="img" class="img">
           <span id="adv" class="aviso"><?= (preg_match('/Error/', $data["img"])) ? $data["img"] : ""; ?></span>

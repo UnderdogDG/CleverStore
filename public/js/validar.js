@@ -1,5 +1,7 @@
 const email = document.getElementById('email');
 const adv  = document.getElementById('adv');
+const container = document.getElementById("container");
+const img = document.getElementById("img");
 // const aviso  = document.getElementById('aviso');
 
 function requestAJAX( email_data ){
@@ -43,4 +45,17 @@ function matchString( e, regExp ){
   };
 }
 
+function setImage(input){
+  const reader = new FileReader();
+
+  reader.onload = (e)=>{
+    container.setAttribute('style','background: url("'+ e.target.result + '") center/cover no-repeat;');
+  }
+
+  reader.readAsDataURL(input.target.files[0]);
+}
+
 email.addEventListener('input', (e)=> matchString(e, "^\\w{8,}[@]\\w{3,8}[.][a-z]{3,8}([.][a-z]{2,4})?$"));
+
+img.addEventListener('change', setImage);
+
