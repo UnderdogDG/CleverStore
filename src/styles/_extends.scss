@@ -1,0 +1,50 @@
+@import '_vars';
+
+%form_basic{
+  @include wh(auto);
+  @include pm(30px, auto);
+  @include content-box;
+  @include center-flex(center, center, column);
+  background-color: $carbon;
+  border-radius: 20px;
+  border: 1px solid $carbon;
+  max-width: 540px;
+  color: $neutro-lt;
+  box-shadow: 4px 4px 3px $neutro-bk;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+
+  .field{
+    @include center-flex();
+    @include pm(0, 5px);
+    width: 100%;
+
+    h1{
+      position: relative;
+    }
+    h1::after{
+      content:"";
+      width: 140%;
+      height: 1px;
+      position: absolute;
+      background-color: $neutro-lt;
+      bottom:-8px;
+      left: -20%;
+      z-index:-1;
+    }
+  }
+
+  .photo{
+    @include wh(200px, 200px);
+    @include center-flex();
+    border: 1px solid $neutro-md;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img{
+      width: 100%;
+    }
+  }
+}

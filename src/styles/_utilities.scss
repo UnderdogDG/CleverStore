@@ -4,7 +4,7 @@
   @include content-box;
   @include wh(30px, 100px);
   @include pm(5px, 5px);
-  display: inline-block;
+  display: block;
   text-decoration: none;
   position: relative;
   color: black;
@@ -68,9 +68,12 @@
 
   // #region [3] ======== ( BTN_RED ) ========
   &_red{
-    @include wh(40px, 240px);
 
-    :before{
+    &:hover{
+      transform: scale(1.1);
+    }
+
+    &:before{
       background-color: #FF1744;
     }
   }

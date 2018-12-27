@@ -5,7 +5,7 @@
   height: 30px;
   margin: 5px;
   padding: 5px;
-  display: inline-block;
+  display: block;
   text-decoration: none;
   position: relative;
   color: black;
@@ -74,12 +74,12 @@
   background-color: #57D507;
 }
 
-.btn_red {
-  width: 240px;
-  height: 40px;
+.btn_red:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
-.btn_red :before {
+.btn_red:before {
   background-color: #FF1744;
 }
 
@@ -164,6 +164,105 @@
   color: #FF1744;
   font-weight: 200;
   font-size: 0.8rem;
+}
+
+.form_black {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  padding: 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #272727;
+  border-radius: 20px;
+  border: 1px solid #272727;
+  max-width: 540px;
+  color: #E0E0E0;
+  -webkit-box-shadow: 4px 4px 3px #616161;
+          box-shadow: 4px 4px 3px #616161;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.form_black .field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 5px;
+  padding: 0;
+  width: 100%;
+}
+
+.form_black .field h1 {
+  position: relative;
+}
+
+.form_black .field h1::after {
+  content: "";
+  width: 140%;
+  height: 1px;
+  position: absolute;
+  background-color: #E0E0E0;
+  bottom: -8px;
+  left: -20%;
+  z-index: -1;
+}
+
+.form_black .photo {
+  width: 200px;
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #BDBDBD;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.form_black .photo img {
+  width: 100%;
 }
 
 body, main, nav, footer, div, input, button {

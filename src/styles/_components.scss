@@ -1,0 +1,7 @@
+@import '_extends';
+
+.form{
+  &_black{
+    @extend %form_basic;
+  }
+}

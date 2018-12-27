@@ -1,6 +1,7 @@
 @import '_vars';
 @import '_mixins';
 @import '_utilities';
+@import '_components';
 
 body, main, nav, footer, div, input, button{
   @include pm();
