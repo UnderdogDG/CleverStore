@@ -4,7 +4,7 @@
 
 <div class="section">
     <div class="container_register">
-      <form action="<?= URL?>/user/login" method="post">
+      <form class="form" action="<?= URL?>/user/login" method="post">
         <div class="field">
           <h2>Ingresar</h2>
           <br>
@@ -21,7 +21,7 @@
         </div>
 
         <div class="field">
-          <input class="btn-std" type="submit" value="Ingresar">
+          <button class="btn btn_green" type="submit" value="Ingresar"><span>Ingresar</span></button>
         </div>
       </form>
     </div>

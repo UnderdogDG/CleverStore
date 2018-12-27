@@ -4,7 +4,7 @@
 
   <div class="section">
     <div class="container_register">
-      <form action="<?= URL?>/user/signin" method="post" enctype="multipart/form-data">
+      <form class="form" action="<?= URL?>/user/signin" method="post" enctype="multipart/form-data">
         <div class="field">
           <h2>Registro</h2>
         </div>
@@ -50,7 +50,7 @@
           <p class="obl">* Campos Obligatorios</p>
 
         <div class="field">
-          <input class="btn-std" type="submit" value="Enviar">
+          <button class="btn btn_green" type="submit" value="Enviar"><span>Enviar</span></button>
         </div>
       </form>
     </div>

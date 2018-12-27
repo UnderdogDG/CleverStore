@@ -22,10 +22,10 @@
       </a>
 
       <div class="menu">
-        <a href="<?= URL?>/main/section/clothes" class="btn btn_std"><span>Ropa</span></a>
-        <a href="<?= URL?>/main/section/shoes" class="btn-std">Zapatos</a>
-        <a href="<?= URL?>/main/section/jewels" class="btn-std">Joyería</a>
-        <a href="<?= URL?>/main/section/props" class="btn-std">Accesorios</a>
+        <a href="<?= URL?>/main/section/clothes" class="btn"><span>Ropa</span></a>
+        <a href="<?= URL?>/main/section/shoes" class="btn"><span>Zapatos</span></a>
+        <a href="<?= URL?>/main/section/jewels" class="btn"><span>Joyería</span></a>
+        <a href="<?= URL?>/main/section/props" class="btn"><span>Accesorios</span></a>
       </div>
 
       <div class="compress">
@@ -42,6 +42,7 @@
         <div class="perfil">
           <img src="<?= URL?>/public/img/upload/<?= $_SESSION["img"]?>" alt="">
         </div>
+        <h2><?= $_SESSION["name"]; ?></h2>
 
         <?php else : ?>
           <svg class="perfil" viewBox="0 0 24 24">

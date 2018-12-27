@@ -2,7 +2,7 @@
 @import '_mixins';
 @import '_utilities';
 
-body, main, nav, footer, div, input{
+body, main, nav, footer, div, input, button{
   @include pm();
   font-family: 'Raleway', sans-serif;
 }
@@ -22,26 +22,6 @@ nav{
       justify-content: space-between;
       padding: 0 1%;
     }
-
-  .logo{
-    @include center-flex();
-    @include wh(50px);
-    @include pm(0, 10px 0);
-    font-family: 'Libre Baskerville', serif;
-    text-decoration: none;
-
-      @include mediaSize($tablet){
-        max-width: 170px;
-      }
-    h1{
-      @include wh(30px, 110px);
-      @include pm(10px 15px);
-      background-color: black;
-      color: white;
-      font-weight: 400;
-      text-align: center;
-    }
-  }
 
   .menu{
     @include center-flex(space-around);
@@ -133,12 +113,13 @@ nav{
 
     .perfil{
       @include wh(50px, 50px);
+      @include center-flex();
       max-height: 90%;
       overflow: hidden;
 
       img{
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
 
         border-radius: 50%;
       }
@@ -440,7 +421,7 @@ main{
     top: 50%;
     transform: translateY(-50%);
     //revisar flex-box en ambos parent(register & forrm)
-      form{
+      .form{
         @include center-flex(space-between, center, column);
         @include wh();
 
@@ -490,12 +471,6 @@ main{
             border-radius: 8px;
             border: 1px solid $neutro-md;
             font-size: 1.1rem;
-          }
-
-          input[type="submit"]{
-            @include wh(30px, 120px);
-            border: 1px solid $neutro-lt;
-            border-radius: 8px;
           }
         }
 

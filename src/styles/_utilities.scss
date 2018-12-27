@@ -1,198 +1,129 @@
 @import '_vars';
 
 .btn{
+  @include content-box;
+  @include wh(30px, 100px);
+  @include pm(5px, 5px);
   display: inline-block;
-  padding: 5px;
-  margin: 5px;
   text-decoration: none;
   position: relative;
-  width: 100px;
-  height: 30px;
-  @include content-box;
+  color: black;
+  background-color: $white-lt;
+  border: none;
+  border-radius: 0 8px 0 8px;
+  transition: 0.5s ease-out;
   
   span{
     @include center-position;
     display: block;
+    white-space: nowrap;
+    font-size: 1rem;
   }
 
-  &_std{
-    color: black;
-    background-color: $white-lt;
+  &:hover{
+    color: white;
     border-radius: 0 8px 0 8px;
+    transform: scale(1.2);
+  
+  }
+
+  &:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $carbon;
+    transition: transform 0.5s ease-in;
+    transform-origin: center;
+    transform: scaleX(0);
+    z-index: -1;
+    border-radius: 0 8px 0 8px;
+  }
+
+  &:hover:before{
+    transform: scaleX(1);
+  }
+
+  // #region [1] ======== ( BTN_STD ) ========
+  &_std{
+    border-radius: 4px;
     transition: 0.5s ease-out;
+  }
+  // #endregion   ========================
+
+  // #region [2] ======== ( BTN_GREEN ) ========
+  &_green{
 
     &:hover{
-      color: white;
-      border-radius: 0 8px 0 8px;
-      transform: scale(1.2);
-    
+      transform: scale(1.1);
     }
 
     &:before{
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: $carbon;
-      transition: transform 0.5s ease-in;
-      transform-origin: center;
-      transform: scaleX(0);
-      z-index: -1;
-      border-radius: 0 8px 0 8px;
-    }
-
-    &:hover:before{
-      transform: scaleX(1);
+      background-color: #57D507;
     }
   }
+  // #endregion   ========================
+
+  // #region [3] ======== ( BTN_RED ) ========
+  &_red{
+    @include wh(40px, 240px);
+
+    :before{
+      background-color: #FF1744;
+    }
+  }
+  // #endregion   ========================
+
+  // #region [4] ======== ( BTN_GOLD ) ========
+  &_gold{
+    color: $white-lt;
+    background-color: rgba(100%, 67.1%, 0%, 0);
+    border: 1px solid $gold;
+
+    &:hover{
+      color: black;
+      transform: scale(1.1);
+    }
+
+    &:before{
+      background-color: $gold;
+    }
+  }
+  // #endregion   ========================
+
+  // #region [5] ======== ( MODIFIERS ) ========
+  &.md{
+    @include wh(40px, 150px);
+  }
+
+  &.lg{
+    @include wh(40px, 240px);
+  }
+  // #endregion   ========================
+
 }
 
-/* #region [1] -------- BTN-STD --------| */
-.btn-std{
-  display: inline-block;
-  padding: 5px 5px;
-  margin: 5px 2px;
+.logo{
+  @include center-flex();
+  @include wh(50px);
+  @include pm(0, 10px 0);
+  font-family: 'Libre Baskerville', serif;
   text-decoration: none;
-  color: black;
-  background-color: $white-lt;
-  text-align: center;
-  border-radius: 0 8px 0 8px;
-  transition: 0.5s ease-out;
-  
-    @include mediaSize($smartphone){
-      @include content-box;
-      padding: 5px 8px;
+
+    @include mediaSize($tablet){
+      max-width: 170px;
     }
-
-    @include mediaSize(500px){
-      width: 100px;
-    }
-}
-
-.btn-std:hover{
-  color: white;
-  border-radius: 0 8px 0 8px;
-  transform: scale(1.2);
-
-}
-
-.btn-std:before{
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: $carbon;
-  transition: transform 0.5s ease-in;
-  transform-origin: center;
-  transform: scaleX(0);
-  z-index: -1;
-  border-radius: 0 8px 0 8px;
-}
-.btn-std:hover:before{
-  transform: scaleX(1);
-}
-/* #endregion   --------------------| */
-
-/* #region [2] -------- BTN_REG --------| */
-.btn_reg{
-  @include wh(30px, 240px);
-  display: inline-block;
-  padding: 5px 5px;
-  margin: 5px 2px;
-  text-decoration: none;
-  color: black;
-  background-color: $white-lt;
-  text-align: center;
-  border-radius: 0 8px 0 8px;
-  transition: 0.5s ease-out;
-  position: relative;
-  span{
-    display: block;
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  h1{
+    @include wh(30px, 110px);
+    @include pm(10px 15px);
+    background-color: black;
+    color: white;
+    font-weight: 400;
+    text-align: center;
   }
 }
-/* #endregion   --------------------| */
-
-/* #region [3] -------- BTN_GREEN --------| */
-.btn-green{
-  @include wh(40px, 240px);
-  @include pm(0, 10px);
-  position: relative;
-  
-  span{
-    display: block;
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
-
-.btn-green:before{
-  background-color: #57D507;
-}
-/* #endregion   --------------------| */
-
-/* #region [4] -------- BTN_REF --------| */
-.btn-red{
-  @include wh(40px, 240px);
-  @include pm(0, 10px);
-  position: relative;
-  
-  span{
-    display: block;
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
-
-.btn-red:before{
-  background-color: #FF1744;
-}
-/* #endregion   --------------------| */
-
-/* #region [5] -------- BTN-GOLD --------| */
-.btn-blog{
-  display: inline-block;
-  padding: 5px 5px;
-  margin: 5px 2px;
-  text-decoration: none;
-  color: $white-lt;
-  background-color: rgba(100%, 67.1%, 0%, 0);
-  text-align: center;
-  border-radius: 0 8px 0 8px;
-  transition: 0.5s ease-out;
-  border: 1px solid $gold;
-  font-size: 1.5rem;
-  
-    @include mediaSize($smartphone){
-      @include content-box;
-      padding: 5px 8px;
-    }
-
-    @include mediaSize(500px){
-      width: 150px;
-    }
-}
-
-.btn-blog:hover{
-  background-color: $gold;
-  color: black;
-  transform: scale(1.1);
-}
-/* #endregion   --------------------| */
 
 .bg-black{
   // background-color: black;

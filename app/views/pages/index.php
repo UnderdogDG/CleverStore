@@ -46,7 +46,7 @@
         <h1>CLEVER</h1>
         <h2>BLOG</h2>
         <p>Conoce las ultimas novedades</p>
-        <a class="btn-blog" href="<?= URL; ?>/public/blog/"><span>Entrar</span></a>
+        <a class="btn btn_gold md" href="<?= URL; ?>/public/blog/"><span>Entrar</span></a>
       </div>
       <div class="lat_der">
         <!-- <img src="./img/bases/blog-bg2.png" alt=""> -->
