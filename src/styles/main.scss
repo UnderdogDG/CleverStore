@@ -1,5 +1,6 @@
 @import '_vars';
 @import '_mixins';
+@import '_utilities';
 
 body, main, nav, footer, div, input{
   @include pm();
@@ -8,7 +9,6 @@ body, main, nav, footer, div, input{
 
 // #region [1] ======== ( NAVIGATION ) ========
 nav{
-  // @include wh(initial);
   @include center-flex(flex-start, center, column);
   @include position-fixed();
   @include pm(5px);
@@ -206,138 +206,6 @@ nav{
   }
 }
 
-.btn-std{
-  display: inline-block;
-  padding: 5px 5px;
-  margin: 5px 2px;
-  text-decoration: none;
-  color: black;
-  background-color: $white-lt;
-  text-align: center;
-  border-radius: 0 8px 0 8px;
-  transition: 0.5s ease-out;
-  
-    @include mediaSize($smartphone){
-      @include content-box;
-      padding: 5px 8px;
-    }
-
-    @include mediaSize(500px){
-      width: 100px;
-    }
-}
-
-.btn-std:hover{
-  color: white;
-  border-radius: 0 8px 0 8px;
-  transform: scale(1.2);
-
-}
-
-.btn-std:before{
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: $carbon;
-  transition: transform 0.5s ease-in;
-  transform-origin: center;
-  transform: scaleX(0);
-  z-index: -1;
-  border-radius: 0 8px 0 8px;
-}
-.btn-std:hover:before{
-  transform: scaleX(1);
-}
-
-.btn_reg{
-  @include wh(30px, 240px);
-  display: inline-block;
-  padding: 5px 5px;
-  margin: 5px 2px;
-  text-decoration: none;
-  color: black;
-  background-color: $white-lt;
-  text-align: center;
-  border-radius: 0 8px 0 8px;
-  transition: 0.5s ease-out;
-  position: relative;
-  span{
-    display: block;
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
-
-.btn-green{
-  @include wh(40px, 240px);
-  @include pm(0, 10px);
-  position: relative;
-  
-  span{
-    display: block;
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
-
-.btn-green:before{
-  background-color: #57D507;
-}
-
-.btn-red{
-  @include wh(40px, 240px);
-  @include pm(0, 10px);
-  position: relative;
-  
-  span{
-    display: block;
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
-
-.btn-red:before{
-  background-color: #FF1744;
-}
-
-.bg-black{
-  // background-color: black;
-  background: $carbon url('../img/bases/bg.jpg') center / 100px repeat;
-}
-
-.error{
-  border: 1px solid #B71C1C !important;
-  box-shadow: 2px 2px 4px red, -2px -2px 4px red;
-}
-
-.aviso{
-  color: #FF1744;
-  font-weight: 200;
-  font-size: 0.8rem;
-}
-
-// .success{
-//   margin-left: 10px;
-//   display: inline-block;
-//   width: 12px;
-//   height: 12px;
-//   border-radius: 50%;
-//   background-color: #AEEA00;
-//   border: 1px solid #33691E;
-//   box-shadow: 1px 1px 2px #1B1B1B;
-// }
 // #endregion   ========================
 
 // #region [3] ======== ( CONTENT ) ========
@@ -536,34 +404,6 @@ main{
         margin: 60px auto;
       }
 
-      .btn-blog{
-        display: inline-block;
-        padding: 5px 5px;
-        margin: 5px 2px;
-        text-decoration: none;
-        color: $white-lt;
-        background-color: rgba(100%, 67.1%, 0%, 0);
-        text-align: center;
-        border-radius: 0 8px 0 8px;
-        transition: 0.5s ease-out;
-        border: 1px solid $gold;
-        font-size: 1.5rem;
-        
-          @include mediaSize($smartphone){
-            @include content-box;
-            padding: 5px 8px;
-          }
-      
-          @include mediaSize(500px){
-            width: 150px;
-          }
-      }
-
-      .btn-blog:hover{
-        background-color: $gold;
-        color: black;
-        transform: scale(1.1);
-      }
     }
 
     .lat_der{
@@ -754,6 +594,8 @@ main{
   display: flex !important;
 }
 // #endregion   ========================
+
+
 
 footer{
   @include wh(60px);

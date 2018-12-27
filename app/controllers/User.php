@@ -196,11 +196,8 @@
       $_SESSION["name"]=$data["name"];
       $_SESSION["img"]=$data["img"];
 
-      // $this->postModel = $this->model('Post');
-      // $data2 = $this->postModel->getPost();
       // $this->view('user/test', $data);
-      header("Location: http://localhost/store/");  //* */
-      // redirect("Location: ". URL);
+      header("Location: http://localhost/store/");
     }
 
     // #region [5] ======== ( VALIDARREG ) ========
