@@ -8,7 +8,8 @@
   // background-color: $carbon;
   border-radius: 0 20px;
   color: $neutro-lt;
-  box-shadow: 5px 5px 2px #424242;
+  box-shadow: 5px 5px 5px #424242;
+  // background-image: url('../img/trama.png');
   // text-align: center;
   position: relative;
   top: 50%;
@@ -18,7 +19,7 @@
     @include center-flex();
     @include content-box;
     @include pm();
-    background-color: black;
+    background-color: #212121;
     border-radius: 0 20px 0 0;
     width: 100%;
 
@@ -39,7 +40,7 @@
   .footer{
     @include center-flex();
     @include content-box;
-    @include pm(20px);
+    @include pm(10px 20px);
     background-color: #313131;
     border-radius: 0 0 0 20px;
     width: 100%;

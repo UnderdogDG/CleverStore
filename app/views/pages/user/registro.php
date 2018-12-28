@@ -3,7 +3,6 @@
 ?>
 
   <div class="section">
-    <!-- <div class="container_register"> -->
       <form class="form_register" action="<?= URL?>/user/signin" method="post" enctype="multipart/form-data">
         <div class="title">
           <h2>Registro</h2>
@@ -58,10 +57,9 @@
         </div>
         
         <div class="footer">
-          <button class="btn btn_green" type="submit" value="Enviar"><span><i class="fas fa-share-square"></i> Enviar</span></button>
+          <button class="btn btn_green md" type="submit" value="Enviar"><span><i class="fas fa-share-square"></i> Enviar</span></button>
         </div>
       </form>
-    <!-- </div> -->
   </div>
 
   <script src="<?= URL; ?>/public/js/validar.js"></script>

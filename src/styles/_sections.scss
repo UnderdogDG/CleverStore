@@ -27,6 +27,61 @@ main{
     background-color: black;
     box-shadow: 8px 6px 2px rgba(0%, 0%, 0%, 0.6);
     color: $white-lt;
+
+    .col{
+      @include wh(44%, 90%);
+      @include center-flex();
+      overflow: hidden;
+
+        @include mediaSize($tablet){
+          @include wh(90%, 46%);
+        }
+
+      .slogan{
+      @include wh(auto, auto);
+
+        h2{
+          @include pm(0, 5px);
+          display: inline;
+          font-size: 1.6rem;
+          font-weight: 200;
+          margin-right: 30px;
+
+            @include mediaSize($smartphone){
+              font-size: 2rem;
+            }
+
+            @include mediaSize($laptop){
+              font-size: 2.6rem;
+            }
+        }
+
+        h3{
+          @include pm(0, 5px);
+          font-size: 1.6rem;
+          font-weight: 400;
+          margin-left: 23px;
+
+            @include mediaSize($smartphone){
+              font-size: 2.2rem;
+            }
+
+            @include mediaSize($laptop){
+              font-size: 3.2rem;
+            }
+
+          span{
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 500;
+            position: relative;
+          }
+        }
+      }
+    }
+
+    // .logo{
+    //   font-size: 3rem;
+    // }
   }
 
   &_articles{

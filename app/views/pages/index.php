@@ -4,16 +4,16 @@
   <div class="section">
 
     <div class="container_main">
-      <div class="container_main_item">
+      <div class="container_main col">
         <div class="slogan">
           <h2>Elige lo mejor</h2>
           <h3>Compra <span>Clever</span></h3>
         </div>
       </div>
 
-      <div class="container_main_pleca"></div>
+      <div class="pleca"></div>
 
-      <div class="container_main_item">
+      <div class="container_main col">
         <img src="./img/bases/anillo_in.png" alt="">
       </div>
     </div>

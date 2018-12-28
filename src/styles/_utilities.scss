@@ -7,7 +7,7 @@
   display: block;
   text-decoration: none;
   position: relative;
-  color: black;
+  color: $carbon;
   background-color: $white-lt;
   border: none;
   border-radius: 0 8px 0 8px;
@@ -78,7 +78,7 @@
     border: 1px solid $white-lt;
 
     &:hover{
-      color: black;
+      color: $carbon;
       transform: scale(1.1);
       border: 1px solid rgba(0, 0, 0, 0);
     }
@@ -123,7 +123,7 @@
     border: 1px solid $gold;
 
     &:hover{
-      color: black;
+      color: $carbon;
       transform: scale(1.1);
     }
 
@@ -147,6 +147,18 @@
   }
   // #endregion   ========================
 
+}
+
+.pleca{
+  @include wh(3px, 90%);
+  background-color: $gold;
+  transform: rotate(-5deg);
+  transition: transform 0.5s ease-out;
+  
+    @include mediaSize($tablet){
+      @include wh(90%, 3px);
+      transform: rotate(-10deg);
+    }
 }
 
 .logo{

@@ -79,6 +79,7 @@
   border: 1px solid $gold;
   border-radius: 50%;
   overflow: hidden;
+  background: url('http://localhost/store/public/img/anonimo.png') center / 100% no-repeat;
 
   &_input{
     @include wh(200px, 200px);

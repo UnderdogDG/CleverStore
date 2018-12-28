@@ -8,7 +8,7 @@
   display: block;
   text-decoration: none;
   position: relative;
-  color: black;
+  color: #272727;
   background-color: #ECEFF1;
   border: none;
   border-radius: 0 8px 0 8px;
@@ -86,7 +86,7 @@
 }
 
 .btn_white:hover {
-  color: black;
+  color: #272727;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   border: 1px solid rgba(0, 0, 0, 0);
@@ -127,7 +127,7 @@
 }
 
 .btn_gold:hover {
-  color: black;
+  color: #272727;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
@@ -149,6 +149,27 @@
 .btn.lg {
   width: 250px;
   height: 40px;
+}
+
+.pleca {
+  width: 90%;
+  height: 3px;
+  background-color: #FFAB00;
+  -webkit-transform: rotate(-5deg);
+          transform: rotate(-5deg);
+  -webkit-transition: -webkit-transform 0.5s ease-out;
+  transition: -webkit-transform 0.5s ease-out;
+  transition: transform 0.5s ease-out;
+  transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+}
+
+@media only screen and (min-width: 681px) {
+  .pleca {
+    width: 3px;
+    height: 90%;
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
 }
 
 .logo {
@@ -232,8 +253,8 @@
           align-items: center;
   border-radius: 0 20px;
   color: #E0E0E0;
-  -webkit-box-shadow: 5px 5px 2px #424242;
-          box-shadow: 5px 5px 2px #424242;
+  -webkit-box-shadow: 5px 5px 5px #424242;
+          box-shadow: 5px 5px 5px #424242;
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -260,7 +281,7 @@
           box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: black;
+  background-color: #212121;
   border-radius: 0 20px 0 0;
   width: 100%;
 }
@@ -315,7 +336,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
-  padding: 20px;
+  padding: 10px 20px;
   background-color: #313131;
   border-radius: 0 0 0 20px;
   width: 100%;
@@ -453,6 +474,7 @@
   border: 1px solid #FFAB00;
   border-radius: 50%;
   overflow: hidden;
+  background: url("http://localhost/store/public/img/anonimo.png") center/100% no-repeat;
 }
 
 .photo_input {
@@ -550,6 +572,86 @@ main {
   -webkit-box-shadow: 8px 6px 2px rgba(0, 0, 0, 0.6);
           box-shadow: 8px 6px 2px rgba(0, 0, 0, 0.6);
   color: #ECEFF1;
+}
+
+.container_main .col {
+  width: 90%;
+  height: 44%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 681px) {
+  .container_main .col {
+    width: 46%;
+    height: 90%;
+  }
+}
+
+.container_main .col .slogan {
+  width: auto;
+  height: auto;
+}
+
+.container_main .col .slogan h2 {
+  margin: 5px;
+  padding: 0;
+  display: inline;
+  font-size: 1.6rem;
+  font-weight: 200;
+  margin-right: 30px;
+}
+
+@media only screen and (min-width: 320px) {
+  .container_main .col .slogan h2 {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1221px) {
+  .container_main .col .slogan h2 {
+    font-size: 2.6rem;
+  }
+}
+
+.container_main .col .slogan h3 {
+  margin: 5px;
+  padding: 0;
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-left: 23px;
+}
+
+@media only screen and (min-width: 320px) {
+  .container_main .col .slogan h3 {
+    font-size: 2.2rem;
+  }
+}
+
+@media only screen and (min-width: 1221px) {
+  .container_main .col .slogan h3 {
+    font-size: 3.2rem;
+  }
+}
+
+.container_main .col .slogan h3 span {
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 500;
+  position: relative;
 }
 
 .container_articles {
@@ -909,7 +1011,7 @@ nav .icon h2 {
   margin: 0 0 0 10px;
   padding: 0;
   font-weight: 300;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Raleway', sans-serif;
   display: block;
   width: 80px;
 }
@@ -992,53 +1094,7 @@ nav .active:hover {
   background-color: #E0E0E0;
 }
 
-main {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  background: #272727 url("../img/bases/bg.jpg") center/100px repeat;
-}
-
-main .section {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  width: 100%;
-  height: 100vh;
-  margin: 0;
-  padding: 145px 0 0 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-@media only screen and (min-width: 1221px) {
-  main .section {
-    padding-top: 90px;
-  }
-}
-
-main .section-mod {
-  padding-top: 124px;
-}
-
-@media only screen and (min-width: 1221px) {
-  main .section-mod {
-    padding-top: 70px;
-  }
-}
-
+/* #endregion   --------------------| */
 .cart {
   display: -webkit-box;
   display: -ms-flexbox;
