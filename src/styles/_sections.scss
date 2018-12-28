@@ -1,0 +1,69 @@
+@import '_vars';
+@import '_mixins';
+
+main{
+  @include pm();
+  width: 100%;
+  background: $white-lt url('../img/bases/bg.jpg') center / 100px repeat;
+}
+
+.section{
+  @include content-box;
+  @include wh(100vh);
+  @include pm(145px 0 0 0, 0);
+  @include center-flex();
+
+      @include mediaSize($laptop){
+        padding-top: 90px;
+      }
+}
+
+.container{
+  &_main{
+    @include wh(96%, 90%);
+    @include center-flex(space-evenly);
+    @include content-box;
+    margin: auto;
+    background-color: black;
+    box-shadow: 8px 6px 2px rgba(0%, 0%, 0%, 0.6);
+    color: $white-lt;
+  }
+
+  &_articles{
+    @include wh(96%, 96%);
+    @include center-flex();
+    @include content-box;
+    margin: auto;
+
+    .header{
+      @include wh(10%);
+      @include center-flex();
+      color: $carbon;
+      font-size: 2rem;
+
+      h2{
+        @include pm();
+        text-shadow: 1px 1px 2px $carbon;
+      }
+    }
+
+    .body{
+      @include wh();
+      @include center-flex(space-around);
+      @include pm(50px);
+      @include content-box;
+    }
+
+    .article{
+      @include wh(200px, 28%);
+      @include pm(5px 15px, 25px);
+      @include center-flex(space-between, flex-end, row-reverse);
+      @include content-box;
+      border: 1px solid $neutro-md;
+      border-radius: 10px;
+      background: $neutro-lt;
+      color: $carbon;
+      text-decoration: none;
+    }
+  }
+}

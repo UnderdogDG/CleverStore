@@ -18,6 +18,11 @@
     display: block;
     white-space: nowrap;
     font-size: 1rem;
+
+    i{
+      margin: 2px 4px;
+      font-size: 1.2rem;
+    }
   }
 
   &:hover{
@@ -66,6 +71,24 @@
   }
   // #endregion   ========================
 
+  // #region [6] ======== ( BTN_WHITE ) ========
+  &_white{
+    color: $white-lt;
+    background-color: rgba(100%, 67.1%, 0%, 0);
+    border: 1px solid $white-lt;
+
+    &:hover{
+      color: black;
+      transform: scale(1.1);
+      border: 1px solid rgba(0, 0, 0, 0);
+    }
+
+    &:before{
+      background-color: $white-lt;
+    }
+  }
+  // #endregion   ========================
+
   // #region [3] ======== ( BTN_RED ) ========
   &_red{
 
@@ -78,6 +101,20 @@
     }
   }
   // #endregion   ========================
+
+  &_warning{
+    border: 1px solid #FF1744;
+    background-color: rgba(100%, 9%, 26.7%, 0);
+    color: #FF1744;
+
+    &:hover{
+      transform: scale(1.1);
+    }
+
+    &:before{
+      background-color: #FF1744;
+    }
+  }
 
   // #region [4] ======== ( BTN_GOLD ) ========
   &_gold{
@@ -97,12 +134,16 @@
   // #endregion   ========================
 
   // #region [5] ======== ( MODIFIERS ) ========
+  &.sm{
+    @include wh(40px, 100px);
+  }
+
   &.md{
     @include wh(40px, 150px);
   }
 
   &.lg{
-    @include wh(40px, 240px);
+    @include wh(40px, 250px);
   }
   // #endregion   ========================
 
@@ -128,10 +169,14 @@
   }
 }
 
-.bg-black{
-  // background-color: black;
-  background: $carbon url('../img/bases/bg.jpg') center / 100px repeat;
+.mx-10px{
+  margin: 10px 0;
 }
+
+// .bg-black{
+//   // background-color: black;
+//   background: $carbon url('../img/bases/bg.jpg') center / 100px repeat;
+// }
 
 .error{
   border: 1px solid #B71C1C !important;

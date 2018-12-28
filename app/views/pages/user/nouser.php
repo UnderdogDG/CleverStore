@@ -3,19 +3,25 @@
 ?>
 
 <div class="section">
-  <div class="container_register">
-    <div class="field">
-      <h2>¡Hola!</h2>
-      <h3>Parece ser que aun no hay un Usuario activo</h3>
+  <div class="form_nouser">
+    <div class="title">
+      <h2>Sin Sesión</h2>
     </div>
 
-    <div class="field">
-      <a href="<?= URL?>/user/registro" class="btn btn_green lg"><span>Quiero Registrarme</span></a>
+    <div class="body">
+      <div class="field">
+        <h2>¡Hola!</h2>
+      </div>
+      <div class="field">
+        <h3>Parece ser que aún no hay un Usuario Activo</h3>
+      </div>
+      
+      <div class="field">
+        <a href="<?= URL?>/user/registro" class="btn btn_white lg mx-10px"><span><i class="fas fa-file-signature"></i> Quiero Registrarme</span></a>
+        <a href="<?= URL?>/user/ingresar" class="btn btn_gold lg mx-10px"><span><i class="fas fa-user"></i> Ya tengo una cuenta</span></a>
+      </div>
     </div>
 
-    <div class="field">
-      <a href="<?= URL?>/user/ingresar" class="btn btn_green lg"><span>Ya tengo una cuenta</span></a>
-    </div>
   </div>
 </div>
 

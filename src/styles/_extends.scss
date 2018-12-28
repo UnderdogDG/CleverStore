@@ -1,50 +1,68 @@
 @import '_vars';
 
 %form_basic{
-  @include wh(auto);
-  @include pm(30px, auto);
+  @include wh(auto, 90%);
+  @include pm(0, auto);
   @include content-box;
   @include center-flex(center, center, column);
-  background-color: $carbon;
-  border-radius: 20px;
-  border: 1px solid $carbon;
-  max-width: 540px;
+  // background-color: $carbon;
+  border-radius: 0 20px;
   color: $neutro-lt;
-  box-shadow: 4px 4px 3px $neutro-bk;
-  text-align: center;
+  box-shadow: 5px 5px 2px #424242;
+  // text-align: center;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
 
-  .field{
+  .title{
     @include center-flex();
-    @include pm(0, 5px);
+    @include content-box;
+    @include pm();
+    background-color: black;
+    border-radius: 0 20px 0 0;
     width: 100%;
 
-    h1{
-      position: relative;
-    }
-    h1::after{
-      content:"";
-      width: 140%;
-      height: 1px;
-      position: absolute;
-      background-color: $neutro-lt;
-      bottom:-8px;
-      left: -20%;
-      z-index:-1;
+    h2{
+      @include pm(0, 10px auto);
+      font-size: 2rem;
+      font-weight: 400;
     }
   }
 
-  .photo{
-    @include wh(200px, 200px);
+  .body{
     @include center-flex();
-    border: 1px solid $neutro-md;
-    border-radius: 50%;
-    overflow: hidden;
-
-    img{
-      width: 100%;
-    }
+    @include wh(auto);
+    @include pm(20px);
+    @include content-box;
   }
+
+  .footer{
+    @include center-flex();
+    @include content-box;
+    @include pm(20px);
+    background-color: #313131;
+    border-radius: 0 0 0 20px;
+    width: 100%;
+  }
+
+  .field{
+    @include center-flex();
+    @include content-box;
+    @include pm(0, 15px 5px);
+    width: 100%;
+  }
+
+  .group{
+    @include pm(0, 20px 0);
+    @include content-box;
+    width: 100%
+  }
+
+  .warning{
+    @include pm();
+    font-size: 0.9rem;
+    font-weight: 300;
+    color:#FF1744;
+  }
+
 }

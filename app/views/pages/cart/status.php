@@ -3,7 +3,7 @@
 ?>
 
 <div class="section">
-  <div class="container_register cart">
+  <div class="form_register cart">
 
     <div class="title">
       <h1>Tu Carrito</h1>
@@ -22,8 +22,8 @@
         </div>
 
         <div class="options">
-          <a href="#" class="goto">Ir a publicación</a>
-          <a href="#" class="delete"><span>Quitar</span></a>
+          <a href="#" class="btn btn_green"><span>Publicación</span></a>
+          <a href="#" class="btn btn_red"><span>Quitar</span></a>
         </div>
 
       </div>

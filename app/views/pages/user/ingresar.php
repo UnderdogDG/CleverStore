@@ -3,15 +3,12 @@
 ?>
 
 <div class="section">
-    <div class="container_register">
-      <form class="form" action="<?= URL?>/user/login" method="post">
-        <div class="field">
+      <form class="form_register" action="<?= URL?>/user/login" method="post">
+        <div class="title">
           <h2>Ingresar</h2>
-          <br>
-          <hr>
         </div>
         
-        <div>
+        <div class="body">
           <div class="field">
             <label for="email">E-mail</label><input type="text" name="email" id="email" placeholder="tu_e-mail@ejemplo.com">
           </div>
@@ -20,11 +17,10 @@
           </div>
         </div>
 
-        <div class="field">
-          <button class="btn btn_green" type="submit" value="Ingresar"><span>Ingresar</span></button>
+        <div class="footer">
+          <button class="btn btn_gold md" type="submit" value="Ingresar"><span><i class="fas fa-sign-in-alt"></i> Ingresar</span></button>
         </div>
       </form>
-    </div>
   </div>
 
 <?php

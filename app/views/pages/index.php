@@ -20,32 +20,32 @@
         
   </div>
 
-  <div class="section bg-black">
-  
-    <div class="container_title">
-      <h2>Lo más Vendido</h2>
+  <div class="section">
+    <div class="container_articles">
+      <div class="header">
+        <h2>Lo más Vendido</h2>
+      </div>
+
+      <div class="body">
+
+        <?php foreach($data as $art) : ?>
+          <a href="#" class="article">
+            <h3><?= $art["name"]?></h3>
+            <h2>$<?= $art["price"]?></h2>
+          </a>
+        <?php endforeach; ?>
+        
+      </div>
     </div>
-
-    <div class="container_content">
-
-      <?php foreach($data as $art) : ?>
-        <a href="#" class="articulo">
-          <h3><?= $art["name"]?></h3>
-          <h2>$<?= $art["price"]?></h2>
-        </a>
-      <?php endforeach; ?>
-      
-    </div>
-
   </div>
 
-  <div class="section bg-black section-mod">
+  <div class="section">
   
-    <div class="container_blog">
+    <div class="container_main">
       <div class="lat_izq">
         <h1>CLEVER</h1>
         <h2>BLOG</h2>
-        <p>Conoce las ultimas novedades</p>
+        <p>Conoce las últimas novedades</p>
         <a class="btn btn_gold md" href="<?= URL; ?>/public/blog/"><span>Entrar</span></a>
       </div>
       <div class="lat_der">

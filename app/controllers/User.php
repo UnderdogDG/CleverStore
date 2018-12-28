@@ -194,6 +194,7 @@
 
       $_SESSION["user"]=$data["id"];
       $_SESSION["name"]=$data["name"];
+      $_SESSION["first_name"]=$data["first_name"];
       $_SESSION["img"]=$data["img"];
 
       // $this->view('user/test', $data);

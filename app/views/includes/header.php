@@ -9,6 +9,7 @@
   <link rel="shortcut icon" href="img/clever_icon.ico" type="image/x-icon">
   <link rel="icon" href="<?= URL; ?>/img/clever_icon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700|Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="<?= URL; ?>/public/css/fullpage.min.css">
   <link rel="stylesheet" type="text/css" href="<?= URL; ?>/public/css/main.css">
 </head>

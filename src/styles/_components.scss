@@ -3,5 +3,111 @@
 .form{
   &_black{
     @extend %form_basic;
+    background-color: $carbon;
   }
+
+  &_white{
+    @extend %form_basic;
+    background-color: $white-lt;
+  }
+
+  &_register{
+    @extend %form_basic;
+    background-color: $carbon;
+    max-width: 450px;
+
+    label{
+      @include pm(0, 5px 5px);
+      display: inline-block;
+      font-size: 1.2rem;
+      font-weight: 300;
+      // width: 30%;
+      width: 110px;
+      text-align: center;
+
+        @include mediaSize(360px){
+          text-align: right;
+        }
+
+      sup{
+        font-size: 1rem;
+        font-weight: 300;
+        color: red;
+      }
+    }
+
+    input[type="text"]{
+      width: 90%;
+      padding: 4px 8px;
+      height: 24px;
+      border-radius: 8px;
+      border: 1px solid $neutro-md;
+      font-size: 1.1rem;
+
+      @include mediaSize(360px){
+        width: 50%;
+      }
+    }
+  }
+
+  &_nouser{
+    @extend %form_basic;
+    background-color: $carbon;
+    max-width: 500px;
+
+    h3, h2{
+      @include pm();
+    }
+
+    h2{
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    h3{
+      font-weight: 300;
+      text-align: center;
+    }
+
+  }
+}
+
+.photo{
+  @include wh(200px, 200px);
+  @include center-flex();
+  @include content-box;
+  border: 1px solid $gold;
+  border-radius: 50%;
+  overflow: hidden;
+
+  &_input{
+    @include wh(200px, 200px);
+    // @include content-box;
+    background: url('http://localhost/store/public/img/anonimo.png') center / 100% no-repeat;
+    // padding: 50px;
+    position: relative;
+    cursor: pointer;
+
+    label{
+      @include wh();
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    #img{
+      @include wh(0, 0);
+      @include pm();
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      opacity: 0;
+    }
+  }
+
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
 }
