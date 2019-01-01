@@ -39,6 +39,11 @@
   @if($position == bottom){
     bottom: 0;
   }
+  z-index: 999;
+}
+
+@mixin min-width {
+  min-width: 300px;
 }
 
 // #region [w] ======== ( QUERYS ) ========

@@ -8,7 +8,7 @@
 
   &_white{
     @extend %form_basic;
-    background-color: $white-lt;
+    background-color: $neutro-md;
   }
 
   &_register{
@@ -85,7 +85,7 @@
     @include wh(200px, 200px);
     // @include content-box;
     background: url('http://localhost/store/public/img/anonimo.png') center / 100% no-repeat;
-    // padding: 50px;
+    margin: 50px 0 10px;
     position: relative;
     cursor: pointer;
 

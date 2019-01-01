@@ -3,15 +3,18 @@
 
 main{
   @include pm();
+  @include min-width;
   width: 100%;
+  min-width: 300px;
   background: $white-lt url('../img/bases/bg.jpg') center / 100px repeat;
 }
 
 .section{
   @include content-box;
-  @include wh(100vh);
-  @include pm(145px 0 0 0, 0);
+  // @include wh(100vh);
+  @include pm(145px 0 20px 0, 0);
   @include center-flex();
+  min-height: 100vh;
 
       @include mediaSize($laptop){
         padding-top: 90px;

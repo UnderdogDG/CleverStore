@@ -1,7 +1,10 @@
 <?php
   include ROOT_APP . '/views/includes/header.php';
 ?>
-
+<?php
+    require ROOT_APP . '/views/includes/nav.php';
+?>
+<main>
   <div class="section">
       <form class="form_register" action="<?= URL?>/user/signin" method="post" enctype="multipart/form-data">
         <div class="title">
@@ -61,8 +64,8 @@
         </div>
       </form>
   </div>
-
-  <script src="<?= URL; ?>/public/js/validar.js"></script>
+</main>
+<script src="<?= URL; ?>/public/js/validar.js"></script>
 
 <?php
   include ROOT_APP . '/views/includes/footer.php';
