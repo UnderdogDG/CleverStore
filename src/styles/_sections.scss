@@ -35,13 +35,14 @@ main{
       @include wh(44%, 90%);
       @include center-flex();
       overflow: hidden;
+      // background-color: none;
 
         @include mediaSize($tablet){
           @include wh(90%, 46%);
         }
 
       .slogan{
-      @include wh(auto, auto);
+        @include wh(auto, auto);
 
         h2{
           @include pm(0, 5px);
@@ -80,11 +81,27 @@ main{
           }
         }
       }
-    }
 
-    // .logo{
-    //   font-size: 3rem;
-    // }
+      img{
+        width: 90%;
+        height: 90%;
+        object-fit: contain;
+      }
+
+      &_img{
+        @include wh(56%, 100%);
+
+        @include mediaSize($tablet){
+          @include wh(100%, 54%);
+        }
+        
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
   }
 
   &_articles{
@@ -94,13 +111,14 @@ main{
     margin: auto;
 
     .header{
-      @include wh(10%);
+      @include wh(2rem);
       @include center-flex();
       color: $carbon;
       font-size: 2rem;
 
       h2{
         @include pm();
+        font-size: 2rem;
         text-shadow: 1px 1px 2px $carbon;
       }
     }
@@ -108,20 +126,66 @@ main{
     .body{
       @include wh();
       @include center-flex(space-around);
-      @include pm(50px);
+      @include pm(50px 30px);
       @include content-box;
     }
 
     .article{
-      @include wh(200px, 28%);
-      @include pm(5px 15px, 25px);
-      @include center-flex(space-between, flex-end, row-reverse);
-      @include content-box;
-      border: 1px solid $neutro-md;
-      border-radius: 10px;
-      background: $neutro-lt;
-      color: $carbon;
+      border: 1px solid $gold;
+      width: 30%;
       text-decoration: none;
+      margin: 5px;
+
+        @include mediaSize($laptop){
+          width: 18%;
+
+        }
+
+      .title{
+        background-color: $neutro-md;
+        color: $carbon;
+
+        h2{
+          font-size: 1rem;
+          margin: 5px auto;
+        }
+      }
+
+      .body{
+        padding: 0;
+
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .footer{
+        background-color: $carbon;
+
+        h2{
+          font-size: 1rem;
+          margin: 5px auto;
+        }
+
+        h2::before{
+          font-family: 'Font Awesome 5 Free';
+          content: '\f155';
+        }
+
+      }
     }
+
+  }
+
+  &_blog{
+    @include wh(96%, 90%);
+    @include center-flex(space-evenly);
+    @include content-box;
+    margin: auto;
+    background-color: black;
+    box-shadow: 8px 6px 2px rgba(0%, 0%, 0%, 0.6);
+    color: $white-lt;
   }
 }

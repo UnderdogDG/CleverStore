@@ -34,9 +34,17 @@
         <div class="body">
 
           <?php foreach($data as $art) : ?>
-            <a href="#" class="article">
-              <h3><?= $art["name"]?></h3>
-              <h2>$<?= $art["price"]?></h2>
+            <a href="#" class="form_white article">
+              <div class="title">
+                <h2><?= $art["name"]?></h2>
+              </div>
+              <div class="body">
+                <img src="./img/store/anillo.jpg" alt="">
+              </div>
+              <div class="footer">
+                <h2><?= $art["price"]?></h2>
+              </div>
+  
             </a>
           <?php endforeach; ?>
           
@@ -47,13 +55,15 @@
     <div class="section">
     
       <div class="container_main">
-        <div class="lat_izq">
-          <h1>CLEVER</h1>
-          <h2>BLOG</h2>
+        <div class="col">
+          <div class="slogan">
+          <h1 class="logo m-auto">CLEVER</h1>
+          <h2 class="m-auto">BLOG</h2>
           <p>Conoce las últimas novedades</p>
-          <a class="btn btn_gold md" href="<?= URL; ?>/public/blog/"><span>Entrar</span></a>
+          <a class="btn btn_gold md m-auto" href="<?= URL; ?>/public/blog/"><span>Entrar</span></a>
+          </div>
         </div>
-        <div class="lat_der">
+        <div class="col_img">
           <img src="./img/bases/blog-bg2.png" alt="">
         </div>
       </div>
