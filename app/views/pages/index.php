@@ -38,7 +38,7 @@
               <div class="title">
                 <h2><?= $art["name"]?></h2>
               </div>
-              <div class="body">
+              <div class="img">
                 <img src="./img/store/anillo.jpg" alt="">
               </div>
               <div class="footer">

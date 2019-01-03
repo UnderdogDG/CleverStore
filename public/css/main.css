@@ -754,7 +754,7 @@ nav .active:hover {
   text-align: center;
 }
 
-@media only screen and (min-width: 360px) {
+@media only screen and (min-width: 363px) {
   .form_register label {
     text-align: right;
   }
@@ -1045,9 +1045,9 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1103,14 +1103,14 @@ main {
       -ms-flex-align: center;
           align-items: center;
   margin: 0;
-  padding: 50px 30px;
+  padding: 30px 10px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
 .container_articles .article {
   border: 1px solid #FFAB00;
-  width: 30%;
+  width: 46%;
   text-decoration: none;
   margin: 5px;
 }
@@ -1124,18 +1124,23 @@ main {
 .container_articles .article .title {
   background-color: #BDBDBD;
   color: #272727;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .container_articles .article .title h2 {
+  display: inline-block;
+  width: 100%;
   font-size: 1rem;
-  margin: 5px auto;
+  margin: 5px;
+  text-align: left !important;
 }
 
-.container_articles .article .body {
+.container_articles .article .img {
   padding: 0;
 }
 
-.container_articles .article .body img {
+.container_articles .article .img img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;

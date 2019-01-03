@@ -109,7 +109,7 @@ main{
 
   &_articles{
     @include wh(96%, 96%);
-    @include center-flex();
+    @include center-flex(space-evenly);
     @include content-box;
     margin: auto;
 
@@ -129,13 +129,13 @@ main{
     .body{
       @include wh();
       @include center-flex(space-around);
-      @include pm(50px 30px);
+      @include pm(30px 10px);
       @include content-box;
     }
 
     .article{
       border: 1px solid $gold;
-      width: 30%;
+      width: 46%;
       text-decoration: none;
       margin: 5px;
 
@@ -147,14 +147,19 @@ main{
       .title{
         background-color: $neutro-md;
         color: $carbon;
+        white-space: nowrap;
+        overflow: hidden;
 
         h2{
+          display: inline-block;
+          width: 100%;
           font-size: 1rem;
-          margin: 5px auto;
+          margin: 5px;
+          text-align: left !important;
         }
       }
 
-      .body{
+      .img{
         padding: 0;
 
         img{
