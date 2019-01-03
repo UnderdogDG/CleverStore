@@ -157,9 +157,9 @@ nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -169,17 +169,19 @@ nav {
   margin: 0;
   padding: 5px;
   width: 100%;
-  height: auto;
+  height: 100vh;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   min-width: 300px;
-  background: #E0E0E0 url("../img/trama.png") center repeat;
   -webkit-box-shadow: 2px 0 8px #272727;
           box-shadow: 2px 0 8px #272727;
+  max-height: 100%;
 }
 
-@media only screen and (min-width: 1221px) {
+@media only screen and (min-width: 1175px) {
   nav {
+    width: 100%;
+    height: auto;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -191,7 +193,49 @@ nav {
   }
 }
 
-nav .menu {
+nav .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-width: 300px;
+  background: #E0E0E0 url("../img/trama.png") center repeat;
+  -webkit-box-shadow: 2px 0 8px #272727;
+          box-shadow: 2px 0 8px #272727;
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 1175px) {
+  nav .wrapper {
+    width: 100%;
+    height: auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0 1%;
+  }
+}
+
+nav .wrapper .menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -201,8 +245,9 @@ nav .menu {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -213,20 +258,57 @@ nav .menu {
       flex-wrap: nowrap;
 }
 
+@media screen and (orientation: portrait) {
+  nav .wrapper .menu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 @media only screen and (min-width: 320px) {
-  nav .menu {
+  nav .wrapper .menu {
     width: 96%;
     max-width: 480px;
   }
 }
 
 @media only screen and (min-width: 681px) {
-  nav .menu {
+  nav .wrapper .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 480px;
   }
 }
 
-nav .compress {
+@media screen and (orientation: portrait) {
+  nav .wrapper .menu .btn {
+    width: 46%;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  nav .wrapper .menu .btn:hover {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+}
+
+nav .wrapper .compress {
   margin: 0;
   padding: 0;
   width: 94%;
@@ -250,7 +332,7 @@ nav .compress {
 }
 
 @media only screen and (min-width: 320px) {
-  nav .compress {
+  nav .wrapper .compress {
     width: 90%;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -259,8 +341,8 @@ nav .compress {
   }
 }
 
-@media only screen and (min-width: 1221px) {
-  nav .compress {
+@media only screen and (min-width: 1175px) {
+  nav .wrapper .compress {
     width: 500px;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
@@ -268,7 +350,7 @@ nav .compress {
   }
 }
 
-nav .compress #buscar {
+nav .wrapper .compress #buscar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -293,13 +375,13 @@ nav .compress #buscar {
 }
 
 @media only screen and (min-width: 681px) {
-  nav .compress #buscar {
+  nav .wrapper .compress #buscar {
     max-width: 300px;
     margin: 0 30px;
   }
 }
 
-nav .compress #buscar input[type="text"] {
+nav .wrapper .compress #buscar input[type="text"] {
   width: 80%;
   height: 30px;
   margin: 0;
@@ -308,7 +390,7 @@ nav .compress #buscar input[type="text"] {
   border-radius: 6px 0 0 6px;
 }
 
-nav .compress #buscar input[type="submit"] {
+nav .wrapper .compress #buscar input[type="submit"] {
   width: 20%;
   height: 30px;
   max-width: 60px;
@@ -317,11 +399,11 @@ nav .compress #buscar input[type="submit"] {
   border-radius: 0 6px 6px 0;
 }
 
-nav .compress #buscar input[type="submit"]:hover {
+nav .wrapper .compress #buscar input[type="submit"]:hover {
   cursor: pointer;
 }
 
-nav .icon {
+nav .wrapper .compress .icon {
   width: 92%;
   height: 50px;
   margin: 0 4%;
@@ -349,7 +431,7 @@ nav .icon {
 }
 
 @media only screen and (min-width: 320px) {
-  nav .icon {
+  nav .wrapper .compress .icon {
     max-width: 150px;
     border-top: none;
     margin: 0;
@@ -357,7 +439,7 @@ nav .icon {
 }
 
 @media only screen and (min-width: 681px) {
-  nav .icon {
+  nav .wrapper .compress .icon {
     width: 60px;
     height: 60px;
     margin: 0 5px;
@@ -365,7 +447,7 @@ nav .icon {
   }
 }
 
-nav .icon .perfil {
+nav .wrapper .compress .icon .perfil {
   width: 50px;
   height: 50px;
   display: -webkit-box;
@@ -387,13 +469,13 @@ nav .icon .perfil {
   overflow: hidden;
 }
 
-nav .icon .perfil img {
+nav .wrapper .compress .icon .perfil img {
   width: 45px;
   height: 45px;
   border-radius: 50%;
 }
 
-nav .icon h2 {
+nav .wrapper .compress .icon h2 {
   margin: 0 0 0 10px;
   padding: 0;
   font-weight: 300;
@@ -403,81 +485,101 @@ nav .icon h2 {
 }
 
 @media only screen and (min-width: 681px) {
-  nav .icon h2 {
+  nav .wrapper .compress .icon h2 {
     display: none;
   }
 }
 
-nav .icon:last-child {
+nav .wrapper .compress .icon:last-child {
   border-bottom: 1px solid #616161;
   margin-bottom: 15px;
 }
 
 @media only screen and (min-width: 320px) {
-  nav .icon:last-child {
+  nav .wrapper .compress .icon:last-child {
     margin-bottom: 0;
     border-bottom: none;
   }
 }
 
-nav .icon:hover {
+nav .wrapper .compress .icon:hover {
   background-color: #BDBDBD;
 }
 
-nav .car {
+nav .wrapper .compress .car {
   width: 44px;
   height: 44px;
 }
 
 nav .hamburguesa {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   margin: 0;
-  padding: 0;
+  padding: 2px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: absolute;
-  top: 15px;
-  right: 10px;
-  border: 1px solid #616161;
-  background-color: #E0E0E0;
+  top: 8px;
+  right: 8px;
+  border: 1px solid #FFAB00;
+  background-color: rgba(66, 66, 66, 0.702);
   border-radius: 10px;
   text-decoration: none;
   color: #272727;
+  -webkit-box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.6);
+          box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.6);
 }
 
-@media only screen and (min-width: 1221px) {
+@media only screen and (min-width: 1175px) {
   nav .hamburguesa {
     display: none  !important;
   }
 }
 
-nav .hamburguesa svg {
-  width: 40px;
-  height: 40px;
+nav .hamburguesa span {
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 70%;
+  height: 3px;
+  background-color: #FFAB00;
+  border-radius: 2px;
 }
 
 nav .active {
-  background-color: #BDBDBD;
+  background-color: #616161;
 }
 
 nav .active:hover {
   background-color: #E0E0E0;
+}
+
+.hidden {
+  height: 0 !important;
+}
+
+@media only screen and (min-width: 1175px) {
+  .hidden {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    height: auto !important;
+  }
 }
 
 .form_black, .form_white, .form_register, .form_nouser {
@@ -772,7 +874,7 @@ main {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
-  padding: 145px 0 20px 0;
+  padding: 20px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -788,10 +890,11 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 100vh;
+  height: 100vh;
+  max-height: 100%;
 }
 
-@media only screen and (min-width: 1221px) {
+@media only screen and (min-width: 1175px) {
   .section {
     padding-top: 90px;
   }
@@ -845,7 +948,7 @@ main {
   overflow: hidden;
 }
 
-@media only screen and (min-width: 681px) {
+@media screen and (orientation: landscape) {
   .container_main .col {
     width: 46%;
     height: 90%;
@@ -872,7 +975,7 @@ main {
   }
 }
 
-@media only screen and (min-width: 1221px) {
+@media only screen and (min-width: 1175px) {
   .container_main .col .slogan h2 {
     font-size: 2.6rem;
   }
@@ -892,7 +995,7 @@ main {
   }
 }
 
-@media only screen and (min-width: 1221px) {
+@media only screen and (min-width: 1175px) {
   .container_main .col .slogan h3 {
     font-size: 3.2rem;
   }
@@ -916,7 +1019,7 @@ main {
   height: 56%;
 }
 
-@media only screen and (min-width: 681px) {
+@media screen and (orientation: landscape) {
   .container_main .col_img {
     width: 54%;
     height: 100%;
@@ -1012,7 +1115,7 @@ main {
   margin: 5px;
 }
 
-@media only screen and (min-width: 1221px) {
+@media only screen and (min-width: 1175px) {
   .container_articles .article {
     width: 18%;
   }
@@ -1245,7 +1348,7 @@ main {
   transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
 }
 
-@media only screen and (min-width: 681px) {
+@media screen and (orientation: landscape) {
   .pleca {
     width: 3px;
     height: 90%;
@@ -1477,21 +1580,11 @@ footer {
   background-color: #616161;
 }
 
-.hidden {
-  display: none !important;
-  opacity: 1;
-}
-
-@media only screen and (min-width: 1221px) {
-  .hidden {
-    display: -webkit-box !important;
-    display: -ms-flexbox !important;
-    display: flex !important;
-  }
-}
-
 .transition {
-  opacity: 1;
-  -webkit-transition: opacity 0.5s 1s ease-in;
-  transition: opacity 0.5s 1s ease-in;
+  -webkit-transition-property: height;
+  transition-property: height;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
 }

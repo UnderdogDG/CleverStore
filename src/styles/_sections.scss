@@ -12,9 +12,11 @@ main{
 .section{
   @include content-box;
   // @include wh(100vh);
-  @include pm(145px 0 20px 0, 0);
+  // @include pm(145px 0 20px 0, 0);
+  @include pm(20px 0, 0);
   @include center-flex();
-  min-height: 100vh;
+  height: 100vh;
+  max-height: 100%;
 
       @include mediaSize($laptop){
         padding-top: 90px;
@@ -30,6 +32,7 @@ main{
     background-color: black;
     box-shadow: 8px 6px 2px rgba(0%, 0%, 0%, 0.6);
     color: $white-lt;
+    // clip-path: polygon(80% 0, 100% 18%, 100% 100%, 0 100%, 0 0);
 
     .col{
       @include wh(44%, 90%);
@@ -37,7 +40,7 @@ main{
       overflow: hidden;
       // background-color: none;
 
-        @include mediaSize($tablet){
+        @include mediaOrientation($landscape){
           @include wh(90%, 46%);
         }
 
@@ -91,7 +94,7 @@ main{
       &_img{
         @include wh(56%, 100%);
 
-        @include mediaSize($tablet){
+        @include mediaOrientation($landscape){
           @include wh(100%, 54%);
         }
         

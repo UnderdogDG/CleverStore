@@ -1,7 +1,8 @@
 @import '_vars';
 @import '_mixins';
 @import '_extends';
-@import '_navs';
+// @import '_navs';
+@import '_navs-p';
 @import '_forms';
 @import '_sections';
 @import '_buttons';
@@ -101,18 +102,19 @@ footer{
 }
 
 // #region [w] ======== ( !! ) ========
-.hidden{
-  display: none !important;
-  opacity: 1;
+// .hidden{
+//   display: none !important;
+//   opacity: 1;
 
-    @include mediaSize($laptop){
-      display: flex !important;
-    }
-}
+//     @include mediaSize($laptop){
+//       display: flex !important;
+//     }
+// }
 
 .transition{
-  opacity: 1;
-  transition: opacity 0.5s 1s ease-in;
+  transition-property: height;
+  transition-delay: 0s;
+  transition-duration: 0.5s;
 }
 // #endregion   ========================
 

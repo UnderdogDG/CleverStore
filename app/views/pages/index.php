@@ -60,7 +60,7 @@
           <h1 class="logo m-auto">CLEVER</h1>
           <h2 class="m-auto">BLOG</h2>
           <p>Conoce las últimas novedades</p>
-          <a class="btn btn_gold md m-auto" href="<?= URL; ?>/public/blog/"><span>Entrar</span></a>
+          <a class="btn btn_gold md m-auto" href="./public/blog/"><span>Entrar</span></a>
           </div>
         </div>
         <div class="col_img">

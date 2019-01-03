@@ -155,7 +155,7 @@
   transform: rotate(-5deg);
   transition: transform 0.5s ease-out;
   
-    @include mediaSize($tablet){
+    @include mediaOrientation($landscape){
       @include wh(90%, 3px);
       transform: rotate(-10deg);
     }

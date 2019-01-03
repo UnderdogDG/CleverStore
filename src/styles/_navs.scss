@@ -1,3 +1,5 @@
+@import '_vars';
+
 nav{
   @include center-flex(flex-start, center, column);
   @include position-fixed();
@@ -28,7 +30,6 @@ nav{
 
       @include mediaSize($tablet){
         width: 480px;
-        //@include pm(0, 10px 0);
       }
   }
 
@@ -150,13 +151,13 @@ nav{
 
   .hamburguesa{
     @include wh(40px, 40px);
-    @include pm();
-    @include center-flex();
+    @include pm(2px);
+    @include center-flex(space-evenly, center, column);
     @include content-box;
     position: absolute;
     top: 15px;
     right: 10px;
-    border: 1px solid $neutro-bk;
+    border: 1px solid $carbon;
     background-color: $neutro-lt;
     border-radius: 10px;
     text-decoration: none;
@@ -166,8 +167,17 @@ nav{
         display: none  !important;
       }
 
-    svg{
-      @include wh(40px, 40px);
+    // svg{
+    //   @include wh(40px, 40px);
+    // }
+
+    span{
+      @include pm();
+      display: block;
+      width: 70%;
+      height: 3px;
+      background-color: $carbon;
+      border-radius: 2px;
     }
   }
 

@@ -47,7 +47,7 @@
 }
 
 // #region [w] ======== ( QUERYS ) ========
-@mixin media($orientation){
+@mixin mediaOrientation($orientation){
   @media screen and (orientation: #{$orientation}) {
       @content
   }
