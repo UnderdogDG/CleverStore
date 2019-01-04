@@ -24,6 +24,13 @@
   align-items: $espaciado_v;
 }
 
+@mixin grid4x4{
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  grid-template-rows: 1fr 1fr !important;
+  grid-gap: 10px !important;
+}
+
 @mixin center-position{
   position: absolute;
   top: 50%;

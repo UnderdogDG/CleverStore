@@ -90,20 +90,6 @@ main{
         height: 90%;
         object-fit: contain;
       }
-
-      &_img{
-        @include wh(56%, 100%);
-
-        @include mediaOrientation($landscape){
-          @include wh(100%, 54%);
-        }
-        
-        img{
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-      }
     }
   }
 
@@ -125,63 +111,67 @@ main{
         text-shadow: 1px 1px 2px $carbon;
       }
     }
+    .shelf{
+      .articles_group{
+        @include wh();
+        @include center-flex(space-evenly);
+        @include pm(30px 10px);
+        @include content-box;
+      
 
-    .body{
-      @include wh();
-      @include center-flex(space-around);
-      @include pm(30px 10px);
-      @include content-box;
-    }
-
-    .article{
-      border: 1px solid $gold;
-      width: 46%;
-      text-decoration: none;
-      margin: 5px;
-
-        @include mediaSize($laptop){
-          width: 18%;
-
-        }
-
-      .title{
-        background-color: $neutro-md;
-        color: $carbon;
-        white-space: nowrap;
-        overflow: hidden;
-
-        h2{
-          display: inline-block;
-          width: 100%;
-          font-size: 1rem;
+        .article{
+          border: 1px solid $gold;
+          width: 40%;
+          text-decoration: none;
           margin: 5px;
-          text-align: left !important;
+
+            @include mediaOrientation($landscape){
+              width: 18%;
+
+            }
+
+          .title{
+            background-color: $neutro-md;
+            color: $carbon;
+            white-space: nowrap;
+            overflow: hidden;
+            justify-content: flex-start;
+
+            h2{
+              display: inline-block;
+              width: 100%;
+              font-size: 1rem;
+              margin: 5px;
+            }
+          }
+
+          .img{
+            padding: 0;
+
+            img{
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+
+          .footer{
+            background-color: $carbon;
+            padding: 5px 10px;
+
+            h2{
+              font-size: 1rem;
+              line-height: 0;
+              margin: 5px auto;
+            }
+
+            h2::before{
+              font-family: 'Font Awesome 5 Free';
+              content: '\f155';
+            }
+
+          }
         }
-      }
-
-      .img{
-        padding: 0;
-
-        img{
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-      }
-
-      .footer{
-        background-color: $carbon;
-
-        h2{
-          font-size: 1rem;
-          margin: 5px auto;
-        }
-
-        h2::before{
-          font-family: 'Font Awesome 5 Free';
-          content: '\f155';
-        }
-
       }
     }
 
@@ -189,11 +179,67 @@ main{
 
   &_blog{
     @include wh(96%, 90%);
-    @include center-flex(space-evenly);
+    @include center-flex(space-evenly, center);
     @include content-box;
     margin: auto;
     background-color: black;
     box-shadow: 8px 6px 2px rgba(0%, 0%, 0%, 0.6);
     color: $white-lt;
+
+    .col{
+      @include wh(100%, calc(46% - 3px));
+      @include center-flex();
+      @include pm();
+
+        @include  mediaOrientation($portrait){
+          @include wh(calc(46% - 3px));
+        }
+
+      .bullet{
+        @include center-flex(space-around, center, column);
+        width: 80%;
+
+        .logo{
+          
+          @include mediaSize($tablet){
+            transform: scale(1.1);
+          }
+        }
+
+        h2{
+          @include pm();
+          font-weight: 200;
+        }
+
+        p{
+          text-align: center;
+        }
+      }
+    }
+
+    .pleca{
+      transform: rotate(5deg);
+      @include mediaOrientation($portrait){
+        order:-1;
+        transform: rotate(-5deg);
+      }
+    }
+
+    .col_img{
+      @include wh(100%, 54%);
+      clip-path: polygon(6vw 0, 100% 0, 100% 100%, 0 100%);
+
+        @include mediaOrientation($portrait){
+          @include wh(54%, 100%);
+          order: -2;
+          clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vh), 0 100%);
+        }
+        
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+    }
   }
 }

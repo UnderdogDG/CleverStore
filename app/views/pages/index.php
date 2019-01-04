@@ -31,7 +31,12 @@
           <h2>Lo más Vendido</h2>
         </div>
 
-        <div class="body">
+      <!-- <div class="container_articles slide">
+        <div class="header">
+          <h2>Lo más Vendido</h2>
+        </div>
+
+        <div class="shelf">
 
           <?php foreach($data as $art) : ?>
             <a href="#" class="form_white article">
@@ -39,7 +44,7 @@
                 <h2><?= $art["name"]?></h2>
               </div>
               <div class="img">
-                <img src="./img/store/anillo.jpg" alt="">
+                <img src="./img/store/18.jpg" alt="">
               </div>
               <div class="footer">
                 <h2><?= $art["price"]?></h2>
@@ -49,20 +54,52 @@
           <?php endforeach; ?>
           
         </div>
+      </div> -->
+      
+
+      <?php for($i = 0; $i < count($data);): ?>
+        
+      <div class="shelf slide">
+          <div class="articles_group">
+
+            <?php for($e = 1; (($e <= 4) and ($i < count($data))); $e++): ?>
+          
+            <a href="#" class="article form_white">
+              <div class="title">
+                <h2><?= $data[$i]["name"]; ?></h2>
+              </div>
+
+              <div class="img">
+                <img src="./img/store/18.jpg" alt="">
+              </div>
+
+              <div class="footer">
+                <h2><?= $data[$i]["price"]; ?></h2>
+              </div>
+            </a>
+
+              <?php $i++; ?>
+
+            <?php endfor; ?>
+          </div>
+        </div>
+      <?php endfor; ?>
+
       </div>
     </div>
 
     <div class="section">
     
-      <div class="container_main">
+      <div class="container_blog">
         <div class="col">
-          <div class="slogan">
-          <h1 class="logo m-auto">CLEVER</h1>
-          <h2 class="m-auto">BLOG</h2>
+          <div class="bullet">
+          <h1 class="logo">CLEVER</h1>
+          <h2 class="">BLOG</h2>
           <p>Conoce las últimas novedades</p>
-          <a class="btn btn_gold md m-auto" href="./public/blog/"><span>Entrar</span></a>
+          <a class="btn btn_gold md" href="./public/blog/"><span>Entrar</span></a>
           </div>
         </div>
+        <div class="pleca"></div>
         <div class="col_img">
           <img src="./img/bases/blog-bg2.png" alt="">
         </div>
@@ -81,4 +118,3 @@
 <?php
   require ROOT_APP . '/views/includes/footer.php';
 ?>
-

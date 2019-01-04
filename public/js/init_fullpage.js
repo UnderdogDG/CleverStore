@@ -5,6 +5,7 @@ window.addEventListener("load", ()=>{
     licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
     menu: '.nav',
     continuousVertical: true,
+    // controlArrows: false,
    });
 
 });
