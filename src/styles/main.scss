@@ -95,21 +95,21 @@ body, main, nav, footer, div, input, button{
 
 .fp-prev{
   border-right-color: $carbon !important;
-  transform: scale(0.6);
+  transform: scale(0.5);
   left: 5px !important;
-  animation: move 1s ease-out alternate infinite;
+  animation: move 0.8s ease-out alternate infinite;
 }
 .fp-next{
   border-left-color: $carbon !important;
-  transform: scale(0.6);
+  transform: scale(0.5);
   right: 5px !important;
-  animation: move 1s ease-out alternate infinite;
+  animation: move 0.8s ease-out alternate infinite;
 }
 // #endregion   ========================
 
 @keyframes move{
   0%{
-    transform: scale(0.6);
+    transform: scale(0.5);
   }
   100%{
     transform: scale(0.7);

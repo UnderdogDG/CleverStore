@@ -956,7 +956,7 @@ main {
 }
 
 .container_main .col .slogan {
-  width: auto;
+  width: 80%;
   height: auto;
 }
 
@@ -967,6 +967,7 @@ main {
   font-size: 1.6rem;
   font-weight: 200;
   margin-right: 30px;
+  white-space: nowrap;
 }
 
 @media only screen and (min-width: 320px) {
@@ -982,21 +983,23 @@ main {
 }
 
 .container_main .col .slogan h3 {
-  margin: 5px;
+  margin: 0;
   padding: 0;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 400;
-  margin-left: 23px;
+  text-align: center;
 }
 
 @media only screen and (min-width: 320px) {
   .container_main .col .slogan h3 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 }
 
 @media only screen and (min-width: 1175px) {
   .container_main .col .slogan h3 {
+    margin: 5px;
+    padding: 0;
     font-size: 3.2rem;
   }
 }
@@ -1116,7 +1119,7 @@ main {
 .container_articles .shelf .articles_group .article .title h2 {
   display: inline-block;
   width: 100%;
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin: 5px;
 }
 
@@ -1193,7 +1196,9 @@ main {
       -ms-flex-align: center;
           align-items: center;
   margin: 0;
-  padding: 0;
+  padding: 10px 5px 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 @media screen and (orientation: portrait) {
@@ -1219,6 +1224,10 @@ main {
       -ms-flex-align: center;
           align-items: center;
   width: 80%;
+}
+
+.container_blog .col .bullet .logo {
+  margin: 0;
 }
 
 @media only screen and (min-width: 681px) {
@@ -1672,26 +1681,26 @@ body, main, nav, footer, div, input, button {
 
 .fp-prev {
   border-right-color: #272727 !important;
-  -webkit-transform: scale(0.6);
-          transform: scale(0.6);
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
   left: 5px !important;
-  -webkit-animation: move 1s ease-out alternate infinite;
-          animation: move 1s ease-out alternate infinite;
+  -webkit-animation: move 0.8s ease-out alternate infinite;
+          animation: move 0.8s ease-out alternate infinite;
 }
 
 .fp-next {
   border-left-color: #272727 !important;
-  -webkit-transform: scale(0.6);
-          transform: scale(0.6);
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
   right: 5px !important;
-  -webkit-animation: move 1s ease-out alternate infinite;
-          animation: move 1s ease-out alternate infinite;
+  -webkit-animation: move 0.8s ease-out alternate infinite;
+          animation: move 0.8s ease-out alternate infinite;
 }
 
 @-webkit-keyframes move {
   0% {
-    -webkit-transform: scale(0.6);
-            transform: scale(0.6);
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
   }
   100% {
     -webkit-transform: scale(0.7);
@@ -1701,8 +1710,8 @@ body, main, nav, footer, div, input, button {
 
 @keyframes move {
   0% {
-    -webkit-transform: scale(0.6);
-            transform: scale(0.6);
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
   }
   100% {
     -webkit-transform: scale(0.7);

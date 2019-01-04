@@ -39,5 +39,12 @@
       $this->view('search', $data);
     }
 
+    public function item($id){
+      $model = $this->model('Classes');
+      $data = $model->fetchItem($id);
+
+      $this->view('item/detail', $data);
+    }
+
   }
 ?>

@@ -9,7 +9,7 @@
     <div class="section">
 
       <div class="container_main">
-        <div class="container_main col">
+        <div class="col">
           <div class="slogan">
             <h2>Elige lo mejor</h2>
             <h3>Compra <span>Clever</span></h3>
@@ -18,7 +18,7 @@
 
         <div class="pleca"></div>
 
-        <div class="container_main col">
+        <div class="col">
           <img src="./img/bases/anillo_in.png" alt="">
         </div>
       </div>
@@ -62,9 +62,11 @@
       <div class="shelf slide">
           <div class="articles_group">
 
+          <?php print_r($data);?>
+
             <?php for($e = 1; (($e <= 4) and ($i < count($data))); $e++): ?>
           
-            <a href="#" class="article form_white">
+            <a href="<?= "/store/main/item/" . $data[$i]["sku"]?>" class="article form_white">
               <div class="title">
                 <h2><?= $data[$i]["name"]; ?></h2>
               </div>

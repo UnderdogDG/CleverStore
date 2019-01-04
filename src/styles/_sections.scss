@@ -45,7 +45,7 @@ main{
         }
 
       .slogan{
-        @include wh(auto, auto);
+        @include wh(auto, 80%);
 
         h2{
           @include pm(0, 5px);
@@ -53,6 +53,7 @@ main{
           font-size: 1.6rem;
           font-weight: 200;
           margin-right: 30px;
+          white-space: nowrap;
 
             @include mediaSize($smartphone){
               font-size: 2rem;
@@ -64,16 +65,18 @@ main{
         }
 
         h3{
-          @include pm(0, 5px);
-          font-size: 1.6rem;
+          @include pm();
+          font-size: 1.4rem;
           font-weight: 400;
-          margin-left: 23px;
+          text-align: center;
+          // margin-left: 23px;
 
             @include mediaSize($smartphone){
-              font-size: 2.2rem;
+              font-size: 2rem;
             }
 
             @include mediaSize($laptop){
+              @include pm(0, 5px);
               font-size: 3.2rem;
             }
 
@@ -140,7 +143,7 @@ main{
             h2{
               display: inline-block;
               width: 100%;
-              font-size: 1rem;
+              font-size: 1.1rem;
               margin: 5px;
             }
           }
@@ -189,7 +192,8 @@ main{
     .col{
       @include wh(100%, calc(46% - 3px));
       @include center-flex();
-      @include pm();
+      @include pm(10px 5px 15px);
+      @include content-box;
 
         @include  mediaOrientation($portrait){
           @include wh(calc(46% - 3px));
@@ -200,6 +204,7 @@ main{
         width: 80%;
 
         .logo{
+          margin: 0;
           
           @include mediaSize($tablet){
             transform: scale(1.1);
