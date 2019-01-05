@@ -38,7 +38,10 @@ main{
       @include wh(44%, 90%);
       @include center-flex();
       overflow: hidden;
-      // background-color: none;
+
+      &_backImg{
+        background: black url('../img/trama_bk.png') center / 200px repeat;
+      }
 
         @include mediaOrientation($landscape){
           @include wh(90%, 46%);
@@ -194,6 +197,7 @@ main{
       @include center-flex();
       @include pm(10px 5px 15px);
       @include content-box;
+      background: black url('../img/trama_bk.png') center / 200px repeat;
 
         @include  mediaOrientation($portrait){
           @include wh(calc(46% - 3px));
@@ -202,9 +206,15 @@ main{
       .bullet{
         @include center-flex(space-around, center, column);
         width: 80%;
+        // background-color: black;
+
+          // @include mediaOrientation($portrait){
+          //   @include wh(80%, 80%);
+          // }
 
         .logo{
-          margin: 0;
+          margin: 0 0 5px;
+          border-bottom: 1px solid $gold;
           
           @include mediaSize($tablet){
             transform: scale(1.1);
@@ -214,10 +224,14 @@ main{
         h2{
           @include pm();
           font-weight: 200;
+          letter-spacing: 2px;
         }
 
         p{
+          font-weight: 200;
+          margin: 15px auto;
           text-align: center;
+          letter-spacing: 1px; // posible borrado
         }
       }
     }
@@ -245,6 +259,17 @@ main{
           height: 100%;
           object-fit: cover;
         }
+    }
+  }
+
+  &_detail{
+    @include wh();
+    max-width: 1500px;
+
+    .info{
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
     }
   }
 }

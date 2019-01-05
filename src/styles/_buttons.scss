@@ -149,6 +149,11 @@
 
 }
 
+.back-black{
+  background-color: black;
+  color: white;
+}
+
 .pleca{
   @include wh(3px, 90%);
   background-color: $gold;

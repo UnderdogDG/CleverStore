@@ -6,6 +6,7 @@
 @import '_forms';
 @import '_sections';
 @import '_buttons';
+@import '_cols';
 
 body, main, nav, footer, div, input, button{
   @include pm();

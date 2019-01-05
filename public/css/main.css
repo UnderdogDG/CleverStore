@@ -739,6 +739,11 @@ nav .active:hover {
   background-color: #BDBDBD;
 }
 
+.form_white .body {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
 .form_register {
   background-color: #272727;
   max-width: 450px;
@@ -946,6 +951,10 @@ main {
       -ms-flex-align: center;
           align-items: center;
   overflow: hidden;
+}
+
+.container_main .col_backImg {
+  background: black url("../img/trama_bk.png") center/200px repeat;
 }
 
 @media screen and (orientation: landscape) {
@@ -1199,6 +1208,7 @@ main {
   padding: 10px 5px 15px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  background: black url("../img/trama_bk.png") center/200px repeat;
 }
 
 @media screen and (orientation: portrait) {
@@ -1227,7 +1237,8 @@ main {
 }
 
 .container_blog .col .bullet .logo {
-  margin: 0;
+  margin: 0 0 5px;
+  border-bottom: 1px solid #FFAB00;
 }
 
 @media only screen and (min-width: 681px) {
@@ -1241,10 +1252,14 @@ main {
   margin: 0;
   padding: 0;
   font-weight: 200;
+  letter-spacing: 2px;
 }
 
 .container_blog .col .bullet p {
+  font-weight: 200;
+  margin: 15px auto;
   text-align: center;
+  letter-spacing: 1px;
 }
 
 .container_blog .pleca {
@@ -1286,6 +1301,25 @@ main {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.container_detail {
+  width: 100%;
+  height: 100%;
+  max-width: 1500px;
+}
+
+.container_detail .info {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .btn {
@@ -1441,6 +1475,11 @@ main {
   height: 40px;
 }
 
+.back-black {
+  background-color: black;
+  color: white;
+}
+
 .pleca {
   width: 90%;
   height: 3px;
@@ -1522,6 +1561,44 @@ main {
   color: #FF1744;
   font-weight: 200;
   font-size: 0.8rem;
+}
+
+.col-50 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: calc(50% - 15px);
+  height: auto;
+  border-radius: 3px;
+}
+
+.col-50 .img {
+  padding: 5px;
+  border: 1px solid #FFAB00;
+}
+
+.col-50 .img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.col-50_black {
+  border: 1px solid #616161;
+  border-radius: 8px;
 }
 
 body, main, nav, footer, div, input, button {

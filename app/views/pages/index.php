@@ -9,7 +9,7 @@
     <div class="section">
 
       <div class="container_main">
-        <div class="col">
+        <div class="col col_backImg">
           <div class="slogan">
             <h2>Elige lo mejor</h2>
             <h3>Compra <span>Clever</span></h3>
@@ -62,23 +62,21 @@
       <div class="shelf slide">
           <div class="articles_group">
 
-          <?php print_r($data);?>
-
             <?php for($e = 1; (($e <= 4) and ($i < count($data))); $e++): ?>
           
-            <a href="<?= "/store/main/item/" . $data[$i]["sku"]?>" class="article form_white">
-              <div class="title">
-                <h2><?= $data[$i]["name"]; ?></h2>
-              </div>
+              <a href="<?= "/store/main/item/" . $data[$i]["sku"]?>" class="article form_white">
+                <div class="title">
+                  <h2><?= $data[$i]["name"]; ?></h2>
+                </div>
 
-              <div class="img">
-                <img src="./img/store/18.jpg" alt="">
-              </div>
+                <div class="img">
+                  <img src="./img/store/18.jpg" alt="">
+                </div>
 
-              <div class="footer">
-                <h2><?= $data[$i]["price"]; ?></h2>
-              </div>
-            </a>
+                <div class="footer">
+                  <h2><?= $data[$i]["price"]; ?></h2>
+                </div>
+              </a>
 
               <?php $i++; ?>
 
