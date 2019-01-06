@@ -806,6 +806,82 @@ nav .active:hover {
   text-align: center;
 }
 
+.btn_add_buy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+  padding: 0;
+  width: calc(100% - 10px);
+}
+
+@media only screen and (min-width: 681px) {
+  .btn_add_buy {
+    max-width: 420px;
+  }
+}
+
+.btn_add_buy .add {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #FFAB00;
+  background-color: #BDBDBD;
+}
+
+@media only screen and (min-width: 681px) {
+  .btn_add_buy .add {
+    margin: 0;
+    padding: 0;
+    width: 30%;
+    border-top-right-radius: 0;
+  }
+}
+
+.btn_add_buy .add span::before {
+  font-family: "Font Awesome 5 Free";
+  content: '\f218';
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.btn_add_buy .buy {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  background-color: #0F0F0F;
+}
+
+@media only screen and (min-width: 681px) {
+  .btn_add_buy .buy {
+    margin: 0;
+    padding: 0;
+    width: calc(70% - 3px);
+    border-bottom-left-radius: 0;
+  }
+}
+
+.btn_add_buy .buy span::before {
+  font-family: "Font Awesome 5 Free";
+  content: '\f155';
+  font-size: 1rem;
+  font-weight: 600;
+}
+
 .photo {
   width: 200px;
   height: 200px;
@@ -1320,6 +1396,10 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #E0E0E0;
+  color: #272727;
+  padding: 10px 5px;
+  border-radius: 0 8px 0 8px;
 }
 
 .btn {

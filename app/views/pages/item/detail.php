@@ -22,7 +22,11 @@
           <div class="col-50 col-50_black info">
             <h2><?= $data["name"]; ?></h2>
             <h3><?= $data["price"]; ?></h3>
-            <a href="#" class="btn btn_green back-black md"><span>Comprar</span></a>
+
+            <div class="btn_add_buy">
+              <a href="#" class="btn btn_green add"><span> Agregar</span></a>
+              <a href="#" class="btn btn_gold buy"><span> Comprar</span></a>
+            </div>
           </div>
           
         </div>
