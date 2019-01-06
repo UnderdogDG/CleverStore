@@ -274,6 +274,80 @@ main{
       color: $carbon;
       padding: 10px 5px;
       border-radius: 0 8px 0 8px;
+
+      .name{
+        @include content-box;
+        display: inline-block;
+        width: 100%;
+        background-color: $neutro-md;
+        font-weight: 400;
+        margin: 0;
+        padding: 5px;
+        text-align: center;
+        border-top-right-radius: 8px;
+      }
+
+      .seguro{
+        font-size: 1.5rem;
+        font-weight: 300;
+        text-align: center;
+        margin: 5px 0;
+      }
+
+      .seguro::before{
+        font-family:"Font Awesome 5 Free";
+        content: '\f023';
+        display: inline-block;
+        font-size: 1.6rem;
+        font-weight: 600;
+        margin: 0 15px;
+        border-radius: 50%;
+      }
+
+      .envio{
+        font-size: 1.5rem;
+        font-weight: 300;
+        text-align: center;
+        margin: 5px 0;
+      }
+
+      .envio::before{
+        // @include pm(5px, 5px);
+        font-family:"Font Awesome 5 Free";
+        content: '\f0d1';
+        display: inline-block;
+        font-size: 1.6rem;
+        font-weight: 600;
+        margin: 0 15px;
+        // border: 2px solid $carbon;
+        border-radius: 50%;
+      }
+
+      .price{
+        font-size: 2rem;
+        font-weight: 600;
+        background-color: $white-lt;
+      }
+
+      .price::before{
+        font-family:"Font Awesome 5 Free";
+        content: '\f155';
+        font-size: 2rem;
+        font-weight: 600;
+        margin: 0 5px;
+      }
+    }
+
+    .field{
+      width: 100%;
+      margin: 20px 0;
+      color: $neutro-bk;
+    }
+
+    .description{
+      margin: 15px auto;
+      border-bottom-left-radius: 8px;
+      color: $carbon;
     }
   }
 }

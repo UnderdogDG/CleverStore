@@ -149,6 +149,63 @@
 
 }
 
+.btn_add_buy{
+  @include center-flex(space-between);
+  @include pm();
+  width: calc(100% - 10px);
+
+    @include mediaSize($tablet){
+      max-width: 420px;
+    }
+  
+
+  .add{
+    @include content-box;
+    @include wh(40px);
+    border: 1px solid $gold;
+    background-color: $neutro-md;
+    
+
+      @include mediaSize($tablet){
+        @include pm();
+        width: 30%;
+        border-top-right-radius: 0;
+      }
+
+      span::before{
+        font-family:"Font Awesome 5 Free";
+        content: '\f218';
+        font-size: 1rem;
+        font-weight: 800;
+        margin: 0 5px;
+      }
+  }
+
+  
+
+  .buy{
+    @include content-box;
+    @include wh(40px);
+    background-color: #0F0F0F;
+    
+
+      @include mediaSize($tablet){
+        @include pm();
+        width: calc(70% - 3px);
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+
+    span::before{
+    font-family:"Font Awesome 5 Free";
+    content: '\f155';
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 5px;
+    }
+  }
+}
+
 .back-black{
   background-color: black;
   color: white;

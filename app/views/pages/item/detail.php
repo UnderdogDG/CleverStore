@@ -20,15 +20,24 @@
             </div>
           </div>
           <div class="col-50 col-50_black info">
-            <h2><?= $data["name"]; ?></h2>
-            <h3><?= $data["price"]; ?></h3>
+            <h2 class="name"><?= $data["name"]; ?></h2>
+
+            <div class="field">
+              <h2 class="seguro">Seguro</h2>
+              <h2 class="envio">Envio Express</h2>
+            </div>
+
+            <h3 class="price"><?= $data["price"]; ?></h3>
 
             <div class="btn_add_buy">
-              <a href="#" class="btn btn_green add"><span> Agregar</span></a>
-              <a href="#" class="btn btn_gold buy"><span> Comprar</span></a>
+              <a href="#" class="btn btn_green add"><span>Agregar</span></a>
+              <a href="#" class="btn btn_gold buy"><span>Comprar</span></a>
             </div>
           </div>
           
+          <div class="col-100 description">
+            <p><?= $data["description"]?></p>
+          </div>
         </div>
       </div>
       <!-- <?php print_r($data); ?> -->
