@@ -9,10 +9,6 @@
   &_white{
     @extend %form_basic;
     background-color: $neutro-md;
-
-    .body{
-      justify-content: space-around;
-    }
   }
 
   &_register{

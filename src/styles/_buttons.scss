@@ -62,7 +62,7 @@
   &_green{
 
     &:hover{
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
 
     &:before{
@@ -79,7 +79,7 @@
 
     &:hover{
       color: $carbon;
-      transform: scale(1.1);
+      transform: scale(1.05);
       border: 1px solid rgba(0, 0, 0, 0);
     }
 
@@ -93,7 +93,7 @@
   &_red{
 
     &:hover{
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
 
     &:before{
@@ -108,7 +108,7 @@
     color: #FF1744;
 
     &:hover{
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
 
     &:before{
@@ -124,7 +124,7 @@
 
     &:hover{
       color: $carbon;
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
 
     &:before{
@@ -161,23 +161,22 @@
 
   .add{
     @include content-box;
-    @include wh(40px);
+    @include pm();
+    @include wh(40px, 30%);
     border: 1px solid $gold;
     background-color: $neutro-md;
     
+    // span{
+    //     @include mediaSize($tablet){
+    //     }
+    // }
 
-      @include mediaSize($tablet){
-        @include pm();
-        width: 30%;
-        border-top-right-radius: 0;
-      }
-
-      span::before{
-        font-family:"Font Awesome 5 Free";
-        content: '\f218';
-        font-size: 1rem;
-        font-weight: 800;
-        margin: 0 5px;
+    span::before{
+      font-family:"Font Awesome 5 Free";
+      content: '\f218';
+      font-size: 1rem;
+      font-weight: 800;
+      margin: 0 5px;
       }
   }
 
@@ -185,16 +184,18 @@
 
   .buy{
     @include content-box;
-    @include wh(40px);
+    @include pm();
+    @include wh(40px, calc(70% - 3px));
     background-color: #0F0F0F;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
     
 
-      @include mediaSize($tablet){
-        @include pm();
-        width: calc(70% - 3px);
-        border-bottom-left-radius: 0;
-        border-top-right-radius: 0;
-      }
+      // @include mediaSize($tablet){
+        
+      //   width: calc(70% - 3px);
+        
+      // }
 
     span::before{
     font-family:"Font Awesome 5 Free";
