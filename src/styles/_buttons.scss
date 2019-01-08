@@ -151,7 +151,7 @@
 
 .btn_add_buy{
   @include center-flex(space-between);
-  @include pm();
+  @include pm(0, 10px 0);
   width: calc(100% - 10px);
 
     @include mediaSize($tablet){
@@ -165,20 +165,18 @@
     @include wh(40px, 30%);
     border: 1px solid $gold;
     background-color: $neutro-md;
-    
-    // span{
-    //     @include mediaSize($tablet){
-    //     }
-    // }
 
-    span::before{
-      font-family:"Font Awesome 5 Free";
-      content: '\f218';
-      font-size: 1rem;
-      font-weight: 800;
-      margin: 0 5px;
+    .agregar::after{
+      @include mediaSize(860px){
+        content:' Agregar';
+        font-family: 'Raleway', sans-serif;
+        font-weight: 500;
+        font-size: 1rem;
       }
+    }
   }
+
+  
 
   
 
@@ -231,7 +229,7 @@
   font-family: 'Libre Baskerville', serif;
   text-decoration: none;
 
-    @include mediaSize($tablet){
+    @include mediaSize($smartphone){
       max-width: 170px;
     }
   h1{

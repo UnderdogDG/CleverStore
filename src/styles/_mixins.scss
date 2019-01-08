@@ -66,6 +66,12 @@
   }
 };
 
+@mixin mediaSO($size, $orientation){
+  @media only screen and (min-width: #{$size}), screen and (orientation: #{$orientation}){
+    @content
+  }
+};
+
 @mixin mediaSizeH($size){
   @media only screen and (min-height: #{$size}) {
       @content

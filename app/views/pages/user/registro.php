@@ -5,7 +5,7 @@
     require ROOT_APP . '/views/includes/nav.php';
 ?>
 <main>
-  <div class="section">
+  <div class="section section_nofull">
       <form class="form_register" action="<?= URL?>/user/signin" method="post" enctype="multipart/form-data">
         <div class="title">
           <h2>Registro</h2>

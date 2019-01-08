@@ -16,17 +16,23 @@
   // transform: translateY(-50%);
 
   .title{
-    @include center-flex();
+    @include center-flex(flex-start);
     @include content-box;
-    @include pm();
+    @include pm(0 10px);
     background-color: #212121;
     border-radius: 0 20px 0 0;
     width: 100%;
+    overflow: hidden;
+
+    @include mediaSize($tablet){
+      justify-content: center;
+    }
 
     h2{
       @include pm(0, 10px auto);
       font-size: 2rem;
       font-weight: 400;
+      white-space: nowrap;
     }
   }
 

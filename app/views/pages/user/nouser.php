@@ -6,7 +6,7 @@
 ?>
 <main>
 
-  <div class="section">
+  <div class="section section_nofull">
     <div class="form_nouser">
       <div class="title">
         <h2>Sin Sesión</h2>

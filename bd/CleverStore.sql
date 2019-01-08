@@ -5,7 +5,7 @@
 -- Dumped from database version 11.1
 -- Dumped by pg_dump version 11.1
 
--- Started on 2018-12-23 21:25:44
+-- Started on 2019-01-06 23:07:45
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -160,6 +160,13 @@ COPY public.reg_users (id, name, first_name, email, password, tel, img) FROM std
 15	Alex	Ross	Alexross@yahoo.com	alexrules	88-99-77-66	39926EA.jpg
 16	Stanley	Artgem	stanleyart@gmail.com	stanleyrules	79-79-79-79	default.png
 17	Ben	Templesmith	bentemple@gmail.com	benrules	55-66-77-12	341BA68.png
+18	Jorge	Barron	correoprueba@gmail.com	159159159	45-45-45-45	1246E1.jpg
+19	Brian	Sum	briansum@gmail.com	brianrules	89-89-89-89	default.png
+20	Sakimi	Chan	sakimichan@gmail.com	12345678	45-45-45-45	211345C.jpg
+21	Edward	Norton	edwardnorton@hotmail.com	12345678	79-79-79-79	default.png
+23	Gal	Gadot	galgadot@gmail.com	12345678	79-79-79-79	633E7B3.jpg
+24	Rosy	Delgado	rosymakeup@gmail.com	12345678	78-89-63-66	5451CF2.jpg
+26	Nivanh	Chanthara	nivanhart@gmail.com	nivanhrules	55-10-12-66	760C26C.jpg
 \.
 
 
@@ -169,7 +176,7 @@ COPY public.reg_users (id, name, first_name, email, password, tel, img) FROM std
 -- Name: User_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."User_id_seq"', 17, true);
+SELECT pg_catalog.setval('public."User_id_seq"', 26, true);
 
 
 --
@@ -208,7 +215,7 @@ ALTER TABLE ONLY public.reg_users
     ADD CONSTRAINT email UNIQUE (email);
 
 
--- Completed on 2018-12-23 21:25:44
+-- Completed on 2019-01-06 23:07:46
 
 --
 -- PostgreSQL database dump complete

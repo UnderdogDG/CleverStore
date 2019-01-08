@@ -21,6 +21,11 @@ main{
       @include mediaSize($laptop){
         padding-top: 90px;
       }
+  &_nofull{
+    height: auto;
+    min-height: 100vh;
+    max-height: 100%;
+  }
 }
 
 .container{
@@ -126,14 +131,15 @@ main{
       
 
         .article{
+          @include wh(48%, 40%);
           border: 1px solid $gold;
-          width: 40%;
           text-decoration: none;
           margin: 5px;
 
-            @include mediaOrientation($landscape){
+            @include mediaSO($tablet, $landscape){
               width: 18%;
-
+              height: 100%;
+              max-height: 400px;
             }
 
           .title{
@@ -142,6 +148,7 @@ main{
             white-space: nowrap;
             overflow: hidden;
             justify-content: flex-start;
+            height: 1.8rem;
 
             h2{
               display: inline-block;
@@ -153,6 +160,7 @@ main{
 
           .img{
             padding: 0;
+            height: calc(100% - 3.6rem);
 
             img{
               width: 100%;
@@ -163,6 +171,7 @@ main{
 
           .footer{
             background-color: $carbon;
+            height: 1.8rem;
             padding: 5px 10px;
 
             h2{
@@ -265,7 +274,7 @@ main{
   &_detail{
     @include wh();
     min-width: 300px;
-    max-width: 1500px;
+    max-width: 1000px;
 
     .body{
       @include center-flex(center, center, row);
@@ -277,7 +286,7 @@ main{
         .col-50{
           @include wh(auto);
   
-            @include mediaOrientation($landscape){
+            @include mediaSize($tablet){
               @include wh(100%, calc(50% - 15px));
             }
         }
@@ -285,23 +294,26 @@ main{
     }
 
     .img{
-      // @include wh();
+      @include wh();
       margin: 5px 0;
-      height: 100%;
       border: 1px solid $gold;
-      object-fit: cover;
-      max-height: 500px;
       overflow: hidden;
-      max-width: 500px;
+      background-color: $white-lt;
+
+        @include mediaSO($tablet, $landscape){
+          @include pm();
+        }
 
       img{
         width: 100%;
-        height: 100%;
-        object-fit: contain;
+        min-height: 100%;
+        // max-width: 500px;
+        object-fit: cover;
       }
     }
 
     .info{
+      @include wh();
       flex-direction: column;
       justify-content: space-evenly;
       align-items: center;
@@ -317,75 +329,183 @@ main{
         display: inline-block;
         width: 100%;
         background-color: $neutro-md;
-        font-weight: 400;
+        font-weight: 500;
         margin: 0;
         padding: 5px;
         text-align: center;
         border-top-right-radius: 8px;
       }
 
-      .seguro{
-        font-size: 1.5rem;
+      .feature{
+        @include center-flex();
+        font-size: 1.3rem;
         font-weight: 300;
-        text-align: center;
         margin: 5px 0;
-      }
+        width: 80%;
+        margin: 10px 0;
 
-      .seguro::before{
-        font-family:"Font Awesome 5 Free";
-        content: '\f023';
-        display: inline-block;
-        font-size: 1.6rem;
-        font-weight: 600;
-        margin: 0 15px;
-        border-radius: 50%;
-      }
+        i{
+          @include content-box;
+          display: inline-block;
+          width: 2rem;
+          text-align: center;
+          padding-right: 5px;
+          font-size: 1.5rem;
+        }
 
-      .envio{
-        font-size: 1.5rem;
-        font-weight: 300;
-        text-align: center;
-        margin: 5px 0;
-      }
-
-      .envio::before{
-        // @include pm(5px, 5px);
-        font-family:"Font Awesome 5 Free";
-        content: '\f0d1';
-        display: inline-block;
-        font-size: 1.6rem;
-        font-weight: 600;
-        margin: 0 15px;
-        // border: 2px solid $carbon;
-        border-radius: 50%;
+        span{
+          @include content-box;
+          display: inline-block;
+          width: 8.5rem;
+          padding-left: 5px;
+          text-align: left;
+          white-space: nowrap;
+        }
       }
 
       .price{
-        font-size: 2rem;
-        font-weight: 600;
-        background-color: $white-lt;
+        @include wh(5rem, 90%);
+        @include center-flex;
+        clip-path: polygon(15% 0, 100% 0, 100% 100%, 15% 100%, 0 52%, 0 48%);
+        background-color: rgb(100%, 7.1%, 31.5%);
+        margin: 10px 0 15px;
+        position: relative;
+        border-radius: 8px;
+
+          @include mediaSize(400px){
+            // @include wh(5rem, 80%);
+            max-width: 230px;
+          }
+
+        h3{
+          font-size: 2rem;
+          font-weight: 500;
+          color: $white-lt;
+          margin: 0;
+        }
+
+        span{
+          // font-weight: 500;
+          font-size: 1rem;
+        }
       }
 
       .price::before{
-        font-family:"Font Awesome 5 Free";
-        content: '\f155';
-        font-size: 2rem;
-        font-weight: 600;
-        margin: 0 5px;
+        // content: '$';
+        // display: inline-block;
+        // font-size: 2rem;
+        // font-weight: 300;
+        // margin: 0 5px;
+        // @include wh(2rem, 2rem);
+
+        content: '';
+        @include wh(1rem, 1rem);
+        background-color: $white-lt;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 15%;
+        transform: translate(-50%, -50%);
+
       }
+
+      .quantity{
+        @include center-flex();
+
+        label{
+          font-size: 1.2rem;
+        }
+
+        .inputNumber{
+          @include center-flex(space-around);
+          @include pm(0, 0 10px);
+
+          button{
+            @include content-box;
+            @include center-flex();
+            @include wh(25px, 25px);
+            background-color: none;
+            color: black;
+            border: 1px solid $gold;
+            border-radius: 3px; 
+
+            span{
+              margin: 0 auto;
+              font-size: 1.2rem;
+              font-weight: 300;
+            }
+          }
+
+          #quantity{
+            @include content-box;
+            font-size: 1.2rem;
+            margin: 3px;
+            text-align: center;
+            width: 30px;
+            height: 30px;
+          }
+        }
+      }
+
+      .total{
+        @include center-flex();
+        background-color: white;
+        border: 1px solid $gold;
+        border-radius: 8px;
+        margin: 30px 0 20px;
+        // padding: 5px 10px;
+        font-size: 2.4rem;
+        font-weight: 500;
+        // text-align: center;
+        width: 80%;
+        max-width: 250px;
+
+        h3{
+          font-weight: 300;
+          font-size: 1.4rem;
+          margin: 5px auto;
+
+          span{
+            border-left: 1px solid $neutro-lt;
+            font-size: 2.4rem;
+            font-weight: 500;
+            padding-left: 10px;
+          }
+        }
+      }
+
+      // .total:before{
+      //   content:'Total $ ';
+      //   display: inline;
+      //   font-weight: 300;
+      //   font-size: 1.4rem;
+      //   border-right: 1px solid $neutro-bk;
+      // }
     }
 
     .field{
       flex-direction: column;
       width: 100%;
-      margin: 20px 0;
+      margin: 10px 0;
+      padding: 5px 0;
       color: $neutro-bk;
+      border-bottom: 1px solid $neutro-md;
     }
 
     .description{
-      @include pm(10px, 15px 0);
+      @include wh(auto);
+      @include pm(10px, 15px 0 5px);
       border-bottom-left-radius: 8px;
       color: $carbon;
+      background-color: $neutro-lt;
+
+      .name{
+        @include pm(5px);
+        @include content-box;
+        width: 100%;
+        background-color: $neutro-md;
+        font-weight: 500;
+      }
     }
   }
 }

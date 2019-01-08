@@ -9,7 +9,7 @@
  $name = $_SESSION["name"] . " " . (($_SESSION["first_name"]) ? $_SESSION["first_name"] : "");
 ?>
 <main>
-  <div class="section">
+  <div class="section section_nofull">
     <!-- <div class="container_register"> -->
       <div class="form_black">
 

@@ -5,7 +5,7 @@
     require ROOT_APP . '/views/includes/nav.php';
 ?>
 <main>
-  <div class="section">
+  <div class="section section_nofull">
     <div class="form_black">
       <div class="title">
         <h2>Registrado</h2>

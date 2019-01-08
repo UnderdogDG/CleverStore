@@ -70,7 +70,7 @@
                 </div>
 
                 <div class="img">
-                  <img src="./img/store/18.jpg" alt="">
+                  <img src="./img/store/anillo.jpg" alt="">
                 </div>
 
                 <div class="footer">
