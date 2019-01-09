@@ -103,7 +103,7 @@
     // #endregion   ========================
 
     public function perfil(){
-      $this->view('user/perfil');
+        $this->view('user/perfil');      
     }
 
     public function logout(){

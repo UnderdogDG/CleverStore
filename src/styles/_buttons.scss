@@ -12,6 +12,7 @@
   border: none;
   border-radius: 0 8px 0 8px;
   transition: 0.5s ease-out;
+  overflow: hidden;
   
   span{
     @include center-position;
@@ -44,7 +45,7 @@
     transform-origin: center;
     transform: scaleX(0);
     z-index: -1;
-    border-radius: 0 8px 0 8px;
+    border-radius: 0;
   }
 
   &:hover:before{
@@ -163,7 +164,7 @@
     @include content-box;
     @include pm();
     @include wh(40px, 30%);
-    border: 1px solid $gold;
+    border: 1px solid $neutro-bk;
     background-color: $neutro-md;
 
     .agregar::after{
@@ -176,24 +177,11 @@
     }
   }
 
-  
-
-  
-
   .buy{
     @include content-box;
     @include pm();
-    @include wh(40px, calc(70% - 3px));
-    background-color: #0F0F0F;
-    border-bottom-left-radius: 0;
-    border-top-right-radius: 0;
-    
-
-      // @include mediaSize($tablet){
-        
-      //   width: calc(70% - 3px);
-        
-      // }
+    @include wh(40px, calc(70% - 10px));
+    background-color: $carbon;
 
     span::before{
     font-family:"Font Awesome 5 Free";
@@ -201,6 +189,10 @@
     font-size: 1rem;
     font-weight: 600;
     margin: 0 5px;
+    }
+
+    &:hover{
+      transform: scale(1.02);
     }
   }
 }

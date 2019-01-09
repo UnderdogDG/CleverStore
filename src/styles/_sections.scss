@@ -363,41 +363,51 @@ main{
         }
       }
 
-      .price{
+      .label{
         @include wh(5rem, 90%);
-        @include center-flex;
+        @include center-flex(flex-end);
         clip-path: polygon(15% 0, 100% 0, 100% 100%, 15% 100%, 0 52%, 0 48%);
-        background-color: rgb(100%, 7.1%, 31.5%);
-        margin: 10px 0 15px;
+        background-color: #FF1250;
+        margin: 10px 0 30px;
         position: relative;
         border-radius: 8px;
+        transform: scale(1);
+        transition: transform 0.5s ease-out;
 
           @include mediaSize(400px){
             // @include wh(5rem, 80%);
             max-width: 230px;
           }
-
-        h3{
+        label{
           font-size: 2rem;
+          font-weight: 400;
+          color: $white-lt;
+          margin: 0;
+          width: 20%;
+          text-align: center;
+        }
+
+        input{
+          font-size: 2.4rem;
           font-weight: 500;
           color: $white-lt;
           margin: 0;
+          background-color: rgba(100%, 100%, 100%, 0);
+          border: none;
+          width: 40%;
+          text-align: center;
         }
 
         span{
           // font-weight: 500;
+          color: $white-lt;
+          text-align: center;
+          width: 20%;
           font-size: 1rem;
         }
       }
 
-      .price::before{
-        // content: '$';
-        // display: inline-block;
-        // font-size: 2rem;
-        // font-weight: 300;
-        // margin: 0 5px;
-        // @include wh(2rem, 2rem);
-
+      .label::before{
         content: '';
         @include wh(1rem, 1rem);
         background-color: $white-lt;
@@ -406,7 +416,10 @@ main{
         top: 50%;
         left: 15%;
         transform: translate(-50%, -50%);
+      }
 
+      .label:hover{
+        transform: scale(1.1);
       }
 
       .quantity{
@@ -436,12 +449,16 @@ main{
             }
           }
 
+          button:hover{
+            background-color: $neutro-md;
+          }
+
           #quantity{
             @include content-box;
             font-size: 1.2rem;
             margin: 3px;
             text-align: center;
-            width: 30px;
+            width: 50px;
             height: 30px;
           }
         }
@@ -460,27 +477,29 @@ main{
         width: 80%;
         max-width: 250px;
 
-        h3{
-          font-weight: 300;
-          font-size: 1.4rem;
-          margin: 5px auto;
+        .output{
+          // @include center-flex();
+          height: 50px;
+          margin: 0 auto;
+          line-height: 1;
 
-          span{
-            border-left: 1px solid $neutro-lt;
+          .prefix{
+            font-weight: 300;
+            font-size: 1.4rem;
+            margin: 5px auto;
+            border-right: 1px solid $neutro-lt;
+            padding-right: 10px;
+          }
+
+          #totalPrice{
+            // border-left: 1px solid $neutro-lt;
+            margin-left: 10px;
             font-size: 2.4rem;
             font-weight: 500;
-            padding-left: 10px;
+            line-height: 1;
           }
         }
       }
-
-      // .total:before{
-      //   content:'Total $ ';
-      //   display: inline;
-      //   font-weight: 300;
-      //   font-size: 1.4rem;
-      //   border-right: 1px solid $neutro-bk;
-      // }
     }
 
     .field{

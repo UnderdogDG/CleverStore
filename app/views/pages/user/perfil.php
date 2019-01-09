@@ -37,7 +37,6 @@
           <a href="#" class="btn btn_gold sm"><span><i class="fas fa-pen"></i> Editar</span></a>
           <a href="<?= URL ?>/user/logout" class="btn btn_red sm"><span><i class="fas fa-times-circle"></i> Salir</span></a>
         </div>
-
       </div>
     <!-- </div> -->
   </div>

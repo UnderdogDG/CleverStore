@@ -33,8 +33,10 @@
               </div>
 
               <div class="field">
-                <div class="price">
-                  <h3 class="">$ <?= $data["price"]; ?> <span>c/u</span></h3>
+                <div class="label">
+                  <label for="price">$</label>
+                  <input type="text" name="price" id="price" disabled value="<?= $data["price"]; ?>">
+                  <span>c/u</span>
                 </div>
                 
 
@@ -43,12 +45,12 @@
                   <div class="inputNumber">
                     <button id="min"><span>-</span></button>
                     <input type="text" name="quantity" id="quantity" min="1" value="1" pattern="\d{1,2}">
-                    <button id="min"><span>+</span></button>
+                    <button id="plus"><span>+</span></button>
                   </div>
                 </div>
 
                 <div class="total">
-                  <h3 class="">Total $ <span><?= $data["price"]; ?></span></h3>
+                  <h3 class="output"><span class="prefix">Total $</span><span id="totalPrice"><?= $data["price"]; ?></span></h3>
                 </div>
 
               </div>
@@ -71,6 +73,8 @@
     </div>
   </div>
 </main>
+
+<script src="<?= URL; ?>/public/js/compras.js"></script>
 
 <?php
   require ROOT_APP . '/views/includes/footer.php';

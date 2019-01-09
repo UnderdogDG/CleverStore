@@ -1486,7 +1486,7 @@ main {
   white-space: nowrap;
 }
 
-.container_detail .info .price {
+.container_detail .info .label {
   width: 90%;
   height: 5rem;
   display: -webkit-box;
@@ -1498,38 +1498,60 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-clip-path: polygon(15% 0, 100% 0, 100% 100%, 15% 100%, 0 52%, 0 48%);
           clip-path: polygon(15% 0, 100% 0, 100% 100%, 15% 100%, 0 52%, 0 48%);
-  background-color: #ff1250;
-  margin: 10px 0 15px;
+  background-color: #FF1250;
+  margin: 10px 0 30px;
   position: relative;
   border-radius: 8px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 0.5s ease-out;
+  transition: -webkit-transform 0.5s ease-out;
+  transition: transform 0.5s ease-out;
+  transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
 }
 
 @media only screen and (min-width: 400px) {
-  .container_detail .info .price {
+  .container_detail .info .label {
     max-width: 230px;
   }
 }
 
-.container_detail .info .price h3 {
+.container_detail .info .label label {
   font-size: 2rem;
+  font-weight: 400;
+  color: #ECEFF1;
+  margin: 0;
+  width: 20%;
+  text-align: center;
+}
+
+.container_detail .info .label input {
+  font-size: 2.4rem;
   font-weight: 500;
   color: #ECEFF1;
   margin: 0;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  width: 40%;
+  text-align: center;
 }
 
-.container_detail .info .price span {
+.container_detail .info .label span {
+  color: #ECEFF1;
+  text-align: center;
+  width: 20%;
   font-size: 1rem;
 }
 
-.container_detail .info .price::before {
+.container_detail .info .label::before {
   content: '';
   width: 1rem;
   height: 1rem;
@@ -1540,6 +1562,11 @@ main {
   left: 15%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+.container_detail .info .label:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .container_detail .info .quantity {
@@ -1615,13 +1642,17 @@ main {
   font-weight: 300;
 }
 
+.container_detail .info .quantity .inputNumber button:hover {
+  background-color: #BDBDBD;
+}
+
 .container_detail .info .quantity .inputNumber #quantity {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 1.2rem;
   margin: 3px;
   text-align: center;
-  width: 30px;
+  width: 50px;
   height: 30px;
 }
 
@@ -1651,17 +1682,25 @@ main {
   max-width: 250px;
 }
 
-.container_detail .info .total h3 {
+.container_detail .info .total .output {
+  height: 50px;
+  margin: 0 auto;
+  line-height: 1;
+}
+
+.container_detail .info .total .output .prefix {
   font-weight: 300;
   font-size: 1.4rem;
   margin: 5px auto;
+  border-right: 1px solid #E0E0E0;
+  padding-right: 10px;
 }
 
-.container_detail .info .total h3 span {
-  border-left: 1px solid #E0E0E0;
+.container_detail .info .total .output #totalPrice {
+  margin-left: 10px;
   font-size: 2.4rem;
   font-weight: 500;
-  padding-left: 10px;
+  line-height: 1;
 }
 
 .container_detail .field {
@@ -1712,6 +1751,7 @@ main {
   border-radius: 0 8px 0 8px;
   -webkit-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
+  overflow: hidden;
 }
 
 .btn span {
@@ -1754,7 +1794,7 @@ main {
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
   z-index: -1;
-  border-radius: 0 8px 0 8px;
+  border-radius: 0;
 }
 
 .btn:hover:before {
@@ -1883,7 +1923,7 @@ main {
   padding: 0;
   width: 30%;
   height: 40px;
-  border: 1px solid #FFAB00;
+  border: 1px solid #616161;
   background-color: #BDBDBD;
 }
 
@@ -1901,11 +1941,9 @@ main {
           box-sizing: border-box;
   margin: 0;
   padding: 0;
-  width: calc(70% - 3px);
+  width: calc(70% - 10px);
   height: 40px;
-  background-color: #0F0F0F;
-  border-bottom-left-radius: 0;
-  border-top-right-radius: 0;
+  background-color: #272727;
 }
 
 .btn_add_buy .buy span::before {
@@ -1914,6 +1952,11 @@ main {
   font-size: 1rem;
   font-weight: 600;
   margin: 0 5px;
+}
+
+.btn_add_buy .buy:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
 }
 
 .back-black {

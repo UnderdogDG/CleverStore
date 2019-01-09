@@ -1,0 +1,117 @@
+console.log("Comprar works");
+
+const NEXT = 'NEXT';
+const PREV = 'PREV';
+const PUT = 'PUT';
+
+const price = parseInt(document.getElementById("price").value);
+const btnplus = document.getElementById("plus");
+const btnmin = document.getElementById("min");
+const inputQuantity = document.getElementById("quantity");
+const totalPrice =  document.getElementById("totalPrice");
+
+// #region [1] ======== ( STORE ) ========
+const store = (reducer)=>{
+  let state = {
+      price: price,
+      quantity: 1,
+      total: price
+  };
+  const listeners = [];
+  const getstate = ()=> state;
+
+  const subscribe = (listener)=>{
+      listeners.push(listener);
+  };
+
+  const dispatch = (action)=>{
+      state = reducer(state, action);
+      listeners.forEach(listener => listener(state));
+  };
+
+  return{ getstate, dispatch, subscribe }
+};
+// #endregion   ========================
+
+// #region [2] ======== ( REDUCER ) ========
+const reducer = (state = {price: price, quantity:1, total: price}, action)=>{
+  let prevQuantity;
+  let prevTotal;
+  
+  switch (action.type) {
+      case NEXT:
+          prevQuantity = state.quantity + action.payload;
+          prevTotal = state.price * prevQuantity;
+          break;
+      case PREV:
+          prevQuantity = Math.max((state.quantity + action.payload), 1);
+          prevTotal = state.price * prevQuantity;
+          break;
+      case PUT:
+          prevQuantity = Math.max((action.payload), 1);
+          prevTotal = state.price * prevQuantity;
+          break;
+      default:
+          return state;
+  }
+
+  return Object.assign({}, state, {quantity: prevQuantity, total: prevTotal });
+
+};
+// #endregion   ========================
+
+// #region [3] ======== ( ACTIONS ) ========
+const actions = {
+  next(){
+      return {
+          type: NEXT,
+          payload: 1
+      }
+  },
+
+  prev(){
+      return{
+          type: PREV,
+          payload: -1
+      }
+  },
+
+  put(value){
+    return{
+      type: PUT,
+      payload: value
+    }
+  }
+};
+// #endregion   ========================
+
+// #region [6] ======== ( STORAGE & SUBCRIBERS ) ========
+
+const storeState = store(reducer);
+
+storeState.subscribe(state =>{
+  quantity.value = state.quantity;
+  totalPrice.innerHTML = state.total;
+});
+// #endregion   ========================
+
+
+// #region [7] ======== ( EVENTS ) ========
+btnplus.addEventListener('click', ()=>{
+  storeState.dispatch(actions.next());
+});
+
+btnmin.addEventListener('click', ()=>{
+  storeState.dispatch(actions.prev());
+});
+
+quantity.addEventListener('change', (e)=>{
+  let value = 1;
+  if(e.target.value.match(/\d+/g)){
+    value = parseInt(e.target.value);
+    storeState.dispatch(actions.put(value));
+  }else{
+    storeState.dispatch(actions.put(value));
+  }
+});
+// #endregion   ========================
