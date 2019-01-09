@@ -56,7 +56,7 @@
               </div>
 
               <div class="btn_add_buy">
-                <a href="#" class="btn btn_green add"><span><i class="fas fa-cart-arrow-down agregar"></i> </span></a>
+                <button id="add" class="btn btn_green add"><span><i class="fas fa-cart-arrow-down agregar"></i> </span></button>
                 <a href="#" class="btn btn_gold buy"><span>Comprar</span></a>
               </div>
             </div>
@@ -69,7 +69,7 @@
         </div>
         
       </div>
-      <!-- <?php print_r($data); ?> -->
+      <?php print_r($_SESSION); ?>
     </div>
   </div>
 </main>

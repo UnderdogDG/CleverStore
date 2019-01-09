@@ -243,6 +243,24 @@
   margin-right: auto !important;
 }
 
+.disabled{
+  color: $neutro-md !important;
+  background-color: $neutro-lt !important;
+  transform: scale(1) !important;
+  
+  &:hover{
+    color: $neutro-md !important;
+  background-color: $neutro-lt !important;
+  transform: scale(1) !important;
+  }
+
+  &::before{
+    color: inherit !important;
+    background-color: inherit !important;
+    transform: scale(1) !important;
+  }
+}
+
 // .bg-black{
 //   // background-color: black;
 //   background: $carbon url('../img/bases/bg.jpg') center / 100px repeat;

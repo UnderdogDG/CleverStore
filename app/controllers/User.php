@@ -196,6 +196,7 @@
       $_SESSION["name"]=$data["name"];
       $_SESSION["first_name"]=$data["first_name"];
       $_SESSION["img"]=$data["img"];
+      $_SESSION["cart"]=[];
 
       // $this->view('user/test', $data);
       header("Location: http://localhost/store/");

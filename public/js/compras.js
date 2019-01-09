@@ -115,3 +115,36 @@ quantity.addEventListener('change', (e)=>{
   }
 });
 // #endregion   ========================
+
+const btnAdd = document.getElementById("add");
+
+btnAdd.addEventListener('click', ()=>{
+   let quantity = parseInt(document.getElementById("quantity").value);
+
+   console.log({quantity});
+   
+
+  let request = new XMLHttpRequest();
+  let data = new FormData();
+
+  data.append("quantity", quantity);
+
+  request.onreadystatechange = function(){
+    if( this.status == 200 && this.readyState == 4){
+      console.log("enviado: ", quantity);
+      let ajaxResponse = this.responseText;
+      if(ajaxResponse){
+        console.log(`Enviado: ${ajaxResponse}`);
+        btnAdd.setAttribute('disabled', 'disabled');
+        btnAdd.classList.add('disabled');
+        
+      }else{
+        console.log("ha ocurrido un error");
+      
+      }
+    }
+  };
+
+  request.open('POST', 'http://localhost/store/cart/add');
+  request.send(data);
+});
