@@ -4,7 +4,7 @@
       $this->view('cart/status');
     }
 
-    public function add(){
+    public function addToCart(){
       session_start();
       $data = $_POST["quantity"];
       $_SESSION["cart"] = $data;
@@ -14,7 +14,7 @@
     public function buy(){
       // $model = $this->model('Products');
       
-      $this->view('cart/buy');
+      $this->view('product/buy');
     }
   }
 ?>

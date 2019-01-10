@@ -1,17 +1,17 @@
 <?php
   class Product extends Controller{
     public function status(){
-      $this->view('cart/status');
+      $this->view('product/status');
     }
 
     public function item($id){
       $model = $this->model('Products');
-      $data = $model->fetchItem($id);
+      $data = $model->getItem($id);
 
-      $this->view('item/detail', $data);
+      $this->view('product/detail', $data);
     }
 
-    public function add(){
+    public function addToCart(){
       session_start();
       $data = $_POST["quantity"];
       $_SESSION["cart"] = $data;
@@ -19,9 +19,13 @@
     }
 
     public function buy(){
-      // $model = $this->model('Products');
+      $sku = $_POST["sku"];
+      $quantity = $_POST["quantity"];
+
+      $model = $this->model('Products');
+      $data = $model->getItem($sku);
       
-      $this->view('cart/buy');
+      $this->view('product/buy');
     }
   }
 ?>

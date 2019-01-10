@@ -2,12 +2,11 @@
   class Main extends Controller{
 
     public function __construct(){
-      $this->postModel = $this->model('Post');
+      $this->postModel = $this->model('Products');
     }
 
     public function index(){
-      $data = $this->postModel->getPost();
-
+      $data = $this->postModel->getShelf();
       $this->view('index', $data);
     }
 
@@ -25,15 +24,15 @@
     public function section($section){
       [0 => $class] = $section;
 
-      [$class=>$item] = [
+      [$class=>$category] = [
         'clothes'=>'clt', 
         'shoes'=>'sho', 
         'jewels'=>'jwl',
         'props'=>'acc',
       ];
 
-      $model = $this->model('Classes');
-      $data = $model->obtClase($item);
+      $model = $this->model('Products');
+      $data = $model->fetchByCategory($category);
 
       // $this->view('class/test', $data);
       $this->view('search', $data);

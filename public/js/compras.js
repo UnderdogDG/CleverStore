@@ -145,6 +145,6 @@ btnAdd.addEventListener('click', ()=>{
     }
   };
 
-  request.open('POST', 'http://localhost/store/cart/add');
+  request.open('POST', 'http://localhost/store/cart/addToCart');
   request.send(data);
 });
