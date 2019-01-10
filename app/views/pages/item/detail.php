@@ -9,7 +9,7 @@
 <main>
   <div class="section section_nofull">
     <div class="container_detail">
-      <div class="form_white">
+      <form class="form_white" action="<?= URL?>/product/buy/" method="post">
 
         <div class="title">
         <h2><?= $data["name"]; ?></h2>
@@ -43,9 +43,9 @@
                 <div class="quantity">
                   <label for="quantity">Cantidad</label>
                   <div class="inputNumber">
-                    <button id="min"><span>-</span></button>
+                    <button type="button" id="min"><span>-</span></button>
                     <input type="text" name="quantity" id="quantity" min="1" value="1" pattern="\d{1,2}">
-                    <button id="plus"><span>+</span></button>
+                    <button type="button" id="plus"><span>+</span></button>
                   </div>
                 </div>
 
@@ -56,8 +56,8 @@
               </div>
 
               <div class="btn_add_buy">
-                <button id="add" class="btn btn_green add"><span><i class="fas fa-cart-arrow-down agregar"></i> </span></button>
-                <a href="#" class="btn btn_gold buy"><span>Comprar</span></a>
+                <button type="button" id="add" class="btn btn_green add"><span><i class="fas fa-cart-arrow-down agregar"></i> </span></button>
+                <button type="submit" class="btn btn_gold buy"><span>Comprar</span></button>
               </div>
             </div>
           </div>
@@ -68,8 +68,9 @@
           </div>
         </div>
         
-      </div>
+      </form>
       <?php print_r($_SESSION); ?>
+      <?php print_r($data); ?>
     </div>
   </div>
 </main>

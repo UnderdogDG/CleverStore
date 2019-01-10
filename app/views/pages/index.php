@@ -64,7 +64,7 @@
 
             <?php for($e = 1; (($e <= 4) and ($i < count($data))); $e++): ?>
           
-              <a href="<?= "/store/main/item/" . $data[$i]["sku"]?>" class="article form_white">
+              <a href="<?= URL . "/product/item/" . $data[$i]["sku"]?>" class="article form_white">
                 <div class="title">
                   <h2><?= $data[$i]["name"]; ?></h2>
                 </div>

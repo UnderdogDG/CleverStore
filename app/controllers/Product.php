@@ -1,7 +1,14 @@
 <?php
-  class Cart extends Controller{
+  class Product extends Controller{
     public function status(){
       $this->view('cart/status');
+    }
+
+    public function item($id){
+      $model = $this->model('Products');
+      $data = $model->fetchItem($id);
+
+      $this->view('item/detail', $data);
     }
 
     public function add(){
