@@ -8,7 +8,7 @@
 
 <main>
   <div class="section section_nofull">
-    <div class="container_detail">
+    <div class="container_detail container_buy">
       <form class="form_black" action="<?= URL?>/product/purchase" method="post">
 
         <div class="title">
@@ -17,12 +17,14 @@
 
         <div class="body">
 
-          <div class="col-50">
+          <div class="col-50 detail">
             <div class="img">
               <img src="<?=URL ?>/img/store/anillo.jpg" alt="<?= $data["name"]; ?>">
             </div>
             <div class="field">
-              <div class="name"><?= $data["name"]?></div>
+              <div class="name">
+              <h2><?= $data["name"]?></h2>
+              </div>
             </div>
             <div class="label gray">
               <span class="sign" for="price">$</span>
@@ -31,20 +33,39 @@
             </div>
           </div>
 
-          <div class="col-50">
-              <div class="field">
-                <div class="">
-                  <h2><?= ($data["price"]*$data["quantity"]) ?></h2>
-                </div>
-              </div>
-              <div class="field">
+          <div class="col-50 request">
+    
+            <div class="field">
+              <h2 class="title">Detalle</h2>
+            </div>
+
+            <div class="payment">
+              <div class="col-50">
                 <div class="feature">
                   <input type="radio" name="pago" id="deposito" value="deposito">
-                  <label for="deposito">Depósito Bancario</label>
+                  <label for="deposito"><i class="far fa-money-bill-alt"></i> Depósito Bancario</label>
                 </div>
                 <div class="feature">
                   <input type="radio" name="pago" id="tarjeta" value="tarjeta">
-                  <label for="tarjeta">Tarjeta de Crédito</label>
+                  <label for="tarjeta"><i class="far fa-credit-card"></i> Tarjeta de Crédito</label>
+                </div>
+              </div>
+            
+              <div class="col-50">
+                <div class="feature">
+                  <input type="radio" name="pago" id="paypal" value="deposito">
+                  <label for="deposito"><i class="fab fa-paypal"></i></i> Paypal</label>
+                </div>
+                <div class="feature">
+                  <input type="radio" name="pago" id="tarjeta" value="tarjeta">
+                  <label for="tarjeta"><i class="far fa-credit-card"></i> </label>
+                </div>
+              </div>
+            </div>
+
+              <div class="field">
+                <div class="">
+                  <h2><?= ($data["price"]*$data["quantity"]) ?></h2>
                 </div>
               </div>
           </div>

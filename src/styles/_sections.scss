@@ -477,19 +477,46 @@ main{
 
   &_buy{
     .body{
-      .img{
-        width: 100%;
+      justify-content: space-around;
+      align-items: flex-start;
 
-        img{
-          width: 100%;
-          object-fit: cover;
+      .detail, .request{
+        @include center-flex(center, center, column);
+        width: calc(100% - 15px);
+
+          @include mediaSize($tablet){
+            width: calc(50% - 15px);
+          }
+      }
+
+      .detail{
+        .name{
+          padding: 0 10px;
         }
       }
+      .request{
+        .title{
+          background-color: $neutro-lt;
+          border-radius: 0;
+          color:$carbon;
+          font-weight: 400;
+          padding: 5px 0;
+        }
 
-      .name{
-        text-align: center;
+        .payment{
+          @include center-flex();
+          width: 100%;
+
+          .col-50{
+            width: calc(100% - 15px);
+
+              @include mediaSize($tablet){
+                width: calc(50% - 15px);
+              }
+          }
+        }
       }
-    }
+    } 
   }
 }
 
