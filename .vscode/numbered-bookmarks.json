@@ -1,10 +1,55 @@
 {
 	"bookmarks": [
 		{
-			"fsPath": "$ROOTPATH$\\app\\controllers\\Product.php",
+			"fsPath": "$ROOTPATH$\\src\\styles\\_extends.scss",
 			"bookmarks": [
 				-1,
-				16,
+				13,
+				14,
+				15,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1
+			]
+		},
+		{
+			"fsPath": "$ROOTPATH$\\src\\styles\\_sections.scss",
+			"bookmarks": [
+				-1,
+				196,
+				242,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1
+			]
+		},
+		{
+			"fsPath": "$ROOTPATH$\\app\\views\\pages\\item\\detail.php",
+			"bookmarks": [
+				-1,
+				-1,
+				-1,
+				-1,
+				72,
+				71,
+				-1,
+				-1,
+				-1,
+				-1
+			]
+		},
+		{
+			"fsPath": "$ROOTPATH$\\src\\styles\\_buttons.scss",
+			"bookmarks": [
+				-1,
+				22,
 				-1,
 				-1,
 				-1,

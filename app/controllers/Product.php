@@ -14,7 +14,7 @@
     public function addToCart(){
       session_start();
       $data = $_POST["quantity"];
-      $_SESSION["cart"] = $data;
+      array_push($_SESSION["cart"], $data);
       echo $data;
     }
 
@@ -23,9 +23,11 @@
       $quantity = $_POST["quantity"];
 
       $model = $this->model('Products');
-      $data = $model->getItem($sku);
+      $data = $model->getItem(array($sku));
+
+      $data["quantity"] = $quantity;
       
-      $this->view('product/buy');
+      $this->view('product/buy', $data);
     }
   }
 ?>

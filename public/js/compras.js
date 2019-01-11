@@ -4,6 +4,7 @@ const NEXT = 'NEXT';
 const PREV = 'PREV';
 const PUT = 'PUT';
 
+const sku = parseInt(document.getElementById("sku").value);
 const price = parseInt(document.getElementById("price").value);
 const btnplus = document.getElementById("plus");
 const btnmin = document.getElementById("min");
@@ -145,6 +146,8 @@ btnAdd.addEventListener('click', ()=>{
     }
   };
 
-  request.open('POST', 'http://localhost/store/cart/addToCart');
+  request.open('POST', 'http://localhost/store/product/addToCart');
   request.send(data);
 });
+
+console.log({sku});

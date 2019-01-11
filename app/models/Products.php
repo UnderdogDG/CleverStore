@@ -10,7 +10,7 @@
       return $this->db->resultSet([]);
     }
 
-    public function addPurchase(){
+    public function purchase(){
       
     }
 

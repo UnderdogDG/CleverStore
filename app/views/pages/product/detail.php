@@ -9,10 +9,12 @@
 <main>
   <div class="section section_nofull">
     <div class="container_detail">
-      <form class="form_white" action="<?= URL?>/product/buy/" method="post">
+      <!-- <form class="form_white" action="<?= (isset($_SESSION["user"]))? URL . '/product/buy/' : URL . '/user/nouser'; ?>" method="post"> -->
+      <form class="form_white" action="<?= URL . '/product/buy/'; ?>" method="post">
 
         <div class="title">
         <h2><?= $data["name"]; ?></h2>
+        <input type="text" name="sku" id="sku" value="<?= $data["sku"]?>">
         </div>
 
         <div class="body">
@@ -20,7 +22,7 @@
           <div class="header">
             <div class="col-50">
               <div class="img">
-                <img src="<?=URL ?>/img/store/anillo.jpg" alt="">
+                <img src="<?=URL ?>/img/store/anillo.jpg" alt="<?= $data["name"]; ?>">
               </div>
             </div>
 
@@ -34,8 +36,8 @@
 
               <div class="field">
                 <div class="label">
-                  <label for="price">$</label>
-                  <input type="text" name="price" id="price" disabled value="<?= $data["price"]; ?>">
+                  <label class="sign" for="price">$</label>
+                  <input class="price" type="text" name="price" id="price" disabled value="<?= $data["price"]; ?>">
                   <span>c/u</span>
                 </div>
                 
@@ -56,7 +58,7 @@
               </div>
 
               <div class="btn_add_buy">
-                <button type="button" id="add" class="btn btn_green add"><span><i class="fas fa-cart-arrow-down agregar"></i> </span></button>
+                <button type="button" id="add" class="btn btn_green add <?= (isset($_SESSION["user"])) ? "" : "disabled" ?>" <?= (isset($_SESSION["user"])) ? "" : "disabled=\"disabled\"" ?>><span><i class="fas fa-cart-arrow-down agregar"></i> </span></button>
                 <button type="submit" class="btn btn_gold buy"><span>Comprar</span></button>
               </div>
             </div>
@@ -69,8 +71,8 @@
         </div>
         
       </form>
-      <?php print_r($_SESSION); ?>
-      <?php print_r($data); ?>
+      <!-- <?php print_r($_SESSION); ?> -->
+      <!-- <?php print_r($data); ?> -->
     </div>
   </div>
 </main>
