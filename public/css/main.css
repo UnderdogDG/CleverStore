@@ -1676,9 +1676,9 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1695,12 +1695,29 @@ main {
   padding: 0 10px;
 }
 
+.container_buy .body .detail .name h2 {
+  color: #E0E0E0;
+}
+
+@media only screen and (min-width: 681px) {
+  .container_buy .body .request {
+    height: 100%;
+  }
+}
+
 .container_buy .body .request .title {
   background-color: #E0E0E0;
   border-radius: 0;
   color: #272727;
-  font-weight: 400;
   padding: 5px 0;
+}
+
+.container_buy .body .request .title h2 {
+  margin: auto;
+  padding: 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
 }
 
 .container_buy .body .request .payment {
@@ -1720,16 +1737,150 @@ main {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+  border-bottom: 0;
 }
 
-.container_buy .body .request .payment .col-50 {
-  width: calc(100% - 15px);
+.container_buy .body .request .payment .head {
+  width: 100%;
 }
 
-@media only screen and (min-width: 681px) {
-  .container_buy .body .request .payment .col-50 {
-    width: calc(50% - 15px);
+.container_buy .body .request .payment .head h2 {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.container_buy .body .request .payment .methods {
+  width: auto;
+}
+
+.container_buy .body .request .payment .methods .feature {
+  margin: 20px 0;
+  padding: 0;
+  min-width: 51%;
+  color: #E0E0E0;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.container_buy .body .request .payment .methods .feature:hover {
+  color: #FFAB00;
+}
+
+.container_buy .body .request .payment .methods .feature:hover i {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.container_buy .body .request .payment .methods .feature i {
+  font-size: 1.4rem;
+  margin-right: 5px;
+  color: #FFAB00;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+}
+
+.container_buy .body .request .payment .methods .feature label {
+  margin-left: 5px;
+}
+
+.container_buy .body .total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #FFAB00;
+  border-radius: 0 8px;
+  padding: 10px 0;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+}
+
+.container_buy .body .total:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.container_buy .body .total .quantity {
+  font-size: 1.4rem;
+}
+
+.container_buy .body .total .quantity #quantity {
+  border: 0;
+  background-color: rgba(245, 0, 87, 0);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #E0E0E0;
+  text-align: center;
+  width: 20px;
+}
+
+.container_buy .body .total .quantity .unidades {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.container_buy .body .total .final {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  width: 90%;
+  background-color: #FFAB00;
+  border-radius: 0 8px;
+  color: #272727;
+  padding: 10px;
+}
+
+@media only screen and (min-width: 400px) {
+  .container_buy .body .total .final {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
   }
+}
+
+.container_buy .body .total .final .sign {
+  font-size: 1.5rem;
+}
+
+.container_buy .body .total .final .price {
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin: 0 10px;
 }
 
 .label {
@@ -1821,6 +1972,10 @@ main {
 
 .label.gold {
   background-color: #FFAB00;
+}
+
+.label.gold .sign, .label.gold .price, .label.gold span {
+  color: #272727;
 }
 
 .btn {

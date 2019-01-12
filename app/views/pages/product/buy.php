@@ -23,7 +23,7 @@
             </div>
             <div class="field">
               <div class="name">
-              <h2><?= $data["name"]?></h2>
+                <h2><?= $data["name"]?></h2>
               </div>
             </div>
             <div class="label gray">
@@ -35,39 +35,54 @@
 
           <div class="col-50 request">
     
-            <div class="field">
-              <h2 class="title">Detalle</h2>
+            <div class="title">
+              <h2>Detalle</h2>
             </div>
 
-            <div class="payment">
-              <div class="col-50">
+            <div class="field payment">
+
+              <div class="head">
+                <h2>Método de Pago</h2>
+              </div>
+
+              <div class="methods">
+
                 <div class="feature">
-                  <input type="radio" name="pago" id="deposito" value="deposito">
+                  <input type="radio" name="payment" id="deposito" value="deposito">
                   <label for="deposito"><i class="far fa-money-bill-alt"></i> Depósito Bancario</label>
                 </div>
                 <div class="feature">
-                  <input type="radio" name="pago" id="tarjeta" value="tarjeta">
+                  <input type="radio" name="payment" id="tarjeta" value="tarjeta">
                   <label for="tarjeta"><i class="far fa-credit-card"></i> Tarjeta de Crédito</label>
                 </div>
-              </div>
-            
-              <div class="col-50">
                 <div class="feature">
-                  <input type="radio" name="pago" id="paypal" value="deposito">
-                  <label for="deposito"><i class="fab fa-paypal"></i></i> Paypal</label>
+                  <input type="radio" name="payment" id="paypal" value="deposito">
+                  <label for="paypal"><i class="fab fa-paypal"></i></i> Paypal</label>
                 </div>
                 <div class="feature">
-                  <input type="radio" name="pago" id="tarjeta" value="tarjeta">
-                  <label for="tarjeta"><i class="far fa-credit-card"></i> </label>
+                  <input type="radio" name="payment" id="clever" value="clever">
+                  <label for="clever"><i class="far fa-credit-card"></i> Tarjeta Clever</label>
                 </div>
               </div>
+
             </div>
 
-              <div class="field">
-                <div class="">
-                  <h2><?= ($data["price"]*$data["quantity"]) ?></h2>
-                </div>
+            <div class="col-100 total">
+
+              <div class="quantity">
+                <label for="quantity">Cantidad:</label>
+                <input type="text" name="quantity" id="quantity" value="<?= $data["quantity"] ?>" disabled>
+                <span class="unidades"><?= ($data["quantity"]>1) ? "Unidades" : "Unidad" ?></span>
               </div>
+            
+              <div class="final">
+                <span class="sign" for="price">Total $ </span>
+                <div class="price"><?= ($data["price"]*$data["quantity"]) ?></div>
+                <span>MX</span>
+              </div>
+
+            </div>
+
           </div>
         
         </div>
@@ -75,7 +90,7 @@
         <div class="footer">
           <button type="button" class="btn btn_red md"><span><i class="far fa-times-circle"></i>Cancelar</span></button>
           <button type="button" class="btn btn_gold md"><span><i class="far fa-check-circle"></i>Comprar</span></button>
-          <?= print_r($data);?>
+          <!-- <?= print_r($data);?> -->
         </div>
         
       </form>

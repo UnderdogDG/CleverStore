@@ -479,9 +479,10 @@ main{
     .body{
       justify-content: space-around;
       align-items: flex-start;
+      // height: auto;
 
       .detail, .request{
-        @include center-flex(center, center, column);
+        @include center-flex(space-between, center, column);
         width: calc(100% - 15px);
 
           @include mediaSize($tablet){
@@ -490,29 +491,138 @@ main{
       }
 
       .detail{
+        
         .name{
           padding: 0 10px;
+          h2{
+            color: $neutro-lt;
+          }
         }
       }
+
       .request{
+        @include mediaSize($tablet){
+          height: 100%;
+        }
+
         .title{
           background-color: $neutro-lt;
           border-radius: 0;
           color:$carbon;
-          font-weight: 400;
           padding: 5px 0;
+
+          h2{
+            @include pm(0, auto);
+            font-size: 1.5rem;
+            font-weight: 400;
+            text-align: center;
+            // width: 90%;
+          }
         }
 
         .payment{
           @include center-flex();
           width: 100%;
+          border-bottom: 0;
 
-          .col-50{
-            width: calc(100% - 15px);
+          .head{
+            width: 100%;
 
-              @include mediaSize($tablet){
-                width: calc(50% - 15px);
+            h2{
+              color: white;
+              font-size: 1.8rem;
+              font-weight: 400;
+              text-align: center;
+            }
+          }
+
+          .methods{
+            width: auto;
+
+            .feature{
+              @include pm(0, 20px 0);
+              min-width: 51%;
+              color: $neutro-lt;
+              font-size: 1.2rem;
+              font-weight: 300;
+
+              &:hover{
+                color: $gold;
+
+                i{
+                  transform: scale(1.2);
+                }
               }
+
+              i{
+                font-size: 1.4rem;
+                margin-right: 5px;
+                color: $gold;
+                transition: transform 0.3s ease-out;
+              }
+
+              label{
+                margin-left: 5px;
+              }
+            }
+          }
+        }
+
+      }
+
+      .total{
+        @include center-flex(center, center, column);
+        border: 1px solid $gold;
+        border-radius: 0 8px;
+        padding: 10px 0;
+        transition: transform 0.3s ease-out;
+
+        &:hover{
+          transform: scale(1.05);
+        }
+    
+        .quantity{
+          font-size: 1.4rem;
+
+          #quantity{
+            border: 0;
+            background-color: rgba(96.1%, 0%, 34.1%, 0);
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: $neutro-lt;
+            text-align: center;
+            width: 20px;
+          }
+
+          .unidades{
+            font-size: 1.2rem;
+            font-weight: 300;
+          }
+        }
+
+        .final{
+          @include center-flex(center, center, column);
+          margin-bottom: 10px;
+          margin-top: 20px;
+          width: 90%;
+          background-color: $gold;
+          border-radius: 0 8px;
+          color: $carbon;
+          padding: 10px;
+
+            @include mediaSize(400px){
+              flex-direction: row;
+              align-items: baseline;
+            }
+
+          .sign{
+            font-size: 1.5rem;
+          }
+
+          .price{
+            font-size: 2.2rem;
+            font-weight: 500;
+            margin: 0 10px;
           }
         }
       }
@@ -584,5 +694,9 @@ main{
 
   &.gold{
     background-color: $gold;
+
+    .sign, .price, span{
+      color: $carbon;
+    }
   }
 }

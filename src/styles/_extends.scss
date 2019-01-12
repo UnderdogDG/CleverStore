@@ -5,15 +5,10 @@
   @include pm(0, auto);
   @include content-box;
   @include center-flex(center, center, column);
-  // background-color: $carbon;
   border-radius: 0 20px;
   color: $neutro-lt;
   box-shadow: 5px 5px 2px #424242;
   background: $carbon url('../img/trama_bk.png') center / 200px repeat;
-  // text-align: center;
-  // position: relative;
-  // top: 50%;
-  // transform: translateY(-50%);
 
   .title{
     @include center-flex(flex-start);
