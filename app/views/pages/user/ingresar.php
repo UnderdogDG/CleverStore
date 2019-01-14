@@ -7,7 +7,7 @@
 ?>
 
 <main>
-  <div class="section section_nofull">
+  <div class="section section_nofull animated fadeIn">
     <form class="form_register" action="<?= URL?>/user/login" method="post">
       <div class="title">
         <h2>Ingresar</h2>

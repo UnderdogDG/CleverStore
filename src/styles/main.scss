@@ -2,11 +2,12 @@
 @import '_mixins';
 @import '_extends';
 // @import '_navs';
-@import '_navs-p';
+@import '_navs';
 @import '_forms';
 @import '_sections';
 @import '_buttons';
 @import '_cols';
+@import '_utilities';
 
 body, main, nav, footer, div, input, button{
   @include pm();
@@ -94,17 +95,37 @@ body, main, nav, footer, div, input, button{
   display: flex !important;
 }
 
-.fp-prev{
-  border-right-color: $carbon !important;
+.fp-prev, .fp-next{
+  @include center-flex();
+  width: 80px !important;
+  height: 80px !important;
+  border: none !important;
   transform: scale(0.5);
-  left: 5px !important;
   animation: move 0.8s ease-out alternate infinite;
 }
+
+.fp-prev{
+  left: 5px !important;
+
+  &:before{
+    content: '\f137';
+    font-family: 'Font Awesome 5 Free' !important;
+    font-size: 4rem;
+    font-weight: 600 !important;
+    color: $carbon;
+  }
+}
+
 .fp-next{
-  border-left-color: $carbon !important;
-  transform: scale(0.5);
   right: 5px !important;
-  animation: move 0.8s ease-out alternate infinite;
+
+  &:before{
+    content: '\f138';
+    font-family: 'Font Awesome 5 Free' !important;
+    font-size: 4rem;
+    font-weight: 600 !important;
+    color: $carbon;
+  }
 }
 // #endregion   ========================
 

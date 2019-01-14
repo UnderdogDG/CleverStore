@@ -1,0 +1,79 @@
+.back-black{
+  background-color: black;
+  color: white;
+}
+
+.pleca{
+  @include wh(3px, 90%);
+  background-color: $gold;
+  transform: rotate(-5deg);
+  transition: transform 0.5s ease-out;
+  
+    @include mediaOrientation($landscape){
+      @include wh(90%, 3px);
+      transform: rotate(-10deg);
+    }
+}
+
+.logo{
+  @include center-flex();
+  @include wh(50px);
+  @include pm(0, 10px 0);
+  font-family: 'Libre Baskerville', serif;
+  text-decoration: none;
+
+    @include mediaSize($smartphone){
+      max-width: 170px;
+    }
+  h1{
+    @include wh(30px, 110px);
+    @include pm(10px 15px);
+    background-color: black;
+    color: white;
+    font-weight: 400;
+    text-align: center;
+  }
+}
+
+.mx-10px{
+  margin: 10px 0;
+}
+
+.m-auto{
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.disabled{
+  color: $neutro-md !important;
+  background-color: $neutro-lt !important;
+  transform: scale(1) !important;
+  
+  &:hover{
+    color: $neutro-md !important;
+  background-color: $neutro-lt !important;
+  transform: scale(1) !important;
+  }
+
+  &::before{
+    color: inherit !important;
+    background-color: inherit !important;
+    transform: scale(1) !important;
+  }
+}
+
+// .bg-black{
+//   // background-color: black;
+//   background: $carbon url('../img/bases/bg.jpg') center / 100px repeat;
+// }
+
+.error{
+  border: 1px solid #B71C1C !important;
+  box-shadow: 2px 2px 4px red, -2px -2px 4px red;
+}
+
+.aviso{
+  color: #FF1744;
+  font-weight: 200;
+  font-size: 0.8rem;
+}

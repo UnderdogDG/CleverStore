@@ -8,7 +8,7 @@
   <main>
     <div class="section">
 
-      <div class="container_main">
+      <div class="container_main animated fadeInLeft">
         <div class="col col_backImg">
           <div class="slogan">
             <h2>Elige lo mejor</h2>
@@ -29,33 +29,7 @@
       <div class="container_articles">
         <div class="header">
           <h2>Lo más Vendido</h2>
-        </div>
-
-      <!-- <div class="container_articles slide">
-        <div class="header">
-          <h2>Lo más Vendido</h2>
-        </div>
-
-        <div class="shelf">
-
-          <?php foreach($data as $art) : ?>
-            <a href="#" class="form_white article">
-              <div class="title">
-                <h2><?= $art["name"]?></h2>
-              </div>
-              <div class="img">
-                <img src="./img/store/18.jpg" alt="">
-              </div>
-              <div class="footer">
-                <h2><?= $art["price"]?></h2>
-              </div>
-  
-            </a>
-          <?php endforeach; ?>
-          
-        </div>
-      </div> -->
-      
+        </div>      
 
       <?php for($i = 0; $i < count($data);): ?>
         
@@ -90,7 +64,7 @@
 
     <div class="section">
     
-      <div class="container_blog">
+      <div class="container_blog animated fadeInRight">
         <div class="col">
           <div class="bullet">
           <h1 class="logo">CLEVER</h1>

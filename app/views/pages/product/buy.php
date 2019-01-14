@@ -7,7 +7,7 @@
 ?>
 
 <main>
-  <div class="section section_nofull">
+  <div class="section section_nofull wow flipInY" data-wow-duration="1.2s">
     <div class="container_detail container_buy">
       <form class="form_black" action="<?= URL?>/product/purchase" method="post">
 
@@ -17,7 +17,7 @@
 
         <div class="body">
 
-          <div class="col-50 detail">
+          <div class="col-50 detail wow flipInY" data-wow-duration="1s" data-wow-delay="0.8s">
             <div class="img">
               <img src="<?=URL ?>/img/store/anillo.jpg" alt="<?= $data["name"]; ?>">
             </div>
@@ -33,7 +33,7 @@
             </div>
           </div>
 
-          <div class="col-50 request">
+          <div class="col-50 request wow flipInY" data-wow-duration="1s" data-wow-delay="0.8s">
     
             <div class="title">
               <h2>Detalle</h2>
@@ -45,7 +45,7 @@
                 <h2>Método de Pago</h2>
               </div>
 
-              <div class="methods">
+              <div class="methods wow flipInX" data-wow-duration="1s" data-wow-delay="1.3s">
 
                 <div class="feature">
                   <input type="radio" name="payment" id="deposito" value="deposito">
@@ -67,7 +67,7 @@
 
             </div>
 
-            <div class="col-100 total">
+            <div class="col-100 total wow bounceIn" data-wow-duration="1s" data-wow-delay="1.6s">
 
               <div class="quantity">
                 <label for="quantity">Cantidad:</label>

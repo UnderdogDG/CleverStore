@@ -1,191 +1,242 @@
 @import '_vars';
 
 nav{
-  @include center-flex(flex-start, center, column);
+  @include center-flex(center, center, column);
   @include position-fixed();
   @include pm(5px);
-  @include wh(auto, 100%);
+  @include wh(100vh, 100%);
   @include content-box;
   @include min-width;
-  background: $neutro-lt url('../img/trama.png') center repeat;
   box-shadow: 2px 0 8px $carbon;
+  max-height: 100%;
   
   
     @include mediaSize($laptop){
+      @include wh(auto, 100%);
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0 1%;
+    }
+  
+  .wrapper{
+    @include center-flex(space-evenly, center, column);
+    @include wh(100vh, 100%);
+    @include content-box;
+    @include min-width;
+    background: $neutro-lt url('../img/trama.png') center repeat;
+    box-shadow: 2px 0 8px $carbon;
+    overflow: hidden;
+  
+  
+    @include mediaSize($laptop){
+      @include wh(auto, 100%);
       flex-direction: row;
       justify-content: space-between;
       padding: 0 1%;
     }
 
-  .menu{
-    @include center-flex(space-around);
-    @include pm(0, 0 0 5px 0);
-    width: 100%;
-    flex-wrap: nowrap; //REVISAR!!!!
-
-      @include mediaSize($smartphone){
-        width: 96%;
-        max-width: 480px;
-      }
-
-      @include mediaSize($tablet){
-        width: 480px;
-      }
-  }
-
-  .compress{
-    @include pm();
-    @include wh(initial, 94%);
-    @include center-flex(center, center, column);
-    border-radius: 5px;
-
-    @include mediaSize($smartphone){
-      width: 90%;
-      flex-direction: row;
-    };
-
-    @include mediaSize($laptop){
-      width: 500px;
-      justify-content: flex-end;
-    };
-
-    #buscar{
-      @include center-flex();
-      @include pm(0, 20px 0);
-      @include wh(30px, 90%);
-      @include content-box;
-
+    .menu{
+      @include center-flex(center, center, row);
+      @include pm(0, 0 0 5px 0);
+      width: 100%;
+      flex-wrap: nowrap; //REVISAR!!!!
+        
+        @include mediaOrientation($portrait){
+          flex-direction: column;
+        }
+  
+        @include mediaSize($smartphone){
+          width: 96%;
+          max-width: 480px;
+        }
+  
         @include mediaSize($tablet){
-          max-width: 300px;
-          margin: 0 30px;
+          @include center-flex(space-between, center, row);
+          width: 480px;
         }
 
-      input[type="text"]{
-        @include wh(30px, 80%);
-        @include pm(0 10px);
-        border: 1px solid $neutro-md;
-        border-radius: 6px 0 0 6px;
-      }
-      
-      input[type="submit"]{
-        @include wh(30px, 20%);
-        max-width: 60px;
-        border: 1px solid $neutro-md;
-        border-left: none;
-        border-radius: 0 6px 6px 0;
-      }
+        .btn{
+          @include mediaOrientation($portrait){
+            width: 46%;
+          }
+        }
 
-      input[type="submit"]:hover{
-        cursor: pointer;
-      }
-    }
-  }
-
-  .icon{
-    @include wh(50px, 92%);
-    @include pm(0, 0 4%);
-    @include center-flex();
-    @include content-box;
-    border-top: 1px solid $neutro-bk;
-    text-decoration: none;
-    color: $carbon;
-
-      @include mediaSize($smartphone){
-        max-width: 150px;
-        border-top: none;
-        margin: 0;
-      }
-
-      @include mediaSize($tablet){
-        width: 60px;
-        height: 60px;
-        margin: 0 5px;
-        border-radius: 50%;
-
-      }
-
-    .perfil{
-      @include wh(50px, 50px);
-      @include center-flex();
-      max-height: 90%;
-      overflow: hidden;
-
-      img{
-        width: 45px;
-        height: 45px;
-
-        border-radius: 50%;
-      }
-    }
-
-    h2{
-      @include pm(0, 0 0 0 10px);
-      font-weight: 300;
-      font-family: 'Raleway', sans-serif;
-      display: block;
-      width: 80px;
-
-        @include mediaSize($tablet){
-          display: none;
+        .btn:hover{
+          @include mediaOrientation($portrait){
+            transform: scale(1.05);
+          }
         }
     }
-  }
 
-  .icon:last-child{
-    border-bottom: 1px solid $neutro-bk;
-    margin-bottom: 15px;
-
+    .compress{
+      @include pm();
+      @include wh(initial, 94%);
+      @include center-flex(center, center, column);
+      border-radius: 5px;
+  
       @include mediaSize($smartphone){
-        margin-bottom: 0;
-        border-bottom: none;
+        width: 90%;
+        flex-direction: row;
+      };
+  
+      @include mediaSize($laptop){
+        width: 500px;
+        justify-content: flex-end;
+      };
+  
+      #buscar{
+        @include center-flex();
+        @include pm(0, 20px 0);
+        @include wh(30px, 90%);
+        @include content-box;
+  
+          @include mediaSize($tablet){
+            max-width: 300px;
+            margin: 0 30px;
+          }
+  
+        input[type="text"]{
+          @include wh(30px, 80%);
+          @include pm(0 10px);
+          border: 1px solid $neutro-md;
+          border-radius: 6px 0 0 6px;
+        }
+        
+        input[type="submit"]{
+          @include wh(30px, 20%);
+          max-width: 60px;
+          border: 1px solid $neutro-md;
+          border-left: none;
+          border-radius: 0 6px 6px 0;
+        }
+  
+        input[type="submit"]:hover{
+          cursor: pointer;
+        }
       }
-  }
 
-  .icon:hover{
-    background-color: $neutro-md;
-  }
+      .icon{
+        @include wh(50px, 92%);
+        @include pm(0, 0 4%);
+        @include center-flex();
+        @include content-box;
+        border-top: 1px solid $neutro-bk;
+        text-decoration: none;
+        color: $carbon;
+    
+          @include mediaSize($smartphone){
+            max-width: 150px;
+            border-top: none;
+            margin: 0;
+          }
+    
+          @include mediaSize($tablet){
+            width: 60px;
+            height: 60px;
+            margin: 0 5px;
+            border-radius: 50%;
+    
+          }
+    
+        .perfil{
+          @include wh(50px, 50px);
+          @include center-flex();
+          max-height: 90%;
+          overflow: hidden;
+    
+          img{
+            width: 45px;
+            height: 45px;
+    
+            border-radius: 50%;
+          }
+        }
+    
+        h2{
+          @include pm(0, 0 0 0 10px);
+          font-weight: 300;
+          font-family: 'Raleway', sans-serif;
+          display: block;
+          width: 80px;
+    
+            @include mediaSize($tablet){
+              display: none;
+            }
+        }
+      }
+    
+      .icon:last-child{
+        border-bottom: 1px solid $neutro-bk;
+        margin-bottom: 15px;
+    
+          @include mediaSize($smartphone){
+            margin-bottom: 0;
+            border-bottom: none;
+          }
+      }
+    
+      .icon:hover{
+        background-color: $neutro-md;
+      }
+    
+      .car{
+        @include wh(44px, 44px);
+      }
+    }
 
-  .car{
-    @include wh(44px, 44px);
   }
+  
 
   .hamburguesa{
-    @include wh(40px, 40px);
+    @include wh(50px, 50px);
     @include pm(2px);
     @include center-flex(space-evenly, center, column);
     @include content-box;
     position: absolute;
-    top: 15px;
-    right: 10px;
-    border: 1px solid $carbon;
-    background-color: $neutro-lt;
+    top: 8px;
+    right: 8px;
+    border: 1px solid $gold;
+    background-color: rgba(25.9%, 25.9%, 25.9%, 0.702);
     border-radius: 10px;
     text-decoration: none;
     color: $carbon;
-
+    box-shadow: 2px 2px 1px rgba(0%, 0%, 0%, 0.6);
+    // box-shadow: -2px 2px 2px $gold;
+    // z-index: 9999;
+  
       @include mediaSize($laptop){
         display: none  !important;
-      }
-
-    // svg{
-    //   @include wh(40px, 40px);
-    // }
-
+       }
+        
     span{
       @include pm();
       display: block;
       width: 70%;
       height: 3px;
-      background-color: $carbon;
+      background-color: $gold;
       border-radius: 2px;
     }
   }
 
   .active{
-    background-color: $neutro-md;
+    background-color: $neutro-bk;
   }
-
+  
   .active:hover{
     background-color: $neutro-lt;
   }
+
 }
+
+.hidden{
+  // display: none !important;
+  height: 0 !important;
+  // z-index:-1;
+  // transform: scale(0) !important;
+
+    @include mediaSize($laptop){
+      display: flex !important;
+      height: auto !important;
+    }
+}
+

@@ -4,8 +4,9 @@
 			"fsPath": "$ROOTPATH$\\src\\styles\\_sections.scss",
 			"bookmarks": [
 				-1,
-				196,
-				242,
+				-1,
+				269,
+				-1,
 				-1,
 				-1,
 				-1,
@@ -58,6 +59,22 @@
 				-1,
 				-1,
 				92
+			]
+		},
+		{
+			"fsPath": "$ROOTPATH$\\app\\views\\includes\\header.php",
+			"bookmarks": [
+				-1,
+				17,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1
 			]
 		}
 	]

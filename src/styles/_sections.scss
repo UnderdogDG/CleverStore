@@ -105,28 +105,35 @@ main{
   }
 
   &_articles{
-    @include wh(96%, 96%);
-    @include center-flex(space-evenly);
+    @include wh(96%, 90%);
+    @include center-flex(center, center);
     @include content-box;
+    background: rgb(236,239,241);
+    background: linear-gradient(180deg, rgba(236,239,241,1) 0%, rgba(233,235,237,1) 20%, rgba(189,189,189,1) 65%, rgba(166,166,166,1) 65%, rgba(97,97,97,1) 100%); 
+    // filter: blur(1px);
+    box-shadow: 12px 12px 6px rgba(7.1%, 7.1%, 7.1%, 0.9);
     margin: auto;
+    overflow: hidden;
 
     .header{
-      @include wh(2rem);
+      @include wh(30%);
       @include center-flex();
       color: $carbon;
-      font-size: 2rem;
+      margin: auto;
 
       h2{
         @include pm();
-        font-size: 2rem;
-        text-shadow: 1px 1px 2px $carbon;
+        font-size: 3rem;
+        font-weight: 300;
+        white-space: nowrap;
+        // text-shadow: 1px 1px 2px $carbon;
       }
     }
     .shelf{
       .articles_group{
-        @include wh();
-        @include center-flex(space-evenly);
-        @include pm(30px 10px);
+        @include wh(70%);
+        @include center-flex(space-evenly, flex-start);
+        @include pm(0 10px 60px);
         @include content-box;
       
 
@@ -135,12 +142,31 @@ main{
           border: 1px solid $gold;
           text-decoration: none;
           margin: 5px;
+          // box-shadow: 8px 8px 4px $carbon;
+          box-shadow: none;
+          position: relative;
 
-            @include mediaSO($tablet, $landscape){
+            @include mediaSO($laptop, $landscape){
               width: 18%;
               height: 100%;
               max-height: 400px;
             }
+          
+          &::before{
+            content:'';
+            background: rgba(97,97,97,1);
+            background: linear-gradient(180deg, rgba(10,10,10,0.8) 0%, rgba(38.4%, 38.4%, 38.4%,0.8) 60%, rgba(38.4%, 38.4%, 38.4%, 0) 90%); 
+            position: absolute;
+            top: calc(100% + 8px);
+            // right: -32px;
+            // transform: skewX(30deg);
+            width: 100%;
+            height: 120px;
+            z-index:-1;
+            border-top-left-radius: 8px;
+            opacity: 0.8;
+            filter: blur(1px);
+          }
 
           .title{
             background-color: $neutro-md;

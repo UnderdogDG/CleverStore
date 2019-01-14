@@ -7,7 +7,7 @@
 ?>
 
 <main>
-  <div class="section section_nofull">
+  <div class="section section_nofull animated fadeInDown">
     <div class="container_detail">
       <!-- <form class="form_white" action="<?= (isset($_SESSION["user"]))? URL . '/product/buy/' : URL . '/user/nouser'; ?>" method="post"> -->
       <form class="form_white" action="<?= URL . '/product/buy/'; ?>" method="post">
