@@ -530,6 +530,9 @@ main{
       }
 
       .detail{
+
+        // border: 1px solid $neutro-lt;
+        // border-radius: 0 8px;
         
         .name{
           padding: 0 10px;
@@ -540,6 +543,9 @@ main{
       }
 
       .request{
+        border: 1px solid $neutro-lt;
+        border-radius: 0 8px;
+
         @include mediaSize($tablet){
           height: 100%;
         }
@@ -611,10 +617,12 @@ main{
 
       .total{
         @include center-flex(center, center, column);
+        width: calc(100% - 16px);
         border: 1px solid $gold;
         border-radius: 0 8px;
         padding: 10px 0;
         transition: transform 0.3s ease-out;
+        margin-bottom: 10px;
 
         &:hover{
           transform: scale(1.05);
@@ -641,9 +649,10 @@ main{
 
         .final{
           @include center-flex(center, center, column);
+          @include content-box;
           margin-bottom: 10px;
           margin-top: 20px;
-          width: 90%;
+          width: calc(100% - 10px);
           background-color: $gold;
           border-radius: 0 8px;
           color: $carbon;
@@ -663,6 +672,7 @@ main{
             font-weight: 500;
             margin: 0 10px;
           }
+
         }
       }
     } 
