@@ -53,6 +53,10 @@
   min-width: 300px;
 }
 
+@mixin border($color: red){
+  border: 1px solid $color;
+}
+
 // #region [w] ======== ( QUERYS ) ========
 @mixin mediaOrientation($orientation){
   @media screen and (orientation: #{$orientation}) {

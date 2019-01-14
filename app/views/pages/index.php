@@ -38,18 +38,22 @@
 
             <?php for($e = 1; (($e <= 4) and ($i < count($data))); $e++): ?>
           
-              <a href="<?= URL . "/product/item/" . $data[$i]["sku"]?>" class="article form_white">
-                <div class="title">
+              <a href="<?= URL . "/product/item/" . $data[$i]["sku"]?>" class="article">
+                <!-- <div class="title">
                   <h2><?= $data[$i]["name"]; ?></h2>
-                </div>
+                </div> -->
 
                 <div class="img">
-                  <img src="./img/store/anillo.jpg" alt="">
+                  <img src="./img/store/anillo.png" alt="">
                 </div>
 
                 <div class="footer">
-                  <h2><?= $data[$i]["price"]; ?></h2>
+                  <h2><?= $data[$i]["name"]; ?></h2>
                 </div>
+
+                <!-- <div class="footer">
+                  <h2><?= $data[$i]["price"]; ?></h2>
+                </div> -->
               </a>
 
               <?php $i++; ?>
@@ -58,6 +62,16 @@
           </div>
         </div>
       <?php endfor; ?>
+
+
+      <!-- <div class="shelf">
+        <div class="articles_group">
+          <canvas href="#" class="article" id="container">
+
+          </canvas>
+
+        </div>
+      </div> -->
 
       </div>
     </div>
@@ -86,6 +100,8 @@
     </footer>
   </main>
 </div>
+<!-- <script type="text/javascript" src="<?= URL; ?>/public/js/three.js"></script>
+<script type="text/javascript" src="<?= URL; ?>/public/js/3dEnviroment.js"></script> -->
 <?php
   require ROOT_APP . '/views/includes/fullpage-js.php';
 ?>

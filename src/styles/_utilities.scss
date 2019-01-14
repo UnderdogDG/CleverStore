@@ -1,3 +1,74 @@
+.label{
+  @include wh(5rem, 90%);
+  @include center-flex(flex-end);
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 15% 100%, 0 52%, 0 48%);
+  background-color: #FF1250;
+  margin: 10px 0 30px;
+  position: relative;
+  border-radius: 8px;
+  transform: scale(1);
+  transition: transform 0.5s ease-out;
+
+    @include mediaSize(400px){
+      // @include wh(5rem, 80%);
+      max-width: 230px;
+    }
+
+  &:hover{
+    transform: scale(1.1);
+  }
+
+  &::before{
+    content: '';
+    @include wh(1rem, 1rem);
+    background-color: $white-lt;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .sign{
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: $white-lt;
+    margin: 0;
+    width: 15%;
+    text-align: center;
+  }
+
+  .price{
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: $white-lt;
+    margin: 0;
+    background-color: rgba(100%, 100%, 100%, 0);
+    border: none;
+    width: 45%;
+    text-align: center;
+  }
+
+  span{
+    color: $white-lt;
+    text-align: center;
+    width: 20%;
+    font-size: 1rem;
+  }
+
+  &.gray{
+    background-color: $neutro-bk;
+  }
+
+  &.gold{
+    background-color: $gold;
+
+    .sign, .price, span{
+      color: $carbon;
+    }
+  }
+}
+
 .back-black{
   background-color: black;
   color: white;
