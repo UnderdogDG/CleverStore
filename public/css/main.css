@@ -1941,6 +1941,8 @@ main {
   width: 90%;
   height: 100%;
   padding-top: 50px;
+  max-width: 1500px;
+  min-width: 300px;
 }
 
 .container_search .item {
@@ -1950,6 +1952,7 @@ main {
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  min-width: 300px;
   color: #E0E0E0;
 }
 
@@ -2076,16 +2079,22 @@ main {
   .container_search .item .container_head h2 {
     margin-top: 15px;
     width: 100%;
+    height: auto;
   }
 }
 
 .container_search .item .container_head button {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   width: calc(50% - 10px);
+  margin: 0 5px 5px 0;
+  margin-right: 5px;
 }
 
 @media only screen and (min-width: 681px) {
   .container_search .item .container_head button {
     width: 100%;
+    max-width: 200px;
   }
 }
 
@@ -2111,12 +2120,22 @@ main {
 }
 
 .container_search .item .container_img img {
-  height: 125%;
+  width: 100%;
   position: absolute;
   bottom: 2rem;
-  right: 2rem;
+  max-width: 250px;
+  margin: 0 auto;
+  right: 0;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+@media only screen and (min-width: 681px) {
+  .container_search .item .container_img img {
+    width: auto;
+    height: 125%;
+    right: 2rem;
+  }
 }
 
 .container_search .item .container_options {

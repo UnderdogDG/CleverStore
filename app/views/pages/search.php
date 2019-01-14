@@ -12,7 +12,7 @@
 
         <?php foreach ($data as $item) : ?>
 
-        <div class="item wow fadeInUp" data-wow-delay="<?= $i; ?>s">
+        <div class="item wow fadeInUp" data-wow-delay="0.25s">
           <div class="container">
             <div class="container_head">
               <h2><?= $item["name"]; ?></h2>

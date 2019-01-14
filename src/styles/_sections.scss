@@ -682,11 +682,14 @@ main{
     @include center-flex(space-around);
     @include wh(100%, 90%);
     padding-top: 50px;
+    max-width: 1500px;
+    min-width: 300px;
 
     .item{
       @include wh(300px);
       @include pm(0, 30px 0);
       @include content-box;
+      @include min-width;
       color: $neutro-lt;
 
         @include mediaSize($laptop){
@@ -726,7 +729,6 @@ main{
           font-size: 0.8rem;
           text-shadow: 3px 3px 6px black;
           order: 2;
-          // @include border();
 
             @include mediaSize($tablet){
               @include center-flex(space-between, flex-start, column);
@@ -748,14 +750,19 @@ main{
               @include mediaSize($tablet){
                 margin-top: 15px;
                 width: 100%;
+                height: auto;
               }
           }
 
           button{
+            @include content-box;
             width: calc(50% - 10px);
+            margin: 0 5px 5px 0;
+            margin-right: 5px;
 
             @include mediaSize($tablet){
               width: 100%;
+              max-width: 200px;
             }
           }
         }
@@ -772,11 +779,19 @@ main{
             }
 
           img{
-            height: 125%;
+            width: 100%;
             position: absolute;
             bottom: 2rem;
-            right: 2rem;
+            max-width: 250px;
+            margin: 0 auto;
+            right: 0;
             object-fit: contain;
+
+              @include mediaSize($tablet){
+                width: auto;
+                height: 125%;
+                right: 2rem;
+              }
           }
         }
 
