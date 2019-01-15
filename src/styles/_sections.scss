@@ -112,15 +112,20 @@ main{
 
     .header{
       @include wh(15%);
-      @include center-flex();
+      @include center-flex(center, flex-start);
       color: $carbon;
       margin: auto;
 
       h2{
         @include pm();
-        font-size: 3rem;
-        font-weight: 300;
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 1;
         white-space: nowrap;
+
+        @include mediaSize($tablet){
+          font-size: 3rem;
+        }
       }
     }
     .shelf{
@@ -172,35 +177,51 @@ main{
             }
 
             .title{
-              @include wh(5rem);
+              @include wh(30%);
               color: $white-lt;
+              overflow: hidden;
+
+                @include mediaAnd($tablet, $landscape){
+                  @include wh(5rem);
+                }
 
                 @include mediaOrientation($portrait){
                   width: 40%;
+                  height: 100%;
                 }
 
               h2{
                 @include content-box;
                 display: inline-block;
                 width: calc(100% - 20px);
-                font-size: 2rem;
+                font-size: 0.8rem;
                 font-weight: 500;
                 margin: 0;
-                padding: 0 10px 5px;
+                padding: 0;
                 text-align: center;
                 text-shadow: 3px 3px 2px black;
 
-                  @include mediaOrientation($portrait){
-                    font-size: 1.5rem;
-                    text-align: left;
+                  @include mediaAnd($tablet, $landscape){
+                    font-size: 2rem;
+                    padding: 0 10px 5px;
                   }
+
+                  // @include mediaOrientation($portrait){
+                  //   font-size: 1.5rem;
+                  //   text-align: left;
+                  // }
               }
             }
 
             .img{
-              @include wh(auto, 100%);
-              padding-bottom: 100%;
+              @include wh(30%, 100%);
+              // padding-bottom: 100%;
               position: relative;
+
+                @include mediaAnd($tablet, $landscape){
+                  @include wh(auto, 100%);
+                  padding-bottom: 100%;
+                }
 
                 @include mediaOrientation($portrait){
                   // @include wh(100%, 30%);
@@ -210,27 +231,33 @@ main{
                 }
 
               img{
-                width: 100%;
+                width: auto;
+                height: 100%;
                 top: 50%;
                 position: absolute;
                 right: -20%;
-                transform: translateY(-40%);
+                transform: translateY(-50%);
                 object-fit: cover;
 
+
+
                   @include mediaOrientation($portrait){
-                    width: auto;
-                    height: 180%;
-                    text-align: center;
+                    // width: auto;
+                    height: 150%;
+                    // text-align: center;
                     top: 0;
+                    transform: translateY(-35%);
                     right: 0;
+                    object-fit: contain;
                   }
               }
             }
 
             .footer{
+              @include content-box;
               @include center-flex();
-              @include wh(auto);
-              padding: 5px 10px;
+              @include wh(25%);
+              // padding: 5px 10px;
 
                 @include mediaOrientation($portrait){
                   @include wh(100%, 30%);
@@ -239,11 +266,41 @@ main{
                 }
 
               .label{
-                @include mediaOrientation($portrait){
-                  @include pm();
-                  @include wh();
-                  max-width: 250px;
-                  max-height: 5rem;
+                @include wh();
+                max-width: 250px;
+                max-height: 5rem;
+                @include pm();
+
+                &::before{
+                  @include wh(8px, 8px);
+
+                    @include mediaSize($tablet){
+                      @include wh(16px, 16px);
+                    }
+                }
+
+                .sign{
+                  font-size: 0.8rem;
+
+                    @include mediaSize($tablet){
+                      font-size: 1.5rem;
+                    }
+                }
+
+                .price{
+                  font-size: 0.9rem;
+
+                    @include mediaSize($tablet){
+                      font-size: 2rem;
+                    }
+                }
+
+                span{
+                  font-size: 0.5rem;
+
+                    @include mediaSize($tablet){
+                      font-size: 1rem;
+                    }
                 }
               }
 
