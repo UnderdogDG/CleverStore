@@ -38,22 +38,25 @@
 
             <?php for($e = 1; (($e <= 4) and ($i < count($data))); $e++): ?>
           
-              <a href="<?= URL . "/product/item/" . $data[$i]["sku"]?>" class="article">
-                <!-- <div class="title">
-                  <h2><?= $data[$i]["name"]; ?></h2>
-                </div> -->
+              <a class="container" href="<?= URL . "/product/item/" . $data[$i]["sku"]?>">
+                <div class="article">
+                  <div class="title">
+                    <h2><?= $data[$i]["name"]; ?></h2>
+                  </div>
 
-                <div class="img">
-                  <img src="./img/store/anillo.png" alt="">
+                  <div class="img">
+                    <img src="./img/store/anillo.png" alt="">
+                  </div>
+
+                  <div class="footer">
+                    <div class="label">
+                      <h3 class="sign">$</h3>
+                      <h2 class="price"><?= $data[$i]["price"]; ?></h2>
+                      <span>c/u</span>
+                    </div>
+                  </div>
+
                 </div>
-
-                <div class="footer">
-                  <h2><?= $data[$i]["name"]; ?></h2>
-                </div>
-
-                <!-- <div class="footer">
-                  <h2><?= $data[$i]["price"]; ?></h2>
-                </div> -->
               </a>
 
               <?php $i++; ?>

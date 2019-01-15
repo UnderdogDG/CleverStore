@@ -1,7 +1,7 @@
 .label{
   @include wh(5rem, 90%);
   @include center-flex(flex-end);
-  clip-path: polygon(15% 0, 100% 0, 100% 100%, 15% 100%, 0 52%, 0 48%);
+  clip-path: polygon(35px 0, 100% 0, 100% 100%, 35px 100%, 0 52%, 0 48%);
   background-color: #FF1250;
   margin: 10px 0 30px;
   position: relative;
@@ -10,7 +10,6 @@
   transition: transform 0.5s ease-out;
 
     @include mediaSize(400px){
-      // @include wh(5rem, 80%);
       max-width: 230px;
     }
 

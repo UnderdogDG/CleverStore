@@ -1,32 +1,18 @@
 {
 	"bookmarks": [
 		{
-			"fsPath": "$ROOTPATH$\\src\\styles\\_extends.scss",
-			"bookmarks": [
-				-1,
-				13,
-				14,
-				15,
-				-1,
-				-1,
-				-1,
-				-1,
-				-1,
-				-1
-			]
-		},
-		{
 			"fsPath": "$ROOTPATH$\\src\\styles\\_sections.scss",
 			"bookmarks": [
 				-1,
-				196,
-				242,
+				-1,
+				305,
+				-1,
+				-1,
+				744,
 				-1,
 				-1,
 				-1,
-				-1,
-				-1,
-				-1,
+				722,
 				-1
 			]
 		},
@@ -51,6 +37,52 @@
 				-1,
 				22,
 				-1,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1
+			]
+		},
+		{
+			"fsPath": "$ROOTPATH$\\app\\views\\pages\\product\\buy.php",
+			"bookmarks": [
+				-1,
+				-1,
+				81,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1,
+				92
+			]
+		},
+		{
+			"fsPath": "$ROOTPATH$\\app\\views\\includes\\header.php",
+			"bookmarks": [
+				-1,
+				17,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1
+			]
+		},
+		{
+			"fsPath": "$ROOTPATH$\\src\\styles\\_mixins.scss",
+			"bookmarks": [
+				-1,
+				-1,
+				55,
 				-1,
 				-1,
 				-1,

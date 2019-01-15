@@ -108,15 +108,10 @@ main{
     @include wh(96%, 90%);
     @include center-flex(center, center);
     @include content-box;
-    background: rgb(236,239,241);
-    background: linear-gradient(180deg, rgba(236,239,241,1) 0%, rgba(233,235,237,1) 20%, rgba(189,189,189,1) 65%, rgba(166,166,166,1) 65%, rgba(97,97,97,1) 100%); 
-    // filter: blur(1px);
-    box-shadow: 12px 12px 6px rgba(7.1%, 7.1%, 7.1%, 0.9);
     margin: auto;
-    overflow: hidden;
 
     .header{
-      @include wh(30%);
+      @include wh(15%);
       @include center-flex();
       color: $carbon;
       margin: auto;
@@ -126,104 +121,140 @@ main{
         font-size: 3rem;
         font-weight: 300;
         white-space: nowrap;
-        // text-shadow: 1px 1px 2px $carbon;
       }
     }
     .shelf{
-      // @include wh();
 
       .articles_group{
-        @include wh(70%);
-        @include center-flex(space-evenly, flex-start);
-        @include pm(0 10px 60px);
+        @include wh(85%);
+        @include center-flex(space-between, center);
+        @include pm(0 10px);
         @include content-box;
-      
+        overflow: visible;
 
-        .article{
-          // @include border();
-          @include wh(48%, 40%);
-          @include pm(10px 5px);
-          // border: 1px solid $gold;
+        .container{
+          @include center-flex(center, flex-start, column);
+          @include wh(100%, calc(25% - 10px));
+          @include content-box;
+          color: $neutro-lt;
           text-decoration: none;
-          margin: 5px;
-          // box-shadow: 8px 8px 4px $carbon;
-          background-color: $neutro-md;
-          box-shadow: none;
-          position: relative;
 
-            @include mediaSO($laptop, $landscape){
-              width: 18%;
-              height: 100%;
-              max-height: 400px;
+            @include mediaOrientation($portrait){
+              @include wh(calc(20% - 10px), 100%);
             }
-          
-          &::before{
-            content:'';
-            background: rgba(97,97,97,1);
-            background: linear-gradient(180deg, rgba(10,10,10,0.8) 0%, rgba(38.4%, 38.4%, 38.4%,0.8) 60%, rgba(38.4%, 38.4%, 38.4%, 0) 90%); 
-            position: absolute;
-            top: calc(100% + 8px);
-            left: 50%;
-            transform: translateX(-50%);
-            // transform: skewX(30deg);
-            width: 50%;
-            height: 120px;
-            z-index:-1;
-            border-radius: 50%;
-            opacity: 0.5;
-            filter: blur(2px);
-          }
 
-          .title{
-            background-color: $neutro-md;
-            color: $carbon;
-            white-space: nowrap;
-            overflow: hidden;
-            justify-content: flex-start;
-            height: 1.8rem;
-
-            h2{
-              display: inline-block;
-              width: 100%;
-              font-size: 1.1rem;
-              margin: 5px;
-            }
-          }
-
-          .img{
-            padding: 0;
-            height: calc(100% - 3.6rem);
-
-            img{
-              width: 100%;
-              // height: 100%;
-              object-fit: cover;
-            }
-          }
-
-          .footer{
-            @include border();
+          .article{
+            @include center-flex(space-between, center, column);
+            @include wh(100%, 80%);
+            @include pm(10px 5px);
+            @include content-box;
+            background-image: linear-gradient(45deg, rgba(36,24,18,1) 0%, rgba(39,39,39,1) 50%); 
+            border-radius: 0 8px;
             text-decoration: none;
-            color: $carbon;
-            // background-color: $carbon;
-            height: 1.8rem;
-            padding: 5px 10px;
+            box-shadow: none;
+            position: relative;
+            z-index: 0;
 
-            h2{
-              @include border();
-              font-size: 1.2rem;
-              font-weight: 400;
-              line-height: 1;
-              margin: 5px auto;
-              text-align: center;
-              white-space: wrap;
+            @include mediaOrientation($portrait){
+              @include wh(90%, 100%);
+            }
+            
+            &::before{
+              content:'';
+              @include wh();
+              background: url('../img/trama_bk.png') center / 200px repeat;
+              border-radius: 0 8px;
+              box-shadow: 6px 6px 6px black;
+              position: absolute;
+              top: 0;
+              left: 0;
+              z-index: -1;
             }
 
-            // h2::before{
-            //   font-family: 'Font Awesome 5 Free';
-            //   content: '\f155';
-            // }
+            .title{
+              @include wh(5rem);
+              color: $white-lt;
 
+                @include mediaOrientation($portrait){
+                  width: 40%;
+                }
+
+              h2{
+                @include content-box;
+                display: inline-block;
+                width: calc(100% - 20px);
+                font-size: 2rem;
+                font-weight: 500;
+                margin: 0;
+                padding: 0 10px 5px;
+                text-align: center;
+                text-shadow: 3px 3px 2px black;
+
+                  @include mediaOrientation($portrait){
+                    font-size: 1.5rem;
+                    text-align: left;
+                  }
+              }
+            }
+
+            .img{
+              @include wh(auto, 100%);
+              padding-bottom: 100%;
+              position: relative;
+
+                @include mediaOrientation($portrait){
+                  // @include wh(100%, 30%);
+                  width: 20%;
+                  height: 100%;
+                  padding-bottom: 0;
+                }
+
+              img{
+                width: 100%;
+                top: 50%;
+                position: absolute;
+                right: -20%;
+                transform: translateY(-40%);
+                object-fit: cover;
+
+                  @include mediaOrientation($portrait){
+                    width: auto;
+                    height: 180%;
+                    text-align: center;
+                    top: 0;
+                    right: 0;
+                  }
+              }
+            }
+
+            .footer{
+              @include center-flex();
+              @include wh(auto);
+              padding: 5px 10px;
+
+                @include mediaOrientation($portrait){
+                  @include wh(100%, 30%);
+                  @include pm();
+                  justify-content: flex-end;
+                }
+
+              .label{
+                @include mediaOrientation($portrait){
+                  @include pm();
+                  @include wh();
+                  max-width: 250px;
+                  max-height: 5rem;
+                }
+              }
+
+              // h2{
+              //   font-size: 2rem;
+              //   font-weight: 400;
+              //   line-height: 1;
+              //   margin: 0;
+              // }
+
+            }
           }
         }
       }
@@ -254,11 +285,6 @@ main{
       .bullet{
         @include center-flex(space-around, center, column);
         width: 80%;
-        // background-color: black;
-
-          // @include mediaOrientation($portrait){
-          //   @include wh(80%, 80%);
-          // }
 
         .logo{
           margin: 0 0 5px;
@@ -681,19 +707,20 @@ main{
   &_search{
     @include center-flex(space-around);
     @include wh(100%, 90%);
-    padding-top: 50px;
+    // padding-top: 50px;
     max-width: 1500px;
     min-width: 300px;
 
     .item{
-      @include wh(300px);
-      @include pm(0, 30px 0);
+      @include center-flex(center, flex-end);
+      @include wh(280px);
+      @include pm(0, 10px 0 20px);
       @include content-box;
-      @include min-width;
       color: $neutro-lt;
+      max-width: 650px;
 
         @include mediaSize($laptop){
-          width: 44%;
+          min-width: 350px;
         }
 
       .container{
@@ -719,13 +746,15 @@ main{
           left: 0;
           z-index: -1;
           background: url('../img/trama_bk.png') center / 200px repeat;
+          border-bottom-left-radius: 8px;
         }
 
         &_head{
           @include wh(20%, calc(100% - 4rem));
           @include center-flex(space-between, center);
           @include content-box;
-          padding-left: 10px;
+          @include pm(0 5px 0 10px);
+          // padding-left: 10px;
           font-size: 0.8rem;
           text-shadow: 3px 3px 6px black;
           order: 2;
@@ -740,21 +769,29 @@ main{
             }
 
           h2{
+            @include center-flex(flex-start, flex-start);
             @include pm();
-            display: block;
+            // display: block;
             margin-bottom: 0;
             width: 50%;
+            max-width: 220px;
+            font-weight: 600;
             height: 100%;
             overflow: hidden;
+            transform-origin: 15px 20px;
+            transform: rotate(-90deg);
+            @include content-box;
 
               @include mediaSize($tablet){
+                align-items: flex-start;
                 margin-top: 15px;
                 width: 100%;
                 height: auto;
+                transform: rotate(0deg);
               }
           }
 
-          button{
+          a{
             @include content-box;
             width: calc(50% - 10px);
             margin: 0 5px 5px 0;
@@ -780,30 +817,50 @@ main{
 
           img{
             width: 100%;
+            height: 125%;
             position: absolute;
-            bottom: 2rem;
+            bottom: 1rem;
             max-width: 250px;
             margin: 0 auto;
-            right: 0;
+            left: 50%;
             object-fit: contain;
+
+            transform: translateX(-50%);
 
               @include mediaSize($tablet){
                 width: auto;
                 height: 125%;
-                right: 2rem;
+                bottom: 2rem;
+                right: 1rem;
               }
           }
         }
 
         &_options{
           @include wh(100%, 4rem);
-          @include pm(10px);
-          @include center-flex(flex-start, flex-end, column);
+          @include pm();
+          @include center-flex(flex-start, center, column);
           @include content-box;
           font-size: 2rem;
           background-color: rgba(18,18,18,1);
           border-top-right-radius: 8px;
           order: 3;
+
+          button{
+            width: 3.5rem;
+            height: 3.5rem;
+            margin-bottom: 3px;
+            border-bottom: 1px solid #202020;
+
+            &:before{
+              @include wh(3.5rem, 3.5rem);
+              background-color: $gold;
+            }
+
+            i.fav{
+              font-weight: 400;
+            }
+          }
         }
       }
         
