@@ -111,41 +111,54 @@ main{
     margin: auto;
 
     .header{
-      @include wh(15%);
+      @include wh(2rem);
       @include center-flex(center, flex-start);
       color: $carbon;
       margin: auto;
 
+        @include mediaSize($tablet){
+          height: 6rem;
+        }
+
       h2{
-        @include pm();
+        @include pm(5px);
+        background-color: rgba(92.5%, 93.7%, 94.5%, 0.5);
         font-size: 1.5rem;
         font-weight: 400;
         line-height: 1;
+        text-shadow: 3px 3px 2px rgba(0%, 0%, 0%, 0.5);
         white-space: nowrap;
 
-        @include mediaSize($tablet){
-          font-size: 3rem;
-        }
+          @include mediaSize($tablet){
+            font-size: 3rem;
+          }
       }
     }
     .shelf{
+      @include wh();
+      @include min-width;
 
       .articles_group{
-        @include wh(85%);
+        @include wh(100%);
         @include center-flex(space-between, center);
-        @include pm(0 10px);
+        @include pm(1rem 10px);
         @include content-box;
         overflow: visible;
 
+          @include mediaSize($tablet){
+            height: calc(100% - 8rem);
+          }
+
         .container{
-          @include center-flex(center, flex-start, column);
-          @include wh(100%, calc(25% - 10px));
+          @include center-flex(space-between, flex-start, column);
+          @include wh(100%, calc(24% - 10px));
           @include content-box;
           color: $neutro-lt;
           text-decoration: none;
 
             @include mediaOrientation($portrait){
               @include wh(calc(20% - 10px), 100%);
+              justify-content: flex-end;
             }
 
           .article{
@@ -167,9 +180,10 @@ main{
             &::before{
               content:'';
               @include wh();
-              background: url('../img/trama_bk.png') center / 200px repeat;
+              background: url('../img/trama_bk.png') center / 220px repeat;
               border-radius: 0 8px;
-              box-shadow: 6px 6px 6px black;
+              // box-shadow: 6px 6px 6px black;
+              box-shadow: 8px 8px 5px rgba(10%, 10%, 10%, 0.65);
               position: absolute;
               top: 0;
               left: 0;
@@ -177,12 +191,13 @@ main{
             }
 
             .title{
-              @include wh(30%);
+              @include wh(calc(30% - 5px));
               color: $white-lt;
               overflow: hidden;
 
                 @include mediaAnd($tablet, $landscape){
                   @include wh(5rem);
+                  border-bottom: 1px solid $gold;
                 }
 
                 @include mediaOrientation($portrait){
@@ -193,29 +208,34 @@ main{
               h2{
                 @include content-box;
                 display: inline-block;
-                width: calc(100% - 20px);
+                width: 100%;
                 font-size: 0.8rem;
                 font-weight: 500;
                 margin: 0;
-                padding: 0;
+                padding: 0 10px;
                 text-align: center;
                 text-shadow: 3px 3px 2px black;
+                max-height: 100%;
+                border-bottom: 1px solid $gold;
+
+                  @include mediaAndWH(650px, 700px){
+                    font-size: 1.5rem
+                  }
 
                   @include mediaAnd($tablet, $landscape){
                     font-size: 2rem;
                     padding: 0 10px 5px;
+                    border: none;
                   }
 
-                  // @include mediaOrientation($portrait){
-                  //   font-size: 1.5rem;
-                  //   text-align: left;
-                  // }
+                  @include mediaOrientation($portrait){
+                    text-align: left;
+                  }
               }
             }
 
             .img{
-              @include wh(30%, 100%);
-              // padding-bottom: 100%;
+              @include wh(40%, 100%);
               position: relative;
 
                 @include mediaAnd($tablet, $landscape){
@@ -231,24 +251,30 @@ main{
                 }
 
               img{
-                width: auto;
-                height: 100%;
-                top: 50%;
+                height: 150%;
+                max-height: 180px;
+                object-fit: contain;
                 position: absolute;
-                right: -20%;
-                transform: translateY(-50%);
-                object-fit: cover;
+                right: 0;
+                bottom: 5%;
+                width: auto;
 
 
 
-                  @include mediaOrientation($portrait){
-                    // width: auto;
-                    height: 150%;
-                    // text-align: center;
-                    top: 0;
-                    transform: translateY(-35%);
+                  @include mediaAnd($tablet, $portrait){
+                    // height: 120%;
+                    object-fit: cover;
                     right: 0;
-                    object-fit: contain;
+                    transform: translateY(0);
+                    
+                  }
+
+                  @include mediaOrientation($landscape){
+                    max-height: none;
+                    height: 100%;
+                    bottom: 50%;
+                    right: -20%;
+                    transform: translateY(50%);
                   }
               }
             }
@@ -267,7 +293,7 @@ main{
 
               .label{
                 @include wh();
-                max-width: 250px;
+                max-width: 230px;
                 max-height: 5rem;
                 @include pm();
 
@@ -780,6 +806,25 @@ main{
           min-width: 350px;
         }
 
+      .noFound{
+        @include wh(100%, 80%);
+        @include center-flex(space-evenly, center, column);
+        flex-wrap: nowrap;
+
+        h2{
+          @include pm(10px 15px);
+          border-bottom: 1px solid $gold;
+          font-weight: 500;
+          text-shadow: 3px 3px 2px black;
+          // border-radius: 8px;
+        }
+
+        h3{
+          @include pm();
+          font-weight: 400;
+        }
+      }        
+
       .container{
         @include wh(80%);
         @include center-flex(center, center, column);
@@ -787,7 +832,8 @@ main{
         background-image: linear-gradient(45deg, rgba(36,24,18,1) 0%, rgba(39,39,39,1) 50%); 
         // background-image: url('../img/trama_bk.png'), linear-gradient(45deg, rgba(36,24,18,1) 0%, rgba(18,18,18,1) 50%); 
         border-radius: 0 8px;
-        box-shadow: 4px 4px 8px black;
+        // box-shadow: 4px 4px 8px black;
+        box-shadow: 8px 8px 3px rgba(10%, 10%, 10%, 0.55);
         position: relative;
         z-index: 0;
 

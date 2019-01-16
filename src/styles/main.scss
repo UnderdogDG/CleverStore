@@ -97,9 +97,11 @@ body, main, nav, footer, div, input, button{
 
 .fp-prev, .fp-next{
   @include center-flex();
-  width: 80px !important;
-  height: 80px !important;
+  width: 70px !important;
+  height: 70px !important;
+  background-color: $neutro-bk;
   border: none !important;
+  border-radius: 50%;
   transform: scale(0.5);
   animation: move 0.8s ease-out alternate infinite;
 }
@@ -112,7 +114,7 @@ body, main, nav, footer, div, input, button{
     font-family: 'Font Awesome 5 Free' !important;
     font-size: 4rem;
     font-weight: 600 !important;
-    color: $carbon;
+    color: $carbon
   }
 }
 

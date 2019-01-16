@@ -82,6 +82,12 @@
   }
 };
 
+@mixin mediaAndWH($width, $height){
+  @media only screen and (min-width: #{$width}) and (min-height: #{$height}){
+    @content
+  }
+};
+
 @mixin mediaSizeH($size){
   @media only screen and (min-height: #{$size}) {
       @content
