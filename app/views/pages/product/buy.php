@@ -88,7 +88,7 @@
         </div>
 
         <div class="footer">
-          <button type="button" class="btn btn_red md"><span><i class="far fa-times-circle"></i>Cancelar</span></button>
+          <a href="<?= URL?>" class="btn btn_red md"><span><i class="far fa-times-circle"></i>Cancelar</span></a>
           <button type="button" class="btn btn_gold md"><span><i class="far fa-check-circle"></i>Comprar</span></button>
           <!-- <?= print_r($data);?> -->
         </div>

@@ -11,7 +11,7 @@
       <div class="container_search">
 
         <?php if(!$data) : ?>
-          <div class="item wow fadeInUp">
+          <div class="item wow flipInX">
             <div class="container">
               <div class="noFound">
                 <h2>Lo sentimos</h2>
@@ -24,7 +24,7 @@
 
           <?php foreach ($data as $item) : ?>
 
-          <div class="item wow fadeInUp" data-wow-delay="<?= $i += 0.1; ?>">
+          <div class="item wow flipInX" data-wow-delay="<?= $i += 0.2; ?>s">
             <div class="container">
               <div class="container_head">
                 <h2><span><?= $item["name"]; ?></span></h2>

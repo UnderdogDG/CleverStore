@@ -31,7 +31,7 @@
 
               <div class="field">
                 <h2 class="feature"><i class="fas fa-lock"></i><span>Envio Seguro</span></h2>
-                <h2 class="feature"><i class="fas fa-truck-moving"></i><span>Envio Express</span></h2>
+                <h2 class="feature"><i class="fas fa-shipping-fast"></i><span>Envio Express</span></h2>
               </div>
 
               <div class="field">

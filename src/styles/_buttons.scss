@@ -198,18 +198,22 @@
 }
 
 .btn_pop{
-  @include wh(40px, 40px);
+  @include wh();
+  @include center-flex(center, center);
   background-color: rgba(46.3%, 100%, 1.2%, 0);
+  // background-color: $neutro-bk;
   border: none;
   position: relative;
+  text-decoration: none;
 
   &:before{
     content: '';
     width: 60px;
     height: 60px;
+    // @include wh();
     border-radius: 50%;
     transform: translate(-50%, -50%) scale(0);
-    background-color: aliceblue;
+    background-color: $neutro-bk;
     box-shadow: 0 0 0 $carbon;
     position: absolute;
     top: 50%;
@@ -225,26 +229,55 @@
   &:hover::before{
     transform: translate(-50%, -50%) scale(1);
     border-radius: 0;
-    box-shadow: -3px 3px 4px black;
+    box-shadow: 3px 3px 4px black;
   }
 
-  &:hover i{
+  &:hover .wrapper{
     color: $carbon;
     text-shadow: 0 0 0 black;
     transform: scale(1.4);
+    
   }
 
-  i{
-    color: $white-lt;
-    font-size: 1.5rem;
-    font-weight: 600;
-    position: relative;
-    text-shadow: 0 3px 1px black;
+  // &:hover .wrapper i, 
+  // &:hover .wrapper .alt{
+  //   color: $carbon;
+  //   // text-shadow: 0 0 0 black;
+  //   // transform: scale(1.4);
+  // }
+
+  .wrapper{
+    @include center-flex(center, center, column);
+    @include wh();
     transform: scale(1);
     transition-property: transform, color;
-    transition-delay: 0s, 0.3s;
-    transition-duration: 0.5s, 0.5s;
-    transition-timing-function: cubic-bezier(0,1.4,.4,-0.46), ease-out;
-    z-index: 5;
+      transition-delay: 0s, 0.3s;
+      transition-duration: 0.5s, 0.5s;
+      transition-timing-function: cubic-bezier(0,1.4,.4,-0.46), ease-out;
+      z-index: 5;
+
+    i, .alt{
+      
+      transition-property: transform, color;
+      transition-delay: 0s, 0.3s;
+      transition-duration: 0.5s, 0.5s;
+      transition-timing-function: cubic-bezier(0,1.4,.4,-0.46), ease-out;
+    }
+
+    i{
+      color: $neutro-md;
+      font-size: 1.5rem;
+      font-weight: 600;
+      position: relative;
+      text-shadow: 2px 1px 1px rgba(0%, 0%, 0%, 0.5);
+      
+    }
+  
+    .alt{
+      color: $neutro-md;
+      margin-bottom: 0;
+    }
   }
+
+  
 }
