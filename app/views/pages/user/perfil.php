@@ -46,7 +46,7 @@
 
             <a href="#" class="btn_pop wow fadeIn" data-wow-delay="1.5s">
               <div class="wrapper">
-                <i class="fas fa-history"></i>
+                <i class="fas fa-shopping-bag"></i>
                 <p class="alt">Tus Compras</p>
               </div>
             </a>
@@ -81,7 +81,9 @@
         </div>
 
         <div class="footer">
-          <a href="<?= URL ?>/user/logout" class="btn btn_red md"><span><i class="fas fa-times-circle"></i> Salir</span></a>
+          <a href="<?= URL ?>/user/logout" class="btn btn_red md">
+            <span><i class="fas fa-power-off"></i> Cerrar Sesión</span>
+          </a>
         </div>
       </div>
     <!-- </div> -->
