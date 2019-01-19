@@ -19,7 +19,7 @@
         <div class="pleca"></div>
 
         <div class="col">
-          <img src="./img/bases/anillo_in.png" alt="">
+          <img src="<?= URL . "/img/bases/anillo_in.png"?>" alt="">
         </div>
       </div>
           
@@ -45,7 +45,7 @@
                   </div>
 
                   <div class="img">
-                    <img src="./img/store/anillo.png" alt="">
+                    <img src="<?= URL . "/img/store/anillo.png"?>" alt="">
                   </div>
 
                   <div class="footer">

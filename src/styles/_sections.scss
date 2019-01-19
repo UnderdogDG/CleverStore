@@ -982,6 +982,7 @@ main{
       background-image: linear-gradient(45deg, rgba(36,24,18,1) 0%, rgba(39,39,39,1) 50%); 
       border-radius: 0 8px;
       box-shadow: 8px 8px 3px rgba(10%, 10%, 10%, 0.55);
+      color: $white-lt;
       position: relative;
       z-index: 0;
 
@@ -1001,7 +1002,7 @@ main{
       }
 
       .item{
-        @include wh(auto, 30%);
+        @include wh(auto);
         @include pm(10px 15px);
         @include content-box;
         @include center-flex();
@@ -1020,13 +1021,36 @@ main{
         .info{
           @include wh(auto, 30%);
           @include center-flex(center, center, column);
-
+          
           .head{
-            @include wh(auto, 70%);
+            @include wh(auto);
+            // color: $white-lt;
           }
 
           .price{
-            @include wh(auto, 30%);
+            @include wh(2.5rem, 85%);
+            margin-left: 15%;
+            display: inline-block;
+            font-size: 2.5rem;
+            font-weight: 500;
+            line-height: 0.8;
+
+            // color: $white-lt;
+
+            &::before{
+              content:'\f155';
+              font-family: 'Font Awesome 5 Free';
+              font-size: 1.5rem;
+              font-weight: 600;
+              margin-right: 5px;
+            }
+
+            &::after{
+              content:'c/u';
+              font-size: 1rem;
+              font-weight: 300;
+              margin-left: 10px;
+            }
           }
 
         }

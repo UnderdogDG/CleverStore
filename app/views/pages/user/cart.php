@@ -25,8 +25,10 @@
                 </div>
 
                 <div class="info">
-                  <h2><?= $item['name']?></h2>
-                  <h3><?= $item['price']?></h3>
+                  <h2 class="head"><?= $item['name']?></h2>
+                  <div class="label">
+                    <h3 class="price"><?= $item['price']?></h3>
+                  </div>
                 </div>
 
                 <div class="options">
@@ -38,7 +40,7 @@
           <?php endforeach; ?>
         <?php else : ?>
           <div class="wrapper">
-            <h2>No has agregado nada a tu Carrito de Compras</h2>
+            <h2>No has agregado productos a tu Carrito de Compras</h2>
           </div>
         <?php endif; ?>
 

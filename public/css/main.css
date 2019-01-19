@@ -519,7 +519,7 @@ nav .wrapper .compress .icon .count {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #FF1250;
+  background-color: #FFAB00;
   border-radius: 3px;
   position: absolute;
   top: 20%;
@@ -533,7 +533,7 @@ nav .wrapper .compress .icon .count input {
   height: 12px;
   background-color: rgba(255, 23, 68, 0);
   border: none;
-  color: #ECEFF1;
+  color: black;
   font-size: 10px;
   font-weight: 600;
   line-height: 1;
@@ -2916,6 +2916,7 @@ main {
   border-radius: 0 8px;
   -webkit-box-shadow: 8px 8px 3px rgba(26, 26, 26, 0.55);
           box-shadow: 8px 8px 3px rgba(26, 26, 26, 0.55);
+  color: #ECEFF1;
   position: relative;
   z-index: 0;
 }
@@ -2942,7 +2943,7 @@ main {
 }
 
 .container_cart .wrapper .item {
-  width: 30%;
+  width: 100%;
   height: auto;
   margin: 0;
   padding: 10px 15px;
@@ -2997,13 +2998,33 @@ main {
 }
 
 .container_cart .wrapper .item .info .head {
-  width: 70%;
+  width: 100%;
   height: auto;
 }
 
 .container_cart .wrapper .item .info .price {
-  width: 30%;
-  height: auto;
+  width: 85%;
+  height: 2.5rem;
+  margin-left: 15%;
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 0.8;
+}
+
+.container_cart .wrapper .item .info .price::before {
+  content: '\f155';
+  font-family: 'Font Awesome 5 Free';
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+.container_cart .wrapper .item .info .price::after {
+  content: 'c/u';
+  font-size: 1rem;
+  font-weight: 300;
+  margin-left: 10px;
 }
 
 .container_cart .wrapper .item .options {

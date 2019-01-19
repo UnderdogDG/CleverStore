@@ -169,7 +169,7 @@ nav{
         .count{
           @include wh(14px, 14px);
           @include center-flex();
-          background-color: #FF1250;
+          background-color: $gold;
           // border: 1px solid $carbon;
           border-radius: 3px;
           position: absolute;
@@ -181,7 +181,7 @@ nav{
             @include wh(12px, 12px);
             background-color: rgba(100%, 9%, 26.7%, 0);
             border: none;
-            color: $white-lt;
+            color: black;
             font-size: 10px;
             font-weight: 600;
             line-height: 1;

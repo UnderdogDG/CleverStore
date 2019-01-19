@@ -22,6 +22,13 @@
       }
 
     }
+
+    public function index(){
+      $model = $this->model('Products');
+
+      $data = $model->getShelf();
+      $this->view('index', $data);
+    }
     
     // #region [8] ======== ( REGISTRO ) ========
     public function registro($data = []){
