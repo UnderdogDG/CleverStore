@@ -26,5 +26,24 @@
       return $data;
     }
 
+    public function getCart($cartItems){
+      $query = 'SELECT sku, name, price FROM art_store WHERE sku IN (';
+
+      for($i = 1; $i <= count($cartItems); $i++){
+        $query .= "$$i";
+
+        if($i<count($_SESSION['cart'])){
+          $query .= ',';
+        }else{
+          $query .= ')';
+        }
+      }
+
+      $this->db->query($query);
+      $data = $this->db->resultSet($cartItems);
+      return $data;
+
+    }
+
   }
 ?>

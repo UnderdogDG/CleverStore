@@ -123,6 +123,7 @@ nav{
         border-top: 1px solid $neutro-bk;
         text-decoration: none;
         color: $carbon;
+        position: relative;
     
           @include mediaSize($smartphone){
             max-width: 150px;
@@ -150,6 +151,7 @@ nav{
     
             border-radius: 50%;
           }
+
         }
     
         h2{
@@ -162,6 +164,30 @@ nav{
             @include mediaSize($tablet){
               display: none;
             }
+        }
+
+        .count{
+          @include wh(14px, 14px);
+          @include center-flex();
+          background-color: #FF1250;
+          // border: 1px solid $carbon;
+          border-radius: 3px;
+          position: absolute;
+          top: 20%;
+          left: 80%;
+          transform: translate(-50%, -50%);
+
+          input{
+            @include wh(12px, 12px);
+            background-color: rgba(100%, 9%, 26.7%, 0);
+            border: none;
+            color: $white-lt;
+            font-size: 10px;
+            font-weight: 600;
+            line-height: 1;
+            text-align: center;
+          }
+
         }
       }
     

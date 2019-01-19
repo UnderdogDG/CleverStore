@@ -9,6 +9,19 @@
     private $password_conf = "";
     private $tel;
     private $img = "";
+    private $aut = false;
+
+    public function __construct(){
+      
+      if(!isset($_SESSION)){ 
+        session_start(); 
+      }
+      
+      if(isset($_SESSION["name"])){
+        $this->aut = true;
+      }
+
+    }
     
     // #region [8] ======== ( REGISTRO ) ========
     public function registro($data = []){
@@ -102,18 +115,51 @@
     }
     // #endregion   ========================
 
+    // #region [9] ======== ( PERFIL ) ========
     public function perfil(){
-        $this->view('user/perfil');      
+      if($this->aut){
+        $this->view('user/perfil');
+      }else{
+        $this->view('user/nouser');
+      }      
     }
+    // #endregion   ========================
 
+    // #region [6] ======== ( CART ) ========
+    public function cart(){
+      // session_start();
+      if($this->aut){
+
+        $cartItems = [];
+        $data = [];
+
+        foreach ($_SESSION['cart'] as $item) {
+          $cartItems[] = $item['sku'];
+        }
+
+        if($cartItems){
+          $model = $this->model('Products');
+          $data = $model->getCart($cartItems);
+        }
+        
+        $this->view('user/cart', $data);
+      }else{
+        $this->view('user/nouser');
+      }
+    }
+    // #endregion   ========================
+
+    // #region [7] ======== ( LOGOUT ) ========
     public function logout(){
       unset($_SESSION["user"]);
       unset($_SESSION["name"]);
       unset($_SESSION["img"]);
+      unset($_SESSION["cart"]);
       session_start();
       session_destroy();
       header("Location: http://localhost/store/");
     }
+    // #endregion   ========================
 
     // #region [2] ======== ( NOUSER ) ========
     public function nouser(){
@@ -188,9 +234,9 @@
     }
     // #endregion   ========================
 
+    // #region [8] ======== ( SESSION START ) ========
     public function userSession($data){
-
-      session_start();
+      // session_start();
 
       $_SESSION["user"]=$data["id"];
       $_SESSION["name"]=$data["name"];
@@ -198,9 +244,9 @@
       $_SESSION["img"]=$data["img"];
       $_SESSION["cart"]=[];
 
-      // $this->view('user/test', $data);
       header("Location: http://localhost/store/");
     }
+    // #endregion   ========================
 
     // #region [5] ======== ( VALIDARREG ) ========
     public function validarReg($cadena, $match){

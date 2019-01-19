@@ -438,6 +438,7 @@ nav .wrapper .compress .icon {
   border-top: 1px solid #616161;
   text-decoration: none;
   color: #272727;
+  position: relative;
 }
 
 @media only screen and (min-width: 320px) {
@@ -498,6 +499,45 @@ nav .wrapper .compress .icon h2 {
   nav .wrapper .compress .icon h2 {
     display: none;
   }
+}
+
+nav .wrapper .compress .icon .count {
+  width: 14px;
+  height: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #FF1250;
+  border-radius: 3px;
+  position: absolute;
+  top: 20%;
+  left: 80%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+nav .wrapper .compress .icon .count input {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 23, 68, 0);
+  border: none;
+  color: #ECEFF1;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
 }
 
 nav .wrapper .compress .icon:last-child {

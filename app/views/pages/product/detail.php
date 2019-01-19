@@ -71,8 +71,8 @@
         </div>
         
       </form>
-      <!-- <?php print_r($_SESSION); ?> -->
-      <!-- <?php print_r($data); ?> -->
+      <?php print_r($_SESSION); ?>
+      <?php print_r($data); ?>
     </div>
   </div>
 </main>

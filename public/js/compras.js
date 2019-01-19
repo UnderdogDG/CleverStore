@@ -6,6 +6,7 @@ const PUT = 'PUT';
 
 const sku = parseInt(document.getElementById("sku").value);
 const price = parseInt(document.getElementById("price").value);
+const counter = document.getElementById("counter");
 const btnplus = document.getElementById("plus");
 const btnmin = document.getElementById("min");
 const inputQuantity = document.getElementById("quantity");
@@ -120,14 +121,15 @@ quantity.addEventListener('change', (e)=>{
 const btnAdd = document.getElementById("add");
 
 btnAdd.addEventListener('click', ()=>{
-   let quantity = parseInt(document.getElementById("quantity").value);
+  let sku = parseInt(document.getElementById("sku").value);
+  let quantity = parseInt(document.getElementById("quantity").value);
 
-   console.log({quantity});
+  console.log({sku, quantity});
    
-
   let request = new XMLHttpRequest();
   let data = new FormData();
 
+  data.append("sku", sku);
   data.append("quantity", quantity);
 
   request.onreadystatechange = function(){
@@ -136,6 +138,7 @@ btnAdd.addEventListener('click', ()=>{
       let ajaxResponse = this.responseText;
       if(ajaxResponse){
         console.log(`Enviado: ${ajaxResponse}`);
+        counter.value = parseInt(counter.value) + 1;
         btnAdd.setAttribute('disabled', 'disabled');
         btnAdd.classList.add('disabled');
         
@@ -150,4 +153,4 @@ btnAdd.addEventListener('click', ()=>{
   request.send(data);
 });
 
-console.log({sku});
+// console.log({sku});
