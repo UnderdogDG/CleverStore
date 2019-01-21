@@ -232,7 +232,7 @@
     box-shadow: 3px 3px 4px black;
   }
 
-  &:hover .wrapper{
+  &:hover .btn_wrapper{
     color: $carbon;
     text-shadow: 0 0 0 black;
     transform: scale(1.4);
@@ -246,7 +246,7 @@
   //   // transform: scale(1.4);
   // }
 
-  .wrapper{
+  .btn_wrapper{
     @include center-flex(center, center, column);
     @include wh();
     transform: scale(1);

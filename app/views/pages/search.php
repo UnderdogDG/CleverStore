@@ -36,8 +36,16 @@
               </div>
 
               <div class="container_options">
-                <button class="btn_pop"><i class="far fa-star fav"></i></button>
-                <button class="btn_pop"><i class="fas fa-gift"></i></button>
+                <button class="btn_pop">
+                  <div class="btn_wrapper">
+                    <i class="far fa-star fav"></i>
+                  </div>
+                </button>
+                <button class="btn_pop">
+                  <div class="btn_wrapper">
+                    <i class="fas fa-gift"></i>
+                  </div>
+                </button>
               </div>
             </div>
           </div>

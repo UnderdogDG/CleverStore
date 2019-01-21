@@ -960,6 +960,10 @@ main{
               background-color: $gold;
             }
 
+            i{
+              color: rgb(12.8%, 15.1%, 16.3%);
+            }
+
             i.fav{
               font-weight: 400;
             }
@@ -977,6 +981,7 @@ main{
     min-width: 300px;
 
     .wrapper{
+      @include border;
       @include wh(80%);
       @include center-flex(center, center, column);
       background-image: linear-gradient(45deg, rgba(36,24,18,1) 0%, rgba(39,39,39,1) 50%); 
@@ -1002,14 +1007,20 @@ main{
       }
 
       .item{
+        @include border;
         @include wh(auto);
         @include pm(10px 15px);
         @include content-box;
-        @include center-flex();
+        @include center-flex(space-between);
 
         .img{
-          max-width: 250px;
-          max-height: 250px;
+          @include border;
+          width: 25%;
+
+            @include mediaSize($tablet){
+              max-width: 250px;
+              max-height: 250px;
+            }
 
           img{
             width: 100%;
@@ -1019,8 +1030,13 @@ main{
         }
 
         .info{
-          @include wh(auto, 30%);
+          @include border;
+          @include wh(auto, calc(95% - (25% + 80px)));
           @include center-flex(center, center, column);
+
+            @include mediaSize($tablet){
+
+            }
           
           .head{
             @include wh(auto);
@@ -1056,7 +1072,10 @@ main{
         }
 
         .options{
-          @include wh(auto, 30%);
+          @include border;
+          @include center-flex(flex-start, center, column);
+          @include wh(100%, 80px);
+          background-color: $carbon;
 
         }
       }

@@ -15,8 +15,8 @@
       <?= count($data) ?> -->
 
       <div class="container_cart">
-        <?php if($data) :?>
-          <?php foreach($data as $item) :?>
+        <?php if($_SESSION["cart"]) :?>
+          <?php foreach($_SESSION["cart"] as $item) :?>
             <div class="wrapper">
               <div class="item">
 
@@ -32,6 +32,12 @@
                 </div>
 
                 <div class="options">
+
+                  <button class="btn_pop">
+                    <div class="btn_wrapper">
+                      <i class="fas fa-trash-alt"></i>
+                    </div>
+                  </button>
 
                 </div>
 

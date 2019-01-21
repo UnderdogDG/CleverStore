@@ -38,28 +38,28 @@
           <div class="col-50 menu">
 
             <a href="#" class="btn_pop wow fadeIn" data-wow-delay="1s">
-              <div class="wrapper">
+              <div class="btn_wrapper">
                 <i class="far fa-star fav"></i>
                 <p class="alt">Favoritos</p>
               </div>
             </a>
 
             <a href="#" class="btn_pop wow fadeIn" data-wow-delay="1.5s">
-              <div class="wrapper">
+              <div class="btn_wrapper">
                 <i class="fas fa-shopping-bag"></i>
                 <p class="alt">Tus Compras</p>
               </div>
             </a>
 
             <a href="#" class="btn_pop wow fadeIn" data-wow-delay="2s">
-              <div class="wrapper">
+              <div class="btn_wrapper">
                 <i class="fas fa-user-friends"></i>
                 <p class="alt">Amigos</p>
               </div>
             </a>
 
             <a href="#" class="btn_pop wow fadeIn" data-wow-delay="2.5s">
-              <div class="wrapper">
+              <div class="btn_wrapper">
                 <i class="fas fa-gift"></i>
                 <p class="alt">Regalos</p>
               </div>

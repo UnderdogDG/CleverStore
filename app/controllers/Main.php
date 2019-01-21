@@ -12,11 +12,21 @@
 
     public function search(){
       if(isset($_GET['search'])){
-        echo 'TRUE';
-        $search = $_GET['search'];
-        $this->view('search',$data);
+        $searchItems = [];
+
+        $search = trim($_GET['search']);
+        $search = ucwords($search) . " " . strtolower($search);
+        $search = explode(" ", $search);
+
+        foreach($search as $item){
+          $searchItems[] = "%".$item."%";
+        }
+
+        $model = $this->model('Products');
+        $data = $model->getSearch($searchItems);
+        $this->view('search', $data);
+        // $this->view('test', $data);
       }else{
-        echo 'FALSE';
         $this->view('index');
       }
     }

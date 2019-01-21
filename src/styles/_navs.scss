@@ -174,8 +174,16 @@ nav{
           border-radius: 3px;
           position: absolute;
           top: 20%;
-          left: 80%;
+          left: 40%;
           transform: translate(-50%, -50%);
+
+          @include mediaSize($smartphone){
+            left: 30%;
+          }
+
+          @include mediaSize($tablet){
+            left: 80%;
+          }
 
           input{
             @include wh(12px, 12px);

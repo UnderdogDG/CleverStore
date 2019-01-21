@@ -2,8 +2,9 @@
   class Product extends Controller{
     private $aut = false;
 
+    // #region [1] ======== ( CONSTRUCT ) ========
     public function __construct(){
-      // session_start();
+
       if(!isset($_SESSION)){ 
         session_start(); 
       }
@@ -13,18 +14,31 @@
       }
 
     }
+    // #endregion   ========================
 
+    // #region [2] ======== ( ITEM ) ========
     public function item($id){
       $model = $this->model('Products');
       $data = $model->getItem($id);
 
       $this->view('product/detail', $data);
     }
+    // #endregion   ========================
 
+    // #region [3] ======== ( ADD TO CART ) ========
     public function addToCart(){
       // session_start();
       if($this->aut){
-        $data = ["sku"=>$_POST["sku"], "quantity"=>$_POST["quantity"]];
+        $sku = $_POST["sku"];
+        $quantity = $_POST["quantity"];
+
+        $model = $this->model('Products');
+        $data = $model->getItem(array($sku));
+
+        unset($data["description"]);
+        $data['quantity'] = $quantity;
+
+        // $data = ["sku"=>$_POST["sku"], "quantity"=>$_POST["quantity"]];
         array_push($_SESSION["cart"], $data);
 
         echo json_encode($data);
@@ -32,7 +46,9 @@
         echo json_encode(array('error'=>"Usuario no Ingresado"));
       }
     }
+    // #endregion   ========================
 
+    // #region [4] ======== ( BUY ) ========
     public function buy(){
 
       if($this->aut){
@@ -50,6 +66,7 @@
       }
 
     }
-
+    // #endregion   ========================
+    
   }
 ?>

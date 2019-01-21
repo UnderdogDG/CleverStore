@@ -10,6 +10,24 @@
       return $this->db->resultSet([]);
     }
 
+    public function getSearch($searchItems){
+      $query = 'SELECT * FROM art_store WHERE name LIKE ANY (VALUES ';
+
+      for($i = 1; $i <= count($searchItems); $i++){
+        $query .= "($$i)";
+
+        if($i<count($searchItems)){
+          $query .= ',';
+        }else{
+          $query .= ')';
+        }
+      }
+
+      $this->db->query($query);
+      $data = $this->db->resultSet($searchItems);
+      return $data;
+    }
+
     public function purchase(){
       
     }

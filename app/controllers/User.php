@@ -137,19 +137,20 @@
       // session_start();
       if($this->aut){
 
-        $cartItems = [];
-        $data = [];
+        // $cartItems = [];
+        // $data = [];
 
-        foreach ($_SESSION['cart'] as $item) {
-          $cartItems[] = $item['sku'];
-        }
+        // foreach ($_SESSION['cart'] as $item) {
+        //   $cartItems[] = $item['sku'];
+        // }
 
-        if($cartItems){
-          $model = $this->model('Products');
-          $data = $model->getCart($cartItems);
-        }
+        // if($cartItems){
+        //   $model = $this->model('Products');
+        //   $data = $model->getCart($cartItems);
+        // }
         
-        $this->view('user/cart', $data);
+        // $this->view('user/cart', $data);
+        $this->view('user/cart');
       }else{
         $this->view('user/nouser');
       }

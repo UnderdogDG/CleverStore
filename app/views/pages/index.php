@@ -12,7 +12,7 @@
         <div class="col col_backImg">
           <div class="slogan">
             <h2>Elige lo mejor</h2>
-            <h3>Compra <span>Clever</span></h3>
+            <h3>Compra en <span>Clever</span></h3>
           </div>
         </div>
 
