@@ -193,7 +193,7 @@
         'name' => '/\w{3,15}/',
         'first_name' => '/\w{3,15}/',
         'tel' => '/\d\d-\d\d-\d\d-\d\d/',
-        'email' => '/^\w{6,}[@]\w{3,8}[.][a-z]{3,8}([.][a-z]{2,4})?$/',
+        'email' => '/^[\w.]{6,}[@]\w{3,8}[.][a-z]{3,8}([.][a-z]{2,4})?$/',
         'password' => '/^.{8,20}$/',
         'email_conf' => '/'. trim($_POST["email"]) . '/',
         'password_conf' => '/'. trim($_POST["password"]) . '/'

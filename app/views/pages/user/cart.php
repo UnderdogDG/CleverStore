@@ -35,7 +35,7 @@
 
                   <button class="btn_pop">
                     <div class="btn_wrapper">
-                      <i class="fas fa-trash-alt"></i>
+                    <i class="fas fa-times-circle"></i>
                     </div>
                   </button>
 

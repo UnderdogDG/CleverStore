@@ -981,7 +981,7 @@ main{
     min-width: 300px;
 
     .wrapper{
-      @include border;
+      // @include border;
       @include wh(80%);
       @include center-flex(center, center, column);
       background-image: linear-gradient(45deg, rgba(36,24,18,1) 0%, rgba(39,39,39,1) 50%); 
@@ -991,9 +991,9 @@ main{
       position: relative;
       z-index: 0;
 
-        @include mediaSize($tablet){
-          flex-direction: row;
-        }
+        // @include mediaSize($tablet){
+        //   flex-direction: row;
+        // }
 
       &::after{
         content:'';
@@ -1007,14 +1007,17 @@ main{
       }
 
       .item{
-        @include border;
+        // @include border;
         @include wh(auto);
-        @include pm(10px 15px);
+        @include pm();
         @include content-box;
         @include center-flex(space-between);
+        padding-left: 10px;
 
         .img{
-          @include border;
+          // @include border;
+          @include pm(10px);
+          @include content-box;
           width: 25%;
 
             @include mediaSize($tablet){
@@ -1037,6 +1040,10 @@ main{
             @include mediaSize($tablet){
 
             }
+
+          .section-1{
+            
+          }
           
           .head{
             @include wh(auto);
@@ -1072,10 +1079,21 @@ main{
         }
 
         .options{
-          @include border;
           @include center-flex(flex-start, center, column);
           @include wh(100%, 80px);
-          background-color: $carbon;
+          background-color: #0A0A0A;
+
+          .btn_pop{
+            @include wh(80px, 80px);
+
+            &::before{
+              background-color: #FF1250;
+            }
+
+            i{
+              color: $neutro-lt;
+            }
+          }
 
         }
       }
