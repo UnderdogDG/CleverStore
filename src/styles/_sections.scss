@@ -305,29 +305,29 @@ main{
                     }
                 }
 
-                .sign{
-                  font-size: 0.8rem;
+                // .sign{
+                //   font-size: 0.8rem;
 
-                    @include mediaSize($tablet){
-                      font-size: 1.5rem;
-                    }
-                }
+                //     @include mediaSize($tablet){
+                //       font-size: 1.5rem;
+                //     }
+                // }
 
                 .price{
-                  font-size: 0.9rem;
+                  font-size: 1.2rem;
 
                     @include mediaSize($tablet){
-                      font-size: 2rem;
+                      font-size: 2.5rem;
                     }
                 }
 
-                span{
-                  font-size: 0.5rem;
+                // span{
+                //   font-size: 0.5rem;
 
-                    @include mediaSize($tablet){
-                      font-size: 1rem;
-                    }
-                }
+                //     @include mediaSize($tablet){
+                //       font-size: 1rem;
+                //     }
+                // }
               }
 
               // h2{
@@ -1050,31 +1050,31 @@ main{
             // color: $white-lt;
           }
 
-          .price{
-            @include wh(2.5rem, 85%);
-            margin-left: 15%;
-            display: inline-block;
-            font-size: 2.5rem;
-            font-weight: 500;
-            line-height: 0.8;
+          // .price{
+          //   @include wh(2.5rem, 85%);
+          //   margin-left: 15%;
+          //   display: inline-block;
+          //   font-size: 2.5rem;
+          //   font-weight: 500;
+          //   line-height: 0.8;
 
-            // color: $white-lt;
+          //   // color: $white-lt;
 
-            &::before{
-              content:'\f155';
-              font-family: 'Font Awesome 5 Free';
-              font-size: 1.5rem;
-              font-weight: 600;
-              margin-right: 5px;
-            }
+          //   &::before{
+          //     content:'\f155';
+          //     font-family: 'Font Awesome 5 Free';
+          //     font-size: 1.5rem;
+          //     font-weight: 600;
+          //     margin-right: 5px;
+          //   }
 
-            &::after{
-              content:'c/u';
-              font-size: 1rem;
-              font-weight: 300;
-              margin-left: 10px;
-            }
-          }
+          //   &::after{
+          //     content:'c/u';
+          //     font-size: 1rem;
+          //     font-weight: 300;
+          //     margin-left: 10px;
+          //   }
+          // }
 
         }
 

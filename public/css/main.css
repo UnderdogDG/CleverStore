@@ -1804,33 +1804,13 @@ main {
   }
 }
 
-.container_articles .shelf .articles_group .container .article .footer .label .sign {
-  font-size: 0.8rem;
-}
-
-@media only screen and (min-width: 681px) {
-  .container_articles .shelf .articles_group .container .article .footer .label .sign {
-    font-size: 1.5rem;
-  }
-}
-
 .container_articles .shelf .articles_group .container .article .footer .label .price {
-  font-size: 0.9rem;
+  font-size: 1.2rem;
 }
 
 @media only screen and (min-width: 681px) {
   .container_articles .shelf .articles_group .container .article .footer .label .price {
-    font-size: 2rem;
-  }
-}
-
-.container_articles .shelf .articles_group .container .article .footer .label span {
-  font-size: 0.5rem;
-}
-
-@media only screen and (min-width: 681px) {
-  .container_articles .shelf .articles_group .container .article .footer .label span {
-    font-size: 1rem;
+    font-size: 2.5rem;
   }
 }
 
@@ -3021,31 +3001,6 @@ main {
   height: auto;
 }
 
-.container_cart .wrapper .item .info .price {
-  width: 85%;
-  height: 2.5rem;
-  margin-left: 15%;
-  display: inline-block;
-  font-size: 2.5rem;
-  font-weight: 500;
-  line-height: 0.8;
-}
-
-.container_cart .wrapper .item .info .price::before {
-  content: '\f155';
-  font-family: 'Font Awesome 5 Free';
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-right: 5px;
-}
-
-.container_cart .wrapper .item .info .price::after {
-  content: 'c/u';
-  font-size: 1rem;
-  font-weight: 300;
-  margin-left: 10px;
-}
-
 .container_cart .wrapper .item .options {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3205,6 +3160,7 @@ main {
   -webkit-clip-path: polygon(15% 0, 100% 0, 100% 100%, 15% 100%, 0 52%, 0 48%);
           clip-path: polygon(15% 0, 100% 0, 100% 100%, 15% 100%, 0 52%, 0 48%);
   background-color: #FF1250;
+  font-size: 2.5rem;
   margin: 10px 0 30px;
   position: relative;
   border-radius: 8px;
@@ -3240,31 +3196,33 @@ main {
           transform: translate(-50%, -50%);
 }
 
-.label .sign {
-  font-size: 1.5rem;
-  font-weight: 300;
-  color: #ECEFF1;
-  margin: 0;
-  width: 15%;
-  text-align: center;
-}
-
 .label .price {
-  font-size: 2.4rem;
-  font-weight: 500;
-  color: #ECEFF1;
+  width: 85%;
+  height: 1em;
   margin: 0;
+  padding: 0;
   background-color: rgba(255, 255, 255, 0);
-  border: none;
-  width: 45%;
+  color: #ECEFF1;
+  display: inline-block;
+  margin-left: 15%;
+  line-height: 0.8;
+  font-size: 2.5rem;
+  font-weight: 500;
   text-align: center;
 }
 
-.label span {
-  color: #ECEFF1;
-  text-align: center;
-  width: 20%;
-  font-size: 1rem;
+.label .price::before {
+  content: '$';
+  font-size: 0.8em;
+  font-weight: 300;
+  margin-right: 5px;
+}
+
+.label .price::after {
+  content: 'c/u';
+  font-size: 0.5em;
+  font-weight: 300;
+  margin-left: 10px;
 }
 
 .label.gray {

@@ -50,9 +50,11 @@
 
                   <div class="footer">
                     <div class="label">
-                      <h3 class="sign">$</h3>
+                      <!-- <h3 class="sign">$</h3>
                       <h2 class="price"><?= $data[$i]["price"]; ?></h2>
-                      <span>c/u</span>
+                      <span>c/u</span> -->
+          
+                      <h3 class="price"><?= $data[$i]['price']?></h3>
                     </div>
                   </div>
 
