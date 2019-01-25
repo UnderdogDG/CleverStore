@@ -36,9 +36,10 @@
 
               <div class="field">
                 <div class="label">
-                  <label class="sign" for="price">$</label>
+                  <!-- <label class="sign" for="price">$</label> -->
+                  <h3 class="price"><?= $data['price']?></h3>
                   <input class="price" type="text" name="price" id="price" disabled value="<?= $data["price"]; ?>">
-                  <span>c/u</span>
+                  <!-- <span>c/u</span> -->
                 </div>
                 
 

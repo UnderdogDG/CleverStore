@@ -25,10 +25,20 @@
                 </div>
 
                 <div class="info">
-                  <h2 class="head"><?= $item['name']?></h2>
-                  <div class="label">
-                    <h3 class="price"><?= $item['price']?></h3>
+
+                  <div class="general">
+                    <h2 class="head"><?= $item['name']?></h2>
+                    <div class="label">
+                      <h3 class="price"><?= $item['price']?></h3>
+                    </div>
                   </div>
+                  <div class="requirement">
+                    <p><?= $item['quantity']?></p>
+                    <div class="label gold">
+                      <h3 class="price mx"><?= ($item["price"] * $item["quantity"])?></h3>
+                    </div>
+                  </div>
+
                 </div>
 
                 <div class="options">

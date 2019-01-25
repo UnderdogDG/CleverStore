@@ -313,13 +313,13 @@ main{
                 //     }
                 // }
 
-                .price{
-                  font-size: 1.2rem;
+                // .price{
+                //   font-size: 1.2rem;
 
-                    @include mediaSize($tablet){
-                      font-size: 2.5rem;
-                    }
-                }
+                //     @include mediaSize($tablet){
+                //       font-size: 2.5rem;
+                //     }
+                // }
 
                 // span{
                 //   font-size: 0.5rem;
@@ -984,6 +984,7 @@ main{
       // @include border;
       @include wh(80%);
       @include center-flex(center, center, column);
+      @include pm(0, 8px auto);
       background-image: linear-gradient(45deg, rgba(36,24,18,1) 0%, rgba(39,39,39,1) 50%); 
       border-radius: 0 8px;
       box-shadow: 8px 8px 3px rgba(10%, 10%, 10%, 0.55);
@@ -1038,43 +1039,36 @@ main{
           @include center-flex(center, center, column);
 
             @include mediaSize($tablet){
-
+              flex-direction: row;
             }
 
-          .section-1{
-            
+          .general{
+            @include wh(auto, calc(100% - 10px));
+            @include center-flex();
+              @include mediaSize($tablet){
+                @include wh(auto, calc(50% - 15px));
+              }
+            .head{
+              @include wh(auto);
+              // color: $white-lt;
+            }
+
+            .label{
+              font-size: 1.6rem;
+
+                @include mediaSize($laptop){
+                  font-size: 2.5rem
+                }
+            }
           }
-          
-          .head{
-            @include wh(auto);
-            // color: $white-lt;
+
+          .requirement{
+            @include wh(auto, calc(100% - 10px));
+            @include center-flex();
+            @include mediaSize($tablet){
+              @include wh(auto, calc(50% - 15px));
+            }
           }
-
-          // .price{
-          //   @include wh(2.5rem, 85%);
-          //   margin-left: 15%;
-          //   display: inline-block;
-          //   font-size: 2.5rem;
-          //   font-weight: 500;
-          //   line-height: 0.8;
-
-          //   // color: $white-lt;
-
-          //   &::before{
-          //     content:'\f155';
-          //     font-family: 'Font Awesome 5 Free';
-          //     font-size: 1.5rem;
-          //     font-weight: 600;
-          //     margin-right: 5px;
-          //   }
-
-          //   &::after{
-          //     content:'c/u';
-          //     font-size: 1rem;
-          //     font-weight: 300;
-          //     margin-left: 10px;
-          //   }
-          // }
 
         }
 

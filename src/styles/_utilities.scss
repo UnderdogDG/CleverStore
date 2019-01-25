@@ -3,7 +3,7 @@
   @include center-flex(flex-end);
   clip-path: polygon(15% 0, 100% 0, 100% 100%, 15% 100%, 0 52%, 0 48%);
   background-color: #FF1250;
-  font-size: 2.5rem;
+  font-size: 1.6rem;
   margin: 10px 0 30px;
   position: relative;
   border-radius: 8px;
@@ -12,6 +12,10 @@
 
     @include mediaSize(400px){
       max-width: 230px;
+    }
+
+    @include mediaSize($laptop){
+      font-size: 2.5rem;
     }
 
   &:hover{
@@ -37,16 +41,21 @@
   //   width: 15%;
   //   text-align: center;
   // }
+  #price{
+    @include wh(1em, 50%);
+    display: none;
+  }
 
   .price{
     @include wh(1em, 85%);
     @include pm();
     background-color: rgba(100%, 100%, 100%, 0);
+    border: none;
     color: $white-lt;
     display: inline-block;
     margin-left: 15%;
     line-height: 0.8;
-    font-size: 2.5rem;
+    font-size: 1em;
     font-weight: 500;
     text-align: center;
 
@@ -66,6 +75,18 @@
       font-weight: 300;
       margin-left: 10px;
     }
+
+    &.mx{
+      &::after{
+        content:'MX';
+      }
+    }
+
+    &.us{
+      &::after{
+        content:'USD';
+      }
+    }
   }
   
 
@@ -76,7 +97,7 @@
   &.gold{
     background-color: $gold;
 
-    .sign, .price, span{
+    .price{
       color: $carbon;
     }
   }

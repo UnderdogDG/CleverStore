@@ -1,22 +1,6 @@
 {
 	"bookmarks": [
 		{
-			"fsPath": "$ROOTPATH$\\src\\styles\\_sections.scss",
-			"bookmarks": [
-				-1,
-				-1,
-				391,
-				-1,
-				-1,
-				829,
-				978,
-				-1,
-				-1,
-				808,
-				-1
-			]
-		},
-		{
 			"fsPath": "$ROOTPATH$\\app\\views\\pages\\item\\detail.php",
 			"bookmarks": [
 				-1,
@@ -90,6 +74,36 @@
 				-1,
 				-1,
 				-1
+			]
+		},
+		{
+			"fsPath": "$ROOTPATH$\\app\\views\\pages\\user\\cart.php",
+			"bookmarks": [
+				-1,
+				11,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1
+			]
+		},
+		{
+			"fsPath": "$ROOTPATH$\\app\\views\\pages\\product\\detail.php",
+			"bookmarks": [
+				-1,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1,
+				74
 			]
 		}
 	]
