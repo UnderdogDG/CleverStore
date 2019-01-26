@@ -822,6 +822,7 @@ main{
         h3{
           @include pm();
           font-weight: 400;
+          text-align: center;
         }
       }        
 
@@ -1005,6 +1006,21 @@ main{
         z-index: -1;
         background: url('../img/trama_bk.png') center / 200px repeat;
         border-bottom-left-radius: 8px;
+      }
+
+      .noFound{
+        @include wh(100%, 80%);
+        @include center-flex(space-evenly, center, column);
+        // @include max-width;
+        flex-wrap: nowrap;
+
+        h2{
+          @include pm(10px 15px, 15px 20px);
+          border-bottom: 1px solid $gold;
+          font-weight: 400;
+          text-shadow: 3px 3px 2px black;
+          text-align: center;
+        }
       }
 
       .item{

@@ -56,7 +56,9 @@
           <?php endforeach; ?>
         <?php else : ?>
           <div class="wrapper">
-            <h2>No has agregado productos a tu Carrito de Compras</h2>
+            <div class="noFound">
+              <h2>No has agregado productos a tu Carrito de Compras</h2>
+            </div>
           </div>
         <?php endif; ?>
 

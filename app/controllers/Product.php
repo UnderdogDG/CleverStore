@@ -21,7 +21,8 @@
       $model = $this->model('Products');
       $data = $model->getItem($id);
 
-      $this->view('product/detail', $data);
+      // $this->view('product/detail', $data);
+      $this->view('product/detail-test', $data);
     }
     // #endregion   ========================
 
