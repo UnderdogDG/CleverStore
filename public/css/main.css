@@ -3159,6 +3159,189 @@ main {
   font-weight: 500;
 }
 
+.product_container {
+  width: 100vw;
+  height: 100vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr;
+  -ms-grid-columns: 1fr 3fr 1fr;
+      grid-template: 1fr / 1fr 3fr 1fr;
+  grid-gap: 10px;
+  max-height: 100%;
+  max-width: 100%;
+  background-color: #E0E0E0;
+}
+
+@media only screen and (min-width: 681px) {
+  .product_container {
+    padding-top: 90px;
+  }
+}
+
+.product_container .sort {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: unset;
+}
+
+.product_container .sort h2 {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: auto;
+  height: 100%;
+  display: inline-block;
+  color: #BDBDBD;
+  font-size: 15rem;
+  font-weight: 800;
+  line-height: 1;
+  padding-top: 4rem;
+  text-align: center;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+}
+
+.product_container .item {
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 10px;
+}
+
+.product_container .item .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+  height: 100px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #E0E0E0;
+  text-decoration: none;
+}
+
+@media screen and (orientation: portrait) {
+  .product_container .item .container {
+    width: 100%;
+    height: calc(20% - 10px);
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+}
+
+.product_container .item .container .article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  height: 100%;
+  margin: 0;
+  padding: 10px 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-image: linear-gradient(45deg, #241812 0%, #272727 50%);
+  border-radius: 0 8px;
+  text-decoration: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  position: relative;
+  z-index: 0;
+}
+
+@media screen and (orientation: portrait) {
+  .product_container .item .container .article {
+    width: 100%;
+    height: 90%;
+  }
+}
+
+.product_container .item .container .article::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: url("../img/trama_bk.png") center/220px repeat;
+  border-radius: 0 8px;
+  -webkit-box-shadow: 8px 8px 5px rgba(26, 26, 26, 0.65);
+          box-shadow: 8px 8px 5px rgba(26, 26, 26, 0.65);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.product_container .item .container .article_name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  width: 100%;
+  height: 50%;
+}
+
 .col-50 {
   display: -webkit-box;
   display: -ms-flexbox;
