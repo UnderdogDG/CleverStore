@@ -13,40 +13,34 @@
       <h2><?= $class?></h2>
     </div>
 
-    <div class="body">
-      <div class="menu">
-        
-      </div>
+    <section class="card">
 
-      <div class="container">
-        <div class="article">
-          <div class="article_name">
-            <h2><?= $data["name"]; ?></h2>
-            <h3>Other</h3>
-          </div>
-          <div class="article_img">
-            <img src="<?=URL ?>/img/store/anillo.png" alt="<?= $data["name"]; ?>">
-          </div>
+      <div class="card_container">
+
+        <div class="name">
+          <h2><?= $data["name"]; ?></h2>
+          <h3><?= "Other";?></h3>
         </div>
+
+        <div class="img">
+          <img src="<?= URL . "/img/store/anillo.png"?>" alt="">
+        </div>
+
       </div>
 
-      <div class="description">
-        <div class="col-50">
-          <p><?= $data["description"]; ?></p>
-          </div>
-        <div class="col-50">
-          
-      </div>
-      </div>
+    </section>
 
-    </div>
+    <section class="description">
+      <p><?= $data["description"]; ?></p>
+    </section>
 
-    <div class="menu">
-      <div class="label">
-        <h3 class="price"><?= $data["price"]; ?></h3 class="price">
-      </div>
+    <section class="options">
+      <button class="cart"><i class="fas fa-gift"></i></button>
+      <button class="cart"><i class="fas fa-shopping-cart"></i></button>
+      <button class="cart"><i class="fas fa-dollar-sign"></i></button>
+    </section>
 
-    </div>
+    
   
   </div>
   <!-- <?= print_r($data);?> -->

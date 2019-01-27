@@ -3198,12 +3198,14 @@ main {
           box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: #E0E0E0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 1fr;
-  -ms-grid-columns: 1fr 3fr 1fr;
-      grid-template: 1fr / 1fr 3fr 1fr;
-  grid-gap: 10px;
+  font-size: 2rem;
+  -ms-grid-rows: minmax(90px, 2fr) 2fr 3fr;
+  -ms-grid-columns: minmax(10px, 300px) minmax(150px, 3fr) minmax(150px, 2fr) 2fr;
+      grid-template: minmax(90px, 2fr) 2fr 3fr/minmax(10px, 300px) minmax(150px, 3fr) minmax(150px, 2fr) 2fr;
+  grid-gap: 0;
   max-height: 100%;
   max-width: 100%;
   background-color: #E0E0E0;
@@ -3233,6 +3235,12 @@ main {
           align-items: flex-end;
   width: 100%;
   height: 100%;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  grid-row: 1 / span 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / span 2;
   max-width: 100%;
   max-height: 100%;
   overflow: unset;
@@ -3250,7 +3258,7 @@ main {
   font-size: 15rem;
   font-weight: 800;
   line-height: 1;
-  padding-top: 4rem;
+  padding-top: 10px;
   text-align: center;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
@@ -3259,70 +3267,54 @@ main {
           writing-mode: vertical-lr;
 }
 
-.product_container .body {
-  width: 100%;
-  height: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin: 0;
-  padding: 10px;
-  position: relative;
-  z-index: 400;
-}
-
-.product_container .body .menu {
-  width: 100%;
-  height: 10%;
-}
-
-.product_container .body .container {
+.product_container .card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  width: 100%;
-  height: 30%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  color: #E0E0E0;
-  text-decoration: none;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / span 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-column: 2 / span 2;
   position: relative;
 }
 
-.product_container .body .container::before {
+.product_container .card::before {
   content: '';
-  width: 105%;
-  height: 50%;
+  width: calc(100% + 40px);
+  height: 64%;
   background-color: #616161;
   position: absolute;
-  bottom: 20%;
+  bottom: 40%;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
   z-index: 0;
 }
 
-.product_container .body .container .article {
+.product_container .card_container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -3332,12 +3324,11 @@ main {
   width: 100%;
   height: 80%;
   margin: 0;
-  padding: 10px 5px;
+  padding: 10px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background-image: linear-gradient(45deg, #241812 0%, #272727 50%);
   border-radius: 0 8px;
-  font-size: 2rem;
   text-decoration: none;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -3345,7 +3336,7 @@ main {
   z-index: 0;
 }
 
-.product_container .body .container .article::after {
+.product_container .card_container::after {
   content: '';
   width: 100%;
   height: 100%;
@@ -3357,7 +3348,7 @@ main {
   z-index: -1;
 }
 
-.product_container .body .container .article_name {
+.product_container .card_container .name {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3373,81 +3364,121 @@ main {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  width: 50%;
+  width: 60%;
   height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-.product_container .body .container .article_name h2 {
+.product_container .card_container .name h2 {
   margin: 0;
   padding: 0;
-  font-size: 1.3em;
-  font-weight: 600;
-  color: #BDBDBD;
-  text-align: right;
-  text-shadow: 4px 4px 2px black;
+  font-size: 1em;
 }
 
-.product_container .body .container .article_name h3 {
-  margin: 10px 0;
-  padding: 0;
+.product_container .card_container .name h3 {
+  margin: 0;
+  padding: 10px 0;
   font-size: 0.8em;
-  font-weight: 300;
-  text-align: right;
+  font-weight: 400;
   text-transform: uppercase;
 }
 
-.product_container .body .container .article_img {
-  width: 50%;
+.product_container .card_container .img {
+  width: 40%;
   height: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   position: relative;
 }
 
-.product_container .body .container .article_img img {
+.product_container .card_container .img img {
+  height: 150%;
+  -o-object-fit: contain;
+     object-fit: contain;
   position: absolute;
   bottom: 10%;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  max-width: 300px;
-  height: 130%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
-.product_container .body .description {
-  width: 100%;
-  height: 30%;
+.product_container .description {
   margin: 0;
-  padding: 10px;
+  padding: 20px 0 0 40px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3 / span 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / span 1;
   color: #272727;
-  font-size: 1.5em;
 }
 
-.product_container .menu {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  width: 100%;
-  height: 100%;
+.product_container .description p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.7em;
+}
+
+.product_container .options {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   margin: 0;
-  padding: 10px;
-  padding-right: 20px;
+  padding: 20px 10px;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3 / span 1;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3 / span 1;
+}
+
+.product_container .options .cart {
+  width: 80px;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid #FFAB00;
+  border-radius: 50%;
+}
+
+.product_container .options .cart i {
+  color: #FFAB00;
+  font-size: 2em;
+  text-align: center;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
 }
 
 .col-50 {
