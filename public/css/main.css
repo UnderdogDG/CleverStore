@@ -183,8 +183,6 @@ nav {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   min-width: 300px;
-  -webkit-box-shadow: 2px 0 8px #272727;
-          box-shadow: 2px 0 8px #272727;
   max-height: 100%;
 }
 
@@ -224,9 +222,6 @@ nav .wrapper {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   min-width: 300px;
-  background: #E0E0E0 url("../img/trama.png") center repeat;
-  -webkit-box-shadow: 2px 0 8px #272727;
-          box-shadow: 2px 0 8px #272727;
   overflow: hidden;
 }
 
@@ -655,7 +650,7 @@ nav .active:hover {
   text-decoration: none;
   position: relative;
   color: #272727;
-  background-color: #ECEFF1;
+  background-color: #F0F4F4;
   border: none;
   border-radius: 0 8px 0 8px;
   -webkit-transition: 0.5s ease-out;
@@ -990,6 +985,64 @@ nav .active:hover {
 .btn_pop .btn_wrapper .alt {
   color: #BDBDBD;
   margin-bottom: 0;
+}
+
+.btn_circle {
+  width: 80px;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #FFAB00;
+  border: 1px solid #FFAB00;
+  border-radius: 50%;
+  color: white;
+  font-size: 2rem;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 0.5s ease-out;
+  transition: -webkit-transform 0.5s ease-out;
+  transition: transform 0.5s ease-out;
+  transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+}
+
+.btn_circle:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.btn_circle .icon {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  line-height: 1;
+}
+
+.btn_circle.gray {
+  background-color: #272727;
+  border-color: #272727;
+}
+
+.btn_circle.outline {
+  background-color: #F0F0F0;
+  color: #FFAB00;
+}
+
+.btn_circle.disabled {
+  border-color: #BDBDBD;
+  color: #BDBDBD;
 }
 
 .form_black, .form_white, .form_register, .form_nouser {
@@ -3208,7 +3261,7 @@ main {
   grid-gap: 0;
   max-height: 100%;
   max-width: 100%;
-  background-color: #E0E0E0;
+  background-color: #F6F6F6;
 }
 
 @media only screen and (min-width: 681px) {
@@ -3297,6 +3350,7 @@ main {
   width: calc(100% + 40px);
   height: 64%;
   background-color: #616161;
+  opacity: 0.5;
   position: absolute;
   bottom: 40%;
   left: 50%;
@@ -3405,6 +3459,96 @@ main {
           transform: translateX(-50%);
 }
 
+.product_container .label {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 1;
+  grid-column: 4 / span 1;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / span 1;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
+.product_container .quantity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 1;
+  grid-column: 4 / span 1;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / span 1;
+  position: relative;
+  font-size: 2rem;
+}
+
+.product_container .quantity::after {
+  content: '';
+  width: 20px;
+  height: 64%;
+  background-color: #616161;
+  opacity: 0.5;
+  position: absolute;
+  bottom: 40%;
+  right: 0;
+  -webkit-transform: translate(0, 50%);
+          transform: translate(0, 50%);
+  z-index: 0;
+}
+
+.product_container .quantity .btn_circle {
+  width: 50px;
+  height: 50px;
+  font-size: 3rem;
+}
+
+.product_container .quantity #quantity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  height: auto;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  color: #616161;
+  font-size: 4em;
+  font-family: sans-serif;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1;
+}
+
 .product_container .description {
   margin: 0;
   padding: 20px 0 0 40px;
@@ -3441,13 +3585,15 @@ main {
       -ms-flex-align: start;
           align-items: flex-start;
   margin: 0;
-  padding: 20px 10px;
+  padding: 0 10px;
+  padding-top: 50px;
   -ms-grid-column: 3;
   -ms-grid-column-span: 1;
   grid-column: 3 / span 1;
   -ms-grid-row: 3;
   -ms-grid-row-span: 1;
   grid-row: 3 / span 1;
+  font-size: 4rem;
 }
 
 .product_container .options .cart {
@@ -3479,6 +3625,37 @@ main {
   text-align: center;
   -webkit-transform-origin: 50% 50%;
           transform-origin: 50% 50%;
+}
+
+.product_container .total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  border-radius: 8px;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 1;
+  grid-column: 4 / span 1;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3/ span 1;
+  padding-top: 50px;
+  color: #272727;
+}
+
+.product_container #sku {
+  display: none;
 }
 
 .col-50 {

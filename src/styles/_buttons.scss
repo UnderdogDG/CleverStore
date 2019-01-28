@@ -8,7 +8,7 @@
   text-decoration: none;
   position: relative;
   color: $carbon;
-  background-color: $white-lt;
+  background-color: #F0F4F4;
   border: none;
   border-radius: 0 8px 0 8px;
   transition: 0.5s ease-out;
@@ -280,4 +280,41 @@
   }
 
   
+}
+
+.btn_circle{
+  @include wh(80px, 80px);
+  @include center-flex();
+  background-color: $gold;
+  border: 1px solid $gold;
+  border-radius: 50%;
+  color: white;
+  font-size: 2rem;
+  transform: scale(1);
+  transition: transform 0.5s ease-out;
+
+  &:hover{
+    transform: scale(1.2);
+  }
+
+  .icon{
+    @include pm();
+    font-size: 1em;
+    line-height: 1;
+  }
+
+  &.gray{
+    background-color: $carbon;
+    border-color: $carbon;
+  }
+
+  &.outline{
+    background-color: #F0F0F0;
+    color: $gold;
+  }
+
+  &.disabled{
+    border-color: $neutro-md;
+    color: $neutro-md;
+  }
 }

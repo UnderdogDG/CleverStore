@@ -92,8 +92,8 @@ const actions = {
 const storeState = store(reducer);
 
 storeState.subscribe(state =>{
-  quantity.value = state.quantity;
-  totalPrice.innerHTML = state.total;
+  quantity.value = (state.quantity < 10) ? "0" + state.quantity : state.quantity;
+  totalPrice.innerHTML = state.total;  
 });
 // #endregion   ========================
 
@@ -104,6 +104,21 @@ btnplus.addEventListener('click', ()=>{
 });
 
 btnmin.addEventListener('click', ()=>{
+  storeState.dispatch(actions.prev());
+});
+
+document.addEventListener('keyup', (x)=>{
+  switch (x.key){
+      case "ArrowUp":
+        storeState.dispatch(actions.next());
+      break;
+      case "ArrowDown":
+        storeState.dispatch(actions.prev());
+      break;
+  }  
+});
+
+window.addEventListener('load', (x)=>{
   storeState.dispatch(actions.prev());
 });
 
@@ -118,7 +133,7 @@ quantity.addEventListener('change', (e)=>{
 });
 // #endregion   ========================
 
-const btnAdd = document.getElementById("add");
+const btnAdd = document.getElementById("cart");
 
 btnAdd.addEventListener('click', ()=>{
   let sku = parseInt(document.getElementById("sku").value);
