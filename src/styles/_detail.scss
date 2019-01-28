@@ -39,10 +39,37 @@
       // transform: rotate(-90deg);
       // transform-origin: 7.5rem 50%;
       padding-top: 10px;
+      position: relative;
       text-align: center;
       // text-shadow: -2px -2px 4px #1E1E1E80;
       transform: rotate(180deg);
       writing-mode: vertical-lr;
+
+      &:hover::after{
+        color: $gold;
+      }
+
+      &::after{
+        content:attr(data-sort);
+        @include pm();
+        @include content-box;
+        @include wh(100%, auto);
+        display: inline-block;
+        color: $neutro-md;
+        font-size: 15rem;
+        font-weight: 800;
+        line-height: 1;
+        // transform: rotate(-90deg);
+        // transform-origin: 7.5rem 50%;
+        opacity: 0.3;
+        padding-top: 10px;
+        position: absolute;
+        bottom: -3rem;
+        right: 3rem;
+        text-align: center;
+        // text-shadow: -2px -2px 4px #1E1E1E80;
+        writing-mode: vertical-lr;
+      }
     }
   }
 

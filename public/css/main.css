@@ -3312,9 +3312,38 @@ main {
   font-weight: 800;
   line-height: 1;
   padding-top: 10px;
+  position: relative;
   text-align: center;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+}
+
+.product_container .sort h2:hover::after {
+  color: #FFAB00;
+}
+
+.product_container .sort h2::after {
+  content: attr(data-sort);
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: auto;
+  height: 100%;
+  display: inline-block;
+  color: #BDBDBD;
+  font-size: 15rem;
+  font-weight: 800;
+  line-height: 1;
+  opacity: 0.3;
+  padding-top: 10px;
+  position: absolute;
+  bottom: -3rem;
+  right: 3rem;
+  text-align: center;
   -webkit-writing-mode: vertical-lr;
       -ms-writing-mode: tb-lr;
           writing-mode: vertical-lr;

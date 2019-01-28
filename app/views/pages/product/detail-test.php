@@ -10,7 +10,7 @@
 <main>
   <div class="product_container">
     <div class="sort">
-      <h2><?= $class?></h2>
+      <h2 data-sort="<?= $class; ?>"><?= $class?></h2>
     </div>
 
     <section class="card">
