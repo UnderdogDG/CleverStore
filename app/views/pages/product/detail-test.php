@@ -40,8 +40,12 @@
         <i class="fas fa-shopping-cart icon"></i>
       </button>
 
-      <button class="btn_circle wow zoomIn" data-wow-delay="2.25s">
+      <button class="btn_circle wow zoomIn" id="comprar" data-wow-delay="2.25s">
         <i class="fas fa-dollar-sign icon"></i>
+      </button>
+
+      <button class="btn_circle wow zoomIn outline" id="btn_menu" data-wow-delay="2.25s">
+        <i class="fas fa-cash-register icon"></i>
       </button>
     </section>
 
@@ -61,7 +65,7 @@
           <span class="icon">+</span>
         </button>
 
-        <input type="text" name="quantity" id="quantity" min="01" value="1" pattern="\d{1,2}">
+        <input type="text" name="quantity" id="quantity" min="01" value="1" pattern="\d{1,2}" disabled="disabled">
 
         <button class="btn_circle outline" type="button" id="min">
           <span class="icon">-</span>
@@ -72,8 +76,6 @@
         <h3 class="output wow flipInX" data-wow-delay="1.8s"><span class="prefix">Total $</span><span id="totalPrice"><?= $data["price"]; ?></span></h3>
       </div>
     </section>
-
-    <button class="btn_circle outline" id="btn_menu"><i class="fas fa-cash-register icon"></i></button>
   
   </div>
   <!-- <?= print_r($data);?> -->

@@ -9,6 +9,10 @@ const price = parseInt(document.getElementById("price").value);
 const counter = document.getElementById("counter");
 const btnplus = document.getElementById("plus");
 const btnmin = document.getElementById("min");
+
+const btn_menu = document.getElementById("btn_menu");
+const menu = document.getElementById("menu");
+
 const inputQuantity = document.getElementById("quantity");
 const totalPrice =  document.getElementById("totalPrice");
 
@@ -101,10 +105,12 @@ storeState.subscribe(state =>{
 // #region [7] ======== ( EVENTS ) ========
 btnplus.addEventListener('click', ()=>{
   storeState.dispatch(actions.next());
+  pop();
 });
 
 btnmin.addEventListener('click', ()=>{
   storeState.dispatch(actions.prev());
+  pop();
 });
 
 document.addEventListener('keyup', (x)=>{
@@ -115,7 +121,8 @@ document.addEventListener('keyup', (x)=>{
       case "ArrowDown":
         storeState.dispatch(actions.prev());
       break;
-  }  
+  }
+  pop();  
 });
 
 window.addEventListener('load', (x)=>{
@@ -130,6 +137,7 @@ quantity.addEventListener('change', (e)=>{
   }else{
     storeState.dispatch(actions.put(value));
   }
+  pop();
 });
 // #endregion   ========================
 
@@ -170,11 +178,6 @@ btnAdd.addEventListener('click', ()=>{
 
 // console.log({sku});
 
-const btn_menu = document.getElementById("btn_menu");
-const menu = document.getElementById("menu");
-
-
-
 btn_menu.addEventListener('click', ()=>{
   console.log("menu");
   let active = Object.values(btn_menu.classList).find(x=>x=='active');
@@ -190,3 +193,12 @@ btn_menu.addEventListener('click', ()=>{
     btn_menu.classList.add("active");
   }
 });
+
+function pop(){
+  console.log('input');
+  inputQuantity.classList.add('pop');
+  let time = setTimeout(()=>{
+    inputQuantity.classList.remove('pop');
+    clearTimeout(time);
+  }, 400);
+};

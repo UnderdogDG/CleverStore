@@ -6,30 +6,34 @@
   @include pm();
   color: $neutro-lt;
   display: grid;
-  font-size: 2rem;
-  grid-template: minmax(90px, 2fr) 2fr 3fr/ minmax(10px, 150px) minmax(200px, 3fr) minmax(200px, 2fr);
+  font-size: 1.2rem;
+  grid-template: minmax(90px, 2fr) 2fr 1.5fr 1.5fr/ minmax(20px, 140px) minmax(140px, 3fr) minmax(180px, 2fr) 20px;
   grid-gap: 0;
   max-height: 100%;
   max-width: 100%;
   background-color: #F6F6F6;
   overflow: hidden;
 
-    @include mediaSize($tablet){
-      grid-template: minmax(90px, 2fr) 2fr 3fr/ minmax(10px, 300px) minmax(250px, 3fr) minmax(250px, 2fr) minmax(250px, 2fr);
-    }
-
     @include mediaSize($laptop){
+      grid-template: minmax(90px, 2fr) 2fr 3fr/ minmax(10px, 300px) minmax(250px, 3fr) minmax(250px, 2fr) minmax(250px, 2fr);
+      font-size: 2rem;
       padding-top: 90px;
     }
 
   .sort{
     @include center-flex(flex-start, flex-end);
     @include wh(100%);
-    grid-row: 1 / span 3;
+    grid-row: 1 / span 4;
     grid-column: 1 / span 1;
     max-width: 100%;
     max-height: 100%;
     overflow: unset;
+    font-size: 7rem;
+
+      @include mediaAndWH($tablet, 400px){
+        font-size: 15rem;
+        grid-row: 1 / span 3;
+      }
     // overflow: hidden;
 
     h2{
@@ -38,7 +42,7 @@
       @include wh(100%, auto);
       display: inline-block;
       color: $neutro-md;
-      font-size: 15rem;
+      font-size: 1em;
       font-weight: 800;
       line-height: 1;
       // transform: rotate(-90deg);
@@ -50,10 +54,6 @@
       transform: rotate(180deg);
       writing-mode: vertical-lr;
 
-      // &:hover::after{
-      //   color: $gold;
-      // }
-
       &::after{
         content:attr(data-sort);
         @include pm();
@@ -61,7 +61,7 @@
         @include wh(100%, auto);
         display: inline-block;
         color: $neutro-md;
-        font-size: 15rem;
+        font-size: 1em;
         font-weight: 800;
         line-height: 1;
         // transform: rotate(-90deg);
@@ -85,6 +85,11 @@
     grid-row: 2 / span 1;
     grid-column: 2 / span 2;
     position: relative;
+
+      @include mediaSize($tablet){
+        grid-row: 2 / span 1;
+        grid-column: 2 / span 2;
+      }
 
     &::before{
       content: '';
@@ -111,10 +116,6 @@
       box-shadow: none;
       position: relative;
       z-index: 0;
-
-        // @include mediaOrientation($portrait){
-        //   @include wh(90%, 100%);
-        // }
         
       &::after{
         content:'';
@@ -133,16 +134,28 @@
         @include center-flex(flex-end, flex-end, column);
         @include wh(100%, 60%);
         @include content-box;
+        font-size: 1.4rem;
+
+          @include mediaAndWH($smartphone, 400px){
+            font-size:  1.6rem;
+          }
+
+          @include mediaSize($tablet){
+            font-size: 2.5rem;
+
+          }
         
         h2{
           @include pm();
           font-size: 1em;
+          text-align: right;
         }
 
         h3{
           @include pm(10px 0);
           font-size: 0.8em;
           font-weight: 400;
+          text-align: right;
           text-transform: uppercase;
         }
       }
@@ -166,21 +179,19 @@
     }
   }
 
-  // .label{
-  //   grid-column: 4 / span 1;
-  //   grid-row: 1 / span 1;
-  //   justify-self: center;
-  //   align-self: end;
-  // }
-
   .description{
     @include pm(20px 0 0 40px);
     @include content-box;
     grid-row: 3 / span 1;
-    grid-column: 2 / span 1;
+    grid-column: 2 / span 2;
     color: $carbon;
     position: relative;
     z-index: 400;
+
+      @include mediaAndWH($tablet, 400px){
+        grid-row: 3 / span 1;
+        grid-column: 2 / span 1;
+      }
 
     p{
       @include pm();
@@ -189,36 +200,41 @@
   }
 
   .options{
-    @include center-flex(space-around, flex-start);
+    @include center-flex(flex-end, flex-start);
     @include pm(0 10px);
-    padding-top: 50px;
-    grid-column: 3 / span 1;
-    grid-row: 3 / span 1;
+    grid-column: 2 / span 2;
+    grid-row: 4 / span 1;
     font-size: 4rem;
 
-    .cart{
-      @include wh(80px, 80px);
-      @include center-flex();
-      // @include pm(0, 0 10px);
-      background-color: rgba(100%, 100%, 100%, 0);
-      border: 1px solid $gold;
-      border-radius: 50%;
-      
-      i{
-        color: $gold;
-        font-size: 2em;
-        text-align: center;
-        transform-origin: 50% 50%;
+      @include mediaSize($tablet){
+        grid-column: 3 / span 1;
+        grid-row: 3 / span 1;
+        padding-top: 50px;
+      }
+
+    .btn_circle{
+      margin: 0 5px;
+
+      @include mediaSize($tablet){
+        margin-left: 15px;
+      }
+
+      &#comprar{
+        display: none;
+
+        @include mediaSize($tablet){
+          display: block;
+        }
       }
     }
   }
 
   .menu{
     @include center-flex();
-    @include wh();
+    @include wh(100vh);
     display: grid;
     grid-column: 1 / span 5;
-    grid-row: 1 / span 4;
+    grid-row: 1 / span 5;
     grid-template: minmax(90px, 2fr) 2fr 3fr/ 100%;
     background-color: #FAFAFA;
     position: absolute;
@@ -238,7 +254,6 @@
       width: 0;
       overflow: hidden;
       
-
       @include mediaSize($laptop){
         width: 100%;
       }
@@ -283,7 +298,13 @@
         font-family: sans-serif;
         font-weight: 600;
         text-align: center;
+        transform: scale(1);
+        transition: transform 0.5s ease-out;
         line-height: 1;
+
+        &.pop{
+          transform: scale(1.1);
+        }
       }
     }
 
@@ -300,21 +321,6 @@
       max-height: 30%;
       max-width: 300px;
       place-self: start center;
-      // position: relative;
-      // z-index: 1;
-      // justify-self: center;
-
-      // &::before{
-      //   @include pm();
-      //   @include wh();
-      //   content: '';
-      //   background: url('../img/trama_bk.png') center / 220px repeat;
-      //   position: absolute;
-      //   top: 10%;
-      //   left: 10%;
-      //   z-index: -1;
-      // }
-      
   
       .output{
         @include center-flex(space-evenly, baseline);
@@ -341,16 +347,11 @@
   }
   
   #btn_menu{
-    @include wh(60px, 60px);
-    position: absolute;
-    top: 100px;
-    right: 10px;
-    z-index: 800;
+    display: block;
 
-    @include mediaSize($laptop){
-      display: none;
-    }
-
+      @include mediaSize($laptop){
+        display: none;
+      }
   }
 }
 

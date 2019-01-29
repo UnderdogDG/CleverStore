@@ -295,6 +295,7 @@
 
   &:hover{
     transform: scale(1.2);
+    background-color: $gold;
   }
 
   .icon{
@@ -311,6 +312,12 @@
   &.outline{
     background-color: #F0F0F0;
     color: $gold;
+    transition: color 0.5s ease-out, transform 0.8s cubic-bezier(0,1.4,.4,-0.46);
+    &:hover{
+      transform: scale(1.2);
+      background-color: $gold;
+      color: #F0F0F0;
+    }
   }
 
   &.disabled{
