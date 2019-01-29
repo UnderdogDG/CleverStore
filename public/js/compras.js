@@ -169,3 +169,24 @@ btnAdd.addEventListener('click', ()=>{
 });
 
 // console.log({sku});
+
+const btn_menu = document.getElementById("btn_menu");
+const menu = document.getElementById("menu");
+
+
+
+btn_menu.addEventListener('click', ()=>{
+  console.log("menu");
+  let active = Object.values(btn_menu.classList).find(x=>x=='active');
+  if(active){
+    for(i=0; i < total_items; i++){
+      menu.classList.add("drop");
+    }
+    btn_menu.classList.remove("active");
+  }else{
+    for(i=0; i < total_items; i++){
+      menu.classList.remove("drop");
+    }
+    btn_menu.classList.add("active");
+  }
+});

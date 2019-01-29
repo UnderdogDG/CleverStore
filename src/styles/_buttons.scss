@@ -317,4 +317,9 @@
     border-color: $neutro-md;
     color: $neutro-md;
   }
+
+  &.md{
+    @include wh(70px, 70px);
+    font-size: 1.8rem;
+  }
 }

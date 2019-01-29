@@ -23,17 +23,19 @@ nav{
     @include wh(100vh, 100%);
     @include content-box;
     @include min-width;
-    // background: $neutro-lt url('../img/trama.png') center repeat;
+    background: $neutro-lt url('../img/trama.png') center repeat;
     // box-shadow: 2px 0 8px $carbon;
     overflow: hidden;
   
   
-    @include mediaSize($laptop){
-      @include wh(auto, 100%);
-      flex-direction: row;
-      justify-content: space-between;
-      padding: 0 1%;
-    }
+      @include mediaSize($laptop){
+        @include wh(auto, 100%);
+        background: none;
+        box-shadow: none;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 1%;
+      }
 
     .menu{
       @include center-flex(center, center, row);
