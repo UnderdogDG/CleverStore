@@ -11,7 +11,8 @@
   grid-gap: 0;
   max-height: 100%;
   max-width: 100%;
-  background-color: #F6F6F6;
+  background: rgb(232,232,232);
+  background: linear-gradient(45deg, rgba(232,232,232,1) 0%, rgba(249,249,249,1) 100%); 
   overflow: hidden;
 
     @include mediaSize($laptop){
@@ -130,6 +131,33 @@
         z-index: -1;
       }
 
+      .sku{
+        background-color: $neutro-bk;
+        border: none;
+        color: white;
+        clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%);
+        font-size: 0.6em;
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+
+        &::before{
+          @include wh();
+          content:'#';
+          display: inline;
+          margin: 0 10px;
+        }
+
+        #sku{
+          @include pm();
+          background-color: $neutro-bk;
+          border: none;
+          color: white;
+          display: inline;
+          font-size: 1rem;
+        }
+      }
+
       .name{
         @include center-flex(flex-end, flex-end, column);
         @include wh(100%, 60%);
@@ -200,7 +228,7 @@
   }
 
   .options{
-    @include center-flex(flex-end, flex-start);
+    @include center-flex(space-evenly, flex-start);
     @include pm(0 10px);
     grid-column: 2 / span 2;
     grid-row: 4 / span 1;
@@ -209,11 +237,12 @@
       @include mediaSize($tablet){
         grid-column: 3 / span 1;
         grid-row: 3 / span 1;
+        justify-content: flex-end;
         padding-top: 50px;
       }
 
     .btn_circle{
-      margin: 0 5px;
+      margin: 5px 5px;
 
       @include mediaSize($tablet){
         margin-left: 15px;
@@ -222,7 +251,7 @@
       &#comprar{
         display: none;
 
-        @include mediaSize($tablet){
+        @include mediaSize($laptop){
           display: block;
         }
       }
@@ -230,20 +259,22 @@
   }
 
   .menu{
-    @include center-flex();
+    // @include center-flex();
     @include wh(100vh);
     display: grid;
     grid-column: 1 / span 5;
     grid-row: 1 / span 5;
-    grid-template: minmax(90px, 2fr) 2fr 3fr/ 100%;
+    grid-template: minmax(90px, 2fr) 2fr 1.5fr 1.5fr/ 100%;
     background-color: #FAFAFA;
     position: absolute;
+    top:0;
     right: 0;
     transition: width 0.8s ease-out;
     width: 100%;
     z-index: 800;
 
       @include mediaSize($laptop){
+        height: 100%;
         grid-column: 4 / span 1;
         grid-row: 1 / span 3;
         position: static;
@@ -260,12 +291,16 @@
     }
 
     .label{
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 1;
       place-self: end center;
     }
 
     .quantity{
       @include center-flex(space-between, center, column);
       @include wh();
+      grid-column: 1 / span 1;
+      grid-row: 2 / span 1;
       position: relative;
       font-size: 2rem;
   
@@ -299,7 +334,7 @@
         font-weight: 600;
         text-align: center;
         transform: scale(1);
-        transition: transform 0.5s ease-out;
+        transition: transform 0.3s ease-out;
         line-height: 1;
 
         &.pop{
@@ -318,7 +353,7 @@
       color: $carbon;
       margin-top: 50px;
       min-height: 5rem;
-      max-height: 30%;
+      // max-height: 30%;
       max-width: 300px;
       place-self: start center;
   
@@ -330,28 +365,83 @@
   
         .prefix{
           font-weight: 300;
-          font-size: 0.8em;
+          font-size: 1.1em;
+          line-height: 1;
+
+            @include mediaSize($tablet){
+              font-size: 0.7em;
+            }
         }
   
         #totalPrice{
-          font-size: 1.3em;
+          font-size: 1.5em;
           font-weight: 500;
+          line-height: 1;
+          margin: 10px 5px;
+
+            @include mediaSize($tablet){
+              font-size: 1.1em;
+            }
         }
+      }
+    }
+
+    .buy{
+      @include center-flex();
+
+        @include mediaSize($laptop){
+          display: none;
+        }
+      
+      .btn{
+        background-color: $neutro-md;
+        margin: 5px 10px;
       }
     }
 
   }
 
-  #sku{
-    display: none;
-  }
+  // #sku{
+  //   display: none;
+  // }
   
   #btn_menu{
     display: block;
 
       @include mediaSize($laptop){
-        display: none;
+        display: none !important;
       }
+  }
+}
+
+.modal{
+  &_std{
+    @include wh(100vh, 100vw);
+    @include center-flex();
+    background-color: rgba(12.9%, 12.9%, 12.9%, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transition-property: opacity, display;
+    transition-delay: 0s, 10s;
+    transition-duration: 2s, 0s;
+    transition-timing-function: ease-in, linear;
+    z-index: 700;
+
+    .container{
+      @include wh(auto, 30%);
+      background: $neutro-lt;
+
+      .body{
+        color: $carbon;
+      }
+    }
+  }
+
+  &_std.drop{
+    display: none !important;
+    opacity: 0 !important;
   }
 }
 

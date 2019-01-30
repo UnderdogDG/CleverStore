@@ -11,7 +11,9 @@ const btnplus = document.getElementById("plus");
 const btnmin = document.getElementById("min");
 
 const btn_menu = document.getElementById("btn_menu");
+const btn_closeMenu = document.getElementById("menuClose");
 const menu = document.getElementById("menu");
+const modal = document.getElementById("modal");
 
 const inputQuantity = document.getElementById("quantity");
 const totalPrice =  document.getElementById("totalPrice");
@@ -164,6 +166,7 @@ btnAdd.addEventListener('click', ()=>{
         counter.value = parseInt(counter.value) + 1;
         btnAdd.setAttribute('disabled', 'disabled');
         btnAdd.classList.add('disabled');
+        modal.classList.remove('drop');
         
       }else{
         console.log("ha ocurrido un error");
@@ -179,26 +182,33 @@ btnAdd.addEventListener('click', ()=>{
 // console.log({sku});
 
 btn_menu.addEventListener('click', ()=>{
-  console.log("menu");
-  let active = Object.values(btn_menu.classList).find(x=>x=='active');
-  if(active){
-    for(i=0; i < total_items; i++){
-      menu.classList.add("drop");
-    }
-    btn_menu.classList.remove("active");
-  }else{
-    for(i=0; i < total_items; i++){
+  // console.log("menu");
+  // let active = Object.values(btn_menu.classList).find(x=>x=='active');
+  // if(active){
+  //   for(i=0; i < total_items; i++){
+  //     menu.classList.add("drop");
+  //   }
+  //   btn_menu.classList.remove("active");
+  // }else{
+  //   for(i=0; i < total_items; i++){
       menu.classList.remove("drop");
-    }
-    btn_menu.classList.add("active");
-  }
+  //   }
+  //   btn_menu.classList.add("active");
+  // }
+});
+
+btn_closeMenu.addEventListener('click', ()=>{
+  menu.classList.add("drop");
+});
+
+modal.addEventListener('click', ()=>{
+  modal.classList.add('drop');
 });
 
 function pop(){
-  console.log('input');
   inputQuantity.classList.add('pop');
   let time = setTimeout(()=>{
     inputQuantity.classList.remove('pop');
     clearTimeout(time);
-  }, 400);
+  }, 320);
 };

@@ -30,7 +30,7 @@ nav{
   
       @include mediaSize($laptop){
         @include wh(auto, 100%);
-        background: none;
+        // background: none;
         box-shadow: none;
         flex-direction: row;
         justify-content: space-between;
