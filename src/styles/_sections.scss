@@ -1050,7 +1050,7 @@ main{
         }
 
         .info{
-          @include border;
+          // @include border;
           @include wh(auto, calc(95% - (25% + 80px)));
           @include center-flex(center, center, column);
 
@@ -1062,15 +1062,17 @@ main{
             @include wh(auto, calc(100% - 10px));
             @include center-flex();
               @include mediaSize($tablet){
-                @include wh(auto, calc(50% - 15px));
+                @include wh(auto, calc(40% - 15px));
               }
             .head{
               @include wh(auto);
               // color: $white-lt;
+              text-align: center;
             }
 
             .label{
               font-size: 1.6rem;
+              @include pm(0, 10px 0);
 
                 @include mediaSize($laptop){
                   font-size: 2.5rem
@@ -1079,11 +1081,61 @@ main{
           }
 
           .requirement{
+            // @include border;
             @include wh(auto, calc(100% - 10px));
-            @include center-flex();
-            @include mediaSize($tablet){
-              @include wh(auto, calc(50% - 15px));
+            @include center-flex(space-between);
+            font-size: 1.5rem;
+            text-align: center;
+
+              @include mediaSize($tablet){
+                @include wh(auto, calc(60% - 15px));
+              }
+
+            .quantity{
+              @include wh(50%);
+              @include pm(0, 10px 0);
+              border-top: 1px solid $neutro-lt;
+              border-bottom: 1px solid $neutro-lt;
+
+                @include mediaSize($tablet){
+                  @include pm();
+                  @include wh(100%, calc(40% - 10px));
+                  border: none;
+                  border-left: 1px solid $neutro-lt;
+                  border-right: 1px solid $neutro-lt;
+                }
+
+              h3{
+                @include pm();
+                font-size: 2em;
+              }
             }
+
+            .total{
+              @include wh(50%);
+
+                @include mediaSize($tablet){
+                  @include wh(100%, calc(60% - 10px));
+                }
+              
+              h2{
+                @include wh(auto);
+                text-align: center;
+                font-size: 1em;
+                font-weight: 400;
+              }
+
+              .label{
+                font-size: 1.6rem;
+                @include pm(0, 10px 0);
+
+                  @include mediaSize($laptop){
+                    font-size: 2.5rem
+                  }
+              }
+            }
+
+
           }
 
         }

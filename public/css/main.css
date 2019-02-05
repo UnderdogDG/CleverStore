@@ -3075,7 +3075,6 @@ main {
 }
 
 .container_cart .wrapper .item .info {
-  border: 1px solid red;
   width: calc(95% - (25% + 80px));
   height: auto;
   display: -webkit-box;
@@ -3126,7 +3125,7 @@ main {
 
 @media only screen and (min-width: 681px) {
   .container_cart .wrapper .item .info .general {
-    width: calc(50% - 15px);
+    width: calc(40% - 15px);
     height: auto;
   }
 }
@@ -3134,10 +3133,13 @@ main {
 .container_cart .wrapper .item .info .general .head {
   width: 100%;
   height: auto;
+  text-align: center;
 }
 
 .container_cart .wrapper .item .info .general .label {
   font-size: 1.6rem;
+  margin: 10px 0;
+  padding: 0;
 }
 
 @media only screen and (min-width: 1175px) {
@@ -3158,18 +3160,79 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 @media only screen and (min-width: 681px) {
   .container_cart .wrapper .item .info .requirement {
-    width: calc(50% - 15px);
+    width: calc(60% - 15px);
     height: auto;
+  }
+}
+
+.container_cart .wrapper .item .info .requirement .quantity {
+  width: 100%;
+  height: 50%;
+  margin: 10px 0;
+  padding: 0;
+  border-top: 1px solid #E0E0E0;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+@media only screen and (min-width: 681px) {
+  .container_cart .wrapper .item .info .requirement .quantity {
+    margin: 0;
+    padding: 0;
+    width: calc(40% - 10px);
+    height: 100%;
+    border: none;
+    border-left: 1px solid #E0E0E0;
+    border-right: 1px solid #E0E0E0;
+  }
+}
+
+.container_cart .wrapper .item .info .requirement .quantity h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 2em;
+}
+
+.container_cart .wrapper .item .info .requirement .total {
+  width: 100%;
+  height: 50%;
+}
+
+@media only screen and (min-width: 681px) {
+  .container_cart .wrapper .item .info .requirement .total {
+    width: calc(60% - 10px);
+    height: 100%;
+  }
+}
+
+.container_cart .wrapper .item .info .requirement .total h2 {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-size: 1em;
+  font-weight: 400;
+}
+
+.container_cart .wrapper .item .info .requirement .total .label {
+  font-size: 1.6rem;
+  margin: 10px 0;
+  padding: 0;
+}
+
+@media only screen and (min-width: 1175px) {
+  .container_cart .wrapper .item .info .requirement .total .label {
+    font-size: 2.5rem;
   }
 }
 

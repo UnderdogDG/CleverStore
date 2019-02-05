@@ -33,10 +33,19 @@
                     </div>
                   </div>
                   <div class="requirement">
-                    <p><?= $item['quantity']?></p>
-                    <div class="label gold">
-                      <h3 class="price mx"><?= ($item["price"] * $item["quantity"])?></h3>
+
+                    <div class="quantity">
+                      <h3><?= $item['quantity']?></h3>
+                      <p>Unidades</p>
                     </div>
+
+                    <div class="total">
+                      <h2>Total: </h2>
+                      <div class="label gold">
+                        <h3 class="price mx"><?= ($item["price"] * $item["quantity"])?></h3>
+                      </div>
+                    </div>
+
                   </div>
 
                 </div>

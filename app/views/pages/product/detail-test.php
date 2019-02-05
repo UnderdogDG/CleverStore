@@ -7,10 +7,10 @@
   $class= "";
 
   $category = [
-    'clothes'=>'clt', 
-    'shoes'=>'sho', 
-    'jewels'=>'jwl',
-    'props'=>'acc',
+    'Ropa'=>'clt', 
+    'Zapatos'=>'sho', 
+    'Joyería'=>'jwl',
+    'Accesorios'=>'acc',
   ];
 
   foreach ($category as $key => $value) {
