@@ -3,7 +3,22 @@
 ?>
 
 <?php
-  [$data["art_class"]=>$class] = ['jwl'=>'Joyería', 'acc'=>'Accesorios', 'sho'=>'Zapatos', 'clo'=>'Ropa'];
+
+  $class= "";
+
+  $category = [
+    'clothes'=>'clt', 
+    'shoes'=>'sho', 
+    'jewels'=>'jwl',
+    'props'=>'acc',
+  ];
+
+  foreach ($category as $key => $value) {
+    if($data["art_class"] == $value){
+      $class = $key;
+    };
+  }
+
   require ROOT_APP . '/views/includes/nav.php';
 ?>
 

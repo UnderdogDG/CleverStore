@@ -34,17 +34,14 @@
     public function registro($data = []){
 
       if(!(empty($data))){
-        [
-          'name'=>$this->name, 
-          'first_name'=>$this->first_name,
-          'tel'=>$this->tel,
-          'email'=>$this->email,
-          'email_conf'=>$this->email_conf,
-          'password'=>$this->password,
-          'password_conf'=>$this->password_conf,
-          'img'=>$this->img
-
-        ] = $data;
+        $this->name = $data['name'];
+        $this->first_name = $data['first_name'];
+        $this->tel = $data['tel'];
+        $this->email = $data['email'];
+        $this->email_conf = $data['email_conf'];
+        $this->password = $data['password'];
+        $this->password_conf = $data['password_conf'];
+        $this->img = $data['img'];
       }
 
       $this->view('user/registro', array(
@@ -214,12 +211,11 @@
     public function validarImg($file){
 
       $img = "";
-      [
-        "name"=>$filename,
-        "type"=>$filetype,
-        "size"=>$filesize,
-        "tmp_name"=>$filetemp
-      ] = $file;
+
+      $filename = $file['name'];
+      $filetype = $file['type'];
+      $filesize = $file['size'];
+      $filetemp = $file['tmp_name'];
 
       $maxsize = 2 * 1024 * 1024;
       $permitidos = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "gif" => "image/gif", "png" => "image/png");
@@ -244,7 +240,6 @@
 
     // #region [8] ======== ( SESSION START ) ========
     public function userSession($data){
-      // session_start();
 
       $_SESSION["user"]=$data["id"];
       $_SESSION["name"]=$data["name"];

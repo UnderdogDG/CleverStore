@@ -32,17 +32,23 @@
     }
 
     public function section($section){
-      [0 => $class] = $section;
-
-      [$class=>$category] = [
+      $class = $section[0];
+      
+      $category = [
         'clothes'=>'clt', 
         'shoes'=>'sho', 
         'jewels'=>'jwl',
         'props'=>'acc',
       ];
 
+      foreach ($category as $key => $value) {
+        if($key == $class){
+          $class = $value;
+        };
+      }
+
       $model = $this->model('Products');
-      $data = $model->fetchByCategory($category);
+      $data = $model->fetchByCategory($class);
 
       // $this->view('class/test', $data);
       $this->view('search', $data);
