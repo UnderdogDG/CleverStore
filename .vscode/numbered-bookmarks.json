@@ -77,6 +77,21 @@
 			]
 		},
 		{
+			"fsPath": "$ROOTPATH$\\app\\views\\pages\\user\\cart.php",
+			"bookmarks": [
+				-1,
+				12,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1,
+				-1
+			]
+		},
+		{
 			"fsPath": "$ROOTPATH$\\app\\views\\pages\\product\\detail.php",
 			"bookmarks": [
 				-1,
@@ -92,14 +107,14 @@
 			]
 		},
 		{
-			"fsPath": "$ROOTPATH$\\src\\styles\\_navs.scss",
+			"fsPath": "$ROOTPATH$\\app\\models\\Users.php",
 			"bookmarks": [
 				-1,
 				-1,
 				-1,
 				-1,
 				-1,
-				25,
+				29,
 				-1,
 				-1,
 				-1,

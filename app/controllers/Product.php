@@ -54,7 +54,7 @@
 
         unset($_SESSION['cart'][$item]);
 
-        echo json_encode($_SESSION['cart']);
+        echo 'true';
       }else{
         echo json_encode(array('error'=>"Usuario no Ingresado"));
       }

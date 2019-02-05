@@ -1011,7 +1011,6 @@ main{
       .noFound{
         @include wh(100%, 80%);
         @include center-flex(space-evenly, center, column);
-        // @include max-width;
         flex-wrap: nowrap;
 
         h2{
@@ -1127,7 +1126,7 @@ main{
 
               .label{
                 font-size: 1.6rem;
-                @include pm(0, 10px 0);
+                @include pm(0, 10px auto);
 
                   @include mediaSize($laptop){
                     font-size: 2.5rem

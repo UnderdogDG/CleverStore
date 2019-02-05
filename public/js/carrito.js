@@ -1,6 +1,7 @@
-console.log("carrito Works!!!");
+// console.log("carrito Works!!!");
 
-const cancel = document.getElementsByClassName("cancel");
+const remove = document.getElementsByClassName("remove");
+const counter = document.getElementById("counter");
 
 function removeElement(){
   let elementId = this.parentElement.parentElement.parentElement.getAttribute("id");
@@ -13,12 +14,11 @@ function removeElement(){
 
   request.onreadystatechange = function(){
     if( this.status == 200 && this.readyState == 4){
-      console.log("enviado: ", elementId);
+      // console.log("enviado: ", elementId);
       let ajaxResponse = this.responseText;
-      if(ajaxResponse){
-        console.log(JSON.parse(ajaxResponse));
-        // item.remove();
-
+      if(ajaxResponse == 'true'){
+        counter.value = parseInt(counter.value) - 1;
+        item.remove();
       }else{
         console.log("ha ocurrido un error");
       }
@@ -29,8 +29,8 @@ function removeElement(){
   request.send(data);
 };
 
-for(i = 0; i < cancel.length; i++){
-  cancel[i].addEventListener('click', removeElement
+for(i = 0; i < remove.length; i++){
+  remove[i].addEventListener('click', removeElement
     // function(){
     //   // console.log(this.parentElement.parentElement.parentElement.getAttribute("id"));
     //   let elementId = this.parentElement.parentElement.parentElement.getAttribute("id");

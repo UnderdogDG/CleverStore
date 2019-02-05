@@ -3226,7 +3226,7 @@ main {
 
 .container_cart .wrapper .item .info .requirement .total .label {
   font-size: 1.6rem;
-  margin: 10px 0;
+  margin: 10px auto;
   padding: 0;
 }
 

@@ -36,7 +36,7 @@
               </div>
 
               <div class="container_options">
-                <button class="btn_pop">
+                <button class="btn_pop fav">
                   <div class="btn_wrapper">
                     <i class="far fa-star fav"></i>
                   </div>
@@ -57,6 +57,8 @@
       </div>
     </div>
   </main>
+
+  <script src="<?= URL; ?>/public/js/favoritos.js"></script>
 <?php
   include ROOT_APP . '/views/includes/footer.php';
 ?>

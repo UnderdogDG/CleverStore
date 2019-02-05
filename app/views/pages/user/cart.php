@@ -3,6 +3,7 @@
 ?>
 
 <?php
+  $i = 0;
   require ROOT_APP . '/views/includes/nav.php';
 ?>
 
@@ -16,16 +17,15 @@
 
       <div class="container_cart">
         <?php if($_SESSION["cart"]) :?>
-          <?php $i=0; ?>
-          <?php foreach($_SESSION["cart"] as $item) :?>
-            <div id="<?= $i?>" class="wrapper">
+          <?php foreach($_SESSION["cart"] as $index=>$item) :?>
+            <div id="<?= $index?>" class="wrapper wow fadeInDown" data-wow-delay="<?= $i += 0.2; ?>s">
               <div class="item">
 
-                <div class="img">
+                <div class="img wow fadeInDown" data-wow-delay="<?= $i += (0.2 + 0.5); ?>s">
                   <img src="<?=URL; ?>/img/store/anillo.png" alt="">
                 </div>
 
-                <div class="info">
+                <div class="info wow flipInX" data-wow-delay="<?= $i += (0.2 + 0.5); ?>s">
 
                   <div class="general">
                     <h2 class="head"><?= $item['name']; ?></h2>
@@ -53,7 +53,7 @@
 
                 <div class="options">
 
-                  <button class="btn_pop cancel">
+                  <button class="btn_pop remove">
                     <div class="btn_wrapper">
                     <i class="fas fa-times-circle"></i>
                     </div>
@@ -63,10 +63,9 @@
 
               </div>
             </div>
-            <?php $i++; ?>
           <?php endforeach; ?>
         <?php else : ?>
-          <div class="wrapper">
+          <div class="wrapper wow flipInX">
             <div class="noFound">
               <h2>No has agregado productos a tu Carrito de Compras</h2>
             </div>

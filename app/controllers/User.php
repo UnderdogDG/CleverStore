@@ -160,6 +160,7 @@
       unset($_SESSION["name"]);
       unset($_SESSION["img"]);
       unset($_SESSION["cart"]);
+      unset($_SESSION["fav"]);
       session_start();
       session_destroy();
       header("Location: http://localhost/store/");
@@ -171,6 +172,21 @@
       $this->view('user/nouser');
     }
     // #endregion   ========================
+
+    public function addFav(){
+      $skuFav= $_POST['fav'];
+      $user = $_SESSION['id'];
+
+      $modelFav = $this->model('User');
+      $favs = $modelFav->getFav($user);
+
+      $newFav = ($favs) ? $favs . "/" . $skuFav : $skuFav;
+
+      // $model = $this->model('Users');
+      // $model.addFav();
+
+      echo $newFav;
+    }
 
     // #region [4] ======== ( AJAX ) ========
     public function ajax(){
@@ -246,6 +262,7 @@
       $_SESSION["first_name"]=$data["first_name"];
       $_SESSION["img"]=$data["img"];
       $_SESSION["cart"]=[];
+      $_SESSION["fav"] = $data["user_fav"];
 
       header("Location: http://localhost/store/");
     }

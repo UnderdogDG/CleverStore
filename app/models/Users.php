@@ -20,5 +20,16 @@
       $resultado = $this->db->resultSingle(array( $email, $password));
       return $resultado;
     }
+
+    public function getFav($id){
+      $this->db->query('SELECT user_fav FROM reg_users WHERE id=$1');
+      $resultado = $this->db->query(array($id));
+      return $resultado;
+    }
+
+    public function addFav($fav){
+      $this->db->query('INSERT INTO reg_users(user_fav) VALUES ($1)');
+      $this->db->execute($fav);
+    }
   }
 ?>
