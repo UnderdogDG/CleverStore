@@ -48,6 +48,18 @@
     }
     // #endregion   ========================
 
+    public function removeFromCart(){
+      if($this->aut){
+        $item = $_POST["item"];
+
+        unset($_SESSION['cart'][$item]);
+
+        echo json_encode($_SESSION['cart']);
+      }else{
+        echo json_encode(array('error'=>"Usuario no Ingresado"));
+      }
+    }
+
     // #region [4] ======== ( BUY ) ========
     public function buy(){
 

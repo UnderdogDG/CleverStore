@@ -12,37 +12,38 @@
       <br>
       <?= print_r($_SESSION); ?>
       <br>
-      <?= count($data) ?> -->
+      <?= count($data); ?> -->
 
       <div class="container_cart">
         <?php if($_SESSION["cart"]) :?>
+          <?php $i=0; ?>
           <?php foreach($_SESSION["cart"] as $item) :?>
-            <div class="wrapper">
+            <div id="<?= $i?>" class="wrapper">
               <div class="item">
 
                 <div class="img">
-                <img src="<?=URL ?>/img/store/anillo.png" alt="">
+                  <img src="<?=URL; ?>/img/store/anillo.png" alt="">
                 </div>
 
                 <div class="info">
 
                   <div class="general">
-                    <h2 class="head"><?= $item['name']?></h2>
+                    <h2 class="head"><?= $item['name']; ?></h2>
                     <div class="label">
-                      <h3 class="price"><?= $item['price']?></h3>
+                      <h3 class="price"><?= $item['price']; ?></h3>
                     </div>
                   </div>
                   <div class="requirement">
 
                     <div class="quantity">
-                      <h3><?= $item['quantity']?></h3>
+                      <h3><?= $item['quantity']; ?></h3>
                       <p>Unidades</p>
                     </div>
 
                     <div class="total">
                       <h2>Total: </h2>
                       <div class="label gold">
-                        <h3 class="price mx"><?= ($item["price"] * $item["quantity"])?></h3>
+                        <h3 class="price mx"><?= ($item["price"] * $item["quantity"]); ?></h3>
                       </div>
                     </div>
 
@@ -52,7 +53,7 @@
 
                 <div class="options">
 
-                  <button class="btn_pop">
+                  <button class="btn_pop cancel">
                     <div class="btn_wrapper">
                     <i class="fas fa-times-circle"></i>
                     </div>
@@ -62,6 +63,7 @@
 
               </div>
             </div>
+            <?php $i++; ?>
           <?php endforeach; ?>
         <?php else : ?>
           <div class="wrapper">
@@ -74,6 +76,8 @@
       </div>
     </div>
   </main>
+
+  <script src="<?= URL; ?>/public/js/carrito.js"></script>
 
 <?php
   require ROOT_APP . '/views/includes/footer.php';
