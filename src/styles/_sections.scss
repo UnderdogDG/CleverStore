@@ -871,6 +871,10 @@ main{
               font-size: 1.4rem;
               order:1;
             }
+          
+          #sku{
+            display: none;
+          }
 
           h2{
             @include center-flex(flex-start, flex-start);

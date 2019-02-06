@@ -118,13 +118,17 @@ btnmin.addEventListener('click', ()=>{
 document.addEventListener('keyup', (x)=>{
   switch (x.key){
       case "ArrowUp":
+      case "+":
         storeState.dispatch(actions.next());
+        pop();
       break;
       case "ArrowDown":
+      case "-":
         storeState.dispatch(actions.prev());
+        pop();
       break;
   }
-  pop();  
+    
 });
 
 window.addEventListener('load', (x)=>{

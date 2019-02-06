@@ -5,6 +5,7 @@
     require ROOT_APP . '/views/includes/nav.php';
 ?>
 <main>
+  <!-- <?= print_r($data); ?> -->
   <div class="section section_nofull animated zoomIn">
       <form class="form_register" action="<?= URL?>/user/signin" method="post" enctype="multipart/form-data">
         <div class="title">
@@ -13,7 +14,7 @@
 
         <div class="body">
           
-          <div class="photo photo_input" id="container">
+          <div class="photo photo_input" id="container" <?= ($data["img"]) ? ('style="'. "background: url(". URL . "/public/img/upload/" . $data['img'] . ') center/cover no-repeat;"') : "";?>>
             <label for="img"></label>
             <input type="file" name="img" id="img" class="img">
           </div>

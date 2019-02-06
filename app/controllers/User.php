@@ -129,6 +129,20 @@
     }
     // #endregion   ========================
 
+    public function editar($id){
+      if($this->aut){
+        $model = $this->model('Users');
+        $data = $model->searchUserById($id);
+
+        $data['email_conf'] = "";
+        $data['password_conf'] = "";
+
+        $this->view('user/registro', $data);
+      }else{
+        $this->view('user/nouser');
+      } 
+    }
+
     // #region [6] ======== ( CART ) ========
     public function cart(){
       // session_start();
@@ -173,19 +187,49 @@
     }
     // #endregion   ========================
 
+    // #region [9] ======== ( ADDFAVS ) ========
     public function addFav(){
-      $skuFav= $_POST['fav'];
-      $user = $_SESSION['id'];
+      if($this->aut){
+        $skuFav= $_POST['fav'];
+        $user = $_SESSION['user'];
 
-      $modelFav = $this->model('User');
-      $favs = $modelFav->getFav($user);
+        // $modelFav = $this->model('Users');
+        // $resultado = $modelFav->getFav($user);
 
-      $newFav = ($favs) ? $favs . "/" . $skuFav : $skuFav;
+        $favs = $_SESSION['fav'];
 
-      // $model = $this->model('Users');
-      // $model.addFav();
+        $newFav = ($favs) ? $favs . "/" . $skuFav : $skuFav;
 
-      echo $newFav;
+        $_SESSION['fav'] = $newFav;
+
+        $model = $this->model('Users');
+        $model->addFav($newFav, $user);
+
+        echo $newFav;
+      }else{
+        echo json_encode(array('error'=>"Usuario no Ingresado"));
+      }
+    }
+    // #endregion   ========================
+
+    public function favoritos(){
+      if($this->aut){
+        if($_SESSION['fav']){
+          $favs = $_SESSION['fav'];
+          $favs = explode('/', $favs);
+
+          $model = $this->model('Products');
+          $data = $model->getFavs($favs);
+
+          
+        }else{
+          $data = [];
+        }
+
+        $this->view('search', $data);
+      }else{
+        $this->view('user/nouser');
+      }
     }
 
     // #region [4] ======== ( AJAX ) ========
@@ -262,7 +306,7 @@
       $_SESSION["first_name"]=$data["first_name"];
       $_SESSION["img"]=$data["img"];
       $_SESSION["cart"]=[];
-      $_SESSION["fav"] = $data["user_fav"];
+      $_SESSION["fav"] = $data["fav"];
 
       header("Location: http://localhost/store/");
     }

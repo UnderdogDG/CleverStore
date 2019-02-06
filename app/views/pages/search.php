@@ -24,9 +24,10 @@
 
           <?php foreach ($data as $item) : ?>
 
-          <div class="item wow flipInX" data-wow-delay="<?= $i += 0.2; ?>s">
+          <div id="<?= $item['sku'] ?>" class="item wow flipInX" data-wow-delay="<?= $i += 0.2; ?>s">
             <div class="container">
               <div class="container_head">
+                <!-- <input type="text" name="sku" id="sku" value="<?= $item["sku"]?>" disabled="disabled"> -->
                 <h2><span><?= $item["name"]; ?></span></h2>
                 <a href="<?= URL . "/product/item/" . $item["sku"]?>" class="btn btn_gold md"><span>Ir al Producto</span></a>
               </div>

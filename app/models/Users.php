@@ -21,15 +21,21 @@
       return $resultado;
     }
 
-    public function getFav($id){
-      $this->db->query('SELECT user_fav FROM reg_users WHERE id=$1');
-      $resultado = $this->db->query(array($id));
+    public function searchUserById($id){
+      $this->db->query('SELECT * FROM reg_users WHERE id=$1');
+      $resultado = $this->db->resultSingle($id);
       return $resultado;
     }
 
-    public function addFav($fav){
-      $this->db->query('INSERT INTO reg_users(user_fav) VALUES ($1)');
-      $this->db->execute($fav);
+    public function getFav($id){
+      $this->db->query('SELECT fav FROM reg_users WHERE id=$1');
+      $resultado = $this->db->resultSingle(array($id));
+      return $resultado;
+    }
+
+    public function addFav($fav, $user){
+      $this->db->query('UPDATE reg_users SET fav=$1 WHERE id=$2');
+      $this->db->execute(array($fav, $user));
     }
   }
 ?>

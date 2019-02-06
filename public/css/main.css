@@ -2780,6 +2780,10 @@ main {
   }
 }
 
+.container_search .item .container_head #sku {
+  display: none;
+}
+
 .container_search .item .container_head h2 {
   display: -webkit-box;
   display: -ms-flexbox;

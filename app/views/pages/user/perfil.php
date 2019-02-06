@@ -31,13 +31,13 @@
 
             <div class="field">
               <a href="#" class="btn btn_warning sm"><span><i class="fas fa-trash-alt"></i> Eliminar</span></a>
-              <a href="#" class="btn btn_gold sm"><span><i class="fas fa-pen"></i> Editar</span></a>
+              <a href="<?= URL . "/user/editar/" . $_SESSION["user"]?>" class="btn btn_gold sm"><span><i class="fas fa-pen"></i> Editar</span></a>
             </div>
           </div>
 
           <div class="col-50 menu">
 
-            <a href="#" class="btn_pop wow fadeIn" data-wow-delay="1s">
+            <a href="<?= URL?>/user/favoritos" class="btn_pop wow fadeIn" data-wow-delay="1s">
               <div class="btn_wrapper">
                 <i class="far fa-star fav"></i>
                 <p class="alt">Favoritos</p>

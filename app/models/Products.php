@@ -44,13 +44,13 @@
       return $data;
     }
 
-    public function getCart($cartItems){
+    public function getFavs($cartItems){
       $query = 'SELECT sku, name, price FROM art_store WHERE sku IN (';
 
       for($i = 1; $i <= count($cartItems); $i++){
-        $query .= "$$i";
+        $query .= "($$i)";
 
-        if($i<count($_SESSION['cart'])){
+        if($i<count($cartItems)){
           $query .= ',';
         }else{
           $query .= ')';
