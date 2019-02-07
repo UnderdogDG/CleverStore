@@ -2,7 +2,7 @@
   class User extends Controller{
 
     private $name = "";
-    private $first_name = "";
+    private $last_name = "";
     private $email = "";
     private $password = "";
     private $email_conf = "";
@@ -35,7 +35,7 @@
 
       if(!(empty($data))){
         $this->name = $data['name'];
-        $this->first_name = $data['first_name'];
+        $this->last_name = $data['last_name'];
         $this->tel = $data['tel'];
         $this->email = $data['email'];
         $this->email_conf = $data['email_conf'];
@@ -46,7 +46,7 @@
 
       $this->view('user/registro', array(
                                         "name"=>$this->name, 
-                                        "first_name"=>$this->first_name,
+                                        "last_name"=>$this->last_name,
                                         "tel"=>$this->tel,
                                         "email"=>$this->email,
                                         "email_conf"=>$this->email_conf,
@@ -111,13 +111,18 @@
           move_uploaded_file($_FILES["img"]["tmp_name"], "img/upload/" . $data["img"]);
         }
 
-        $model2 = $this->model('Users');
-        $user = $model2->searchUser( $data['email'], $data['password'] );
-        $this->userSession($user);
+        // $model2 = $this->model('Users');
+        // $user2 = $model2->searchUser( $data['email'], $data['password'] );
+        // $this->userSession($user2);
         
+        $this->view('user/agregado', $data);
       }
     }
     // #endregion   ========================
+
+    public function agregado(){
+      $this->view('user/agregado');
+    }
 
     // #region [9] ======== ( PERFIL ) ========
     public function perfil(){
@@ -134,33 +139,59 @@
         $model = $this->model('Users');
         $data = $model->searchUserById($id);
 
-        $data['email_conf'] = "";
         $data['password_conf'] = "";
 
-        $this->view('user/registro', $data);
+        $this->view('user/edit', $data);
       }else{
         $this->view('user/nouser');
       } 
+    }
+
+    public function update(){
+      $img = "";
+
+      if($_FILES["img"]["error"] != 4){
+        $file = $_FILES["img"];
+        $img = $this->validarImg($file);
+      }else{
+        $img = $_SESSION["img"]; 
+      }
+
+      $data = $this->validar();
+      $data["img"] = $img;
+
+
+      if(in_array('Error', $data) || preg_match('/Error/', $img)){
+
+        header("Location: http://localhost/store/user/editar/" . $_SESSION["user"]);
+
+      }else{
+        $id = $_SESSION["user"];
+        unset($data['password_conf']);
+
+        $data["id"] = $id;
+
+        $model = $this->model('Users');
+        $model->updateUser($data);
+
+        if($data["img"] != $_SESSION["img"]){
+          move_uploaded_file($_FILES["img"]["tmp_name"], "img/upload/" . $data["img"]);
+          $file = $_SESSION["img"];
+          unlink("./img/upload/" . $file);
+
+          // $real = realpath('./');
+          
+          $_SESSION["img"] = $data["img"];
+        }
+        
+        header("Location: http://localhost/store/user/perfil/");
+      }
     }
 
     // #region [6] ======== ( CART ) ========
     public function cart(){
       // session_start();
       if($this->aut){
-
-        // $cartItems = [];
-        // $data = [];
-
-        // foreach ($_SESSION['cart'] as $item) {
-        //   $cartItems[] = $item['sku'];
-        // }
-
-        // if($cartItems){
-        //   $model = $this->model('Products');
-        //   $data = $model->getCart($cartItems);
-        // }
-        
-        // $this->view('user/cart', $data);
         $this->view('user/cart');
       }else{
         $this->view('user/nouser');
@@ -172,6 +203,7 @@
     public function logout(){
       unset($_SESSION["user"]);
       unset($_SESSION["name"]);
+      unset($_SESSION["last_name"]);
       unset($_SESSION["img"]);
       unset($_SESSION["cart"]);
       unset($_SESSION["fav"]);
@@ -248,7 +280,7 @@
 
       $validators = [
         'name' => '/\w{3,15}/',
-        'first_name' => '/\w{3,15}/',
+        'last_name' => '/\w{3,15}/',
         'tel' => '/\d\d-\d\d-\d\d-\d\d/',
         'email' => '/^[\w.]{6,}[@]\w{3,8}[.][a-z]{3,8}([.][a-z]{2,4})?$/',
         'password' => '/^.{8,20}$/',
@@ -286,7 +318,7 @@
           $img = "Error: La Extensión debe ser: .jpg / .jpeg / .gif / .png.";
         }else{
           preg_match('/(?![php]).*/', pathinfo($filetemp, PATHINFO_FILENAME), $matches);
-          $random = random_int(1, 999);
+          $random = rand(1, 999);
           $random = ($random < 10) ? '00' . $random : (($random < 100) ? '0' . $random : $random);
           $img = $random . $matches[0] . "." . pathinfo($filename, PATHINFO_EXTENSION);
         }
@@ -303,10 +335,10 @@
 
       $_SESSION["user"]=$data["id"];
       $_SESSION["name"]=$data["name"];
-      $_SESSION["first_name"]=$data["first_name"];
+      $_SESSION["last_name"]=$data["last_name"];
       $_SESSION["img"]=$data["img"];
       $_SESSION["cart"]=[];
-      $_SESSION["fav"] = $data["fav"];
+      $_SESSION["fav"] = ($data["fav"]) ? $data["fav"] : "";
 
       header("Location: http://localhost/store/");
     }

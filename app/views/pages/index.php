@@ -19,7 +19,7 @@
         <div class="pleca"></div>
 
         <div class="col">
-          <img src="<?= URL . "/img/bases/anillo_in.png"?>" alt="">
+          <img src="<?= URL . "/img/sitio/anillo_in.png"?>" alt="">
         </div>
       </div>
           
@@ -45,15 +45,11 @@
                   </div>
 
                   <div class="img">
-                    <img src="<?= URL . "/img/store/anillo.png"?>" alt="">
+                    <img src="<?= URL . "/img/store/". $data[$i]["img"]?>" alt="<?= $data[$i]["name"]; ?>">
                   </div>
 
                   <div class="footer">
                     <div class="label">
-                      <!-- <h3 class="sign">$</h3>
-                      <h2 class="price"><?= $data[$i]["price"]; ?></h2>
-                      <span>c/u</span> -->
-          
                       <h3 class="price"><?= $data[$i]['price']?></h3>
                     </div>
                   </div>
@@ -67,16 +63,6 @@
           </div>
         </div>
       <?php endfor; ?>
-
-
-      <!-- <div class="shelf">
-        <div class="articles_group">
-          <canvas href="#" class="article" id="container">
-
-          </canvas>
-
-        </div>
-      </div> -->
 
       </div>
     </div>
@@ -94,19 +80,24 @@
         </div>
         <div class="pleca"></div>
         <div class="col_img">
-          <img src="./img/bases/blog-bg2.png" alt="">
+          <img src="<?= URL . "/img/sitio/blog-bg2.png"?>" alt="">
         </div>
       </div>
 
     </div>
       
-    <footer>
-      
-    </footer>
+    <div class="section">
+      <div class="container_video">
+
+        <div class="video_player">
+          <video class="frame" src="<?= URL . "/video/video_01.Webm"?>" controls></video>
+        </div>
+
+      </div>
+    </div>
   </main>
 </div>
-<!-- <script type="text/javascript" src="<?= URL; ?>/public/js/three.js"></script>
-<script type="text/javascript" src="<?= URL; ?>/public/js/3dEnviroment.js"></script> -->
+
 <?php
   require ROOT_APP . '/views/includes/fullpage-js.php';
 ?>

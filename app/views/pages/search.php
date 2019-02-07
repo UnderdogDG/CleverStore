@@ -33,7 +33,7 @@
               </div>
 
               <div class="container_img">
-                <img src="<?=URL ?>/img/store/anillo.png" alt="<?= $item["name"]; ?>">
+                <img src="<?= URL . "/img/store/". $item["img"]?>" alt="<?= $item["name"]; ?>">
               </div>
 
               <div class="container_options">

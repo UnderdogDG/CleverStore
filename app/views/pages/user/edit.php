@@ -6,8 +6,9 @@
 ?>
 <main>
   <!-- <?= print_r($data); ?> -->
+  <!-- <?= print_r($_SESSION); ?> -->
   <div class="section section_nofull animated zoomIn">
-      <form class="form_register" action="<?= URL?>/user/signin" method="post" enctype="multipart/form-data">
+      <form class="form_register" action="<?= URL?>/user/update" method="post" enctype="multipart/form-data">
         <div class="title">
           <h2>Registro</h2>
         </div>
@@ -37,14 +38,11 @@
               <input type="text" name="tel" id="tel" class="<?= ($data["tel"] == 'Error') ? "error" : ""; ?>" placeholder="00-00-00-00" value="<?= ($data["tel"] == 'Error') ? "" : $data["tel"]; ?>">
             </div>
             <div class="field">
-              <label for="email">E-mail<sup>*</sup></label>
-              <input type="text" name="email" id="email" class="<?= ($data["email"] == 'Error' OR $data["email_conf"] == 'Error') ? "error" : ""; ?>" placeholder="ejemplo@exm.com" value="<?= ($data["email"] == 'Error') ? "" : $data["email"]; ?>">
+              <label for="email">E-mail</label>
+              <input type="text" id="email" name="email" class="" placeholder="ejemplo@exm.com" value="<?= $data["email"]; ?>" disabled="disabled">
               <span id="adv" class="aviso"></span>
             </div>
-            <div class="field">
-              <label for="email_conf">E-mail<sup>2</sup> </label>
-              <input type="text" name="email_conf" id="email_conf" class="<?= ($data["email_conf"] == 'Error') ? "error" : ""; ?>" placeholder="Repite tu e-mail" value="<?= ($data["email_conf"] == 'Error') ? "" : $data["email_conf"]; ?>">
-            </div>
+
             <div class="field">
               <label for="password">Contraseña<sup>*</sup></label>
               <input type="text" name="password" id="password" class="<?= ($data["password"] == 'Error' OR $data["password_conf"] == 'Error') ? "error" : ""; ?>" placeholder="al menos 8 caracteres" value="<?= ($data["password"] == 'Error') ? "" : $data["password"]; ?>">

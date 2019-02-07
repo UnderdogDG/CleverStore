@@ -6,7 +6,7 @@
     }
 
     public function getShelf(){
-      $this->db->query('SELECT * FROM art_store ORDER BY rank ASC LIMIT 9');
+      $this->db->query('SELECT * FROM art_store ORDER BY rank ASC LIMIT 12');
       return $this->db->resultSet([]);
     }
 
@@ -45,7 +45,7 @@
     }
 
     public function getFavs($cartItems){
-      $query = 'SELECT sku, name, price FROM art_store WHERE sku IN (';
+      $query = 'SELECT sku, name, price, img FROM art_store WHERE sku IN (';
 
       for($i = 1; $i <= count($cartItems); $i++){
         $query .= "($$i)";

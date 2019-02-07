@@ -121,7 +121,7 @@
       &::after{
         content:'';
         @include wh();
-        background: url('../img/trama_bk.png') center / 220px repeat;
+        background: url('../img/sitio/trama_bk.png') center / 220px repeat;
         border-radius: 0 8px;
         // box-shadow: 6px 6px 6px black;
         // box-shadow: 6px 6px 2px rgba(10%, 10%, 10%, 0.65);

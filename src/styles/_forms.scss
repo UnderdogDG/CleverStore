@@ -4,6 +4,11 @@
   &_black{
     @extend %form_basic;
     background-color: $carbon;
+
+    &.success{
+      max-width: 600px;
+      text-align: center;
+    }
   }
 
   &_white{
@@ -79,12 +84,12 @@
   border: 1px solid $gold;
   border-radius: 50%;
   overflow: hidden;
-  background: url('http://localhost/store/public/img/anonimo.png') center / 100% no-repeat;
+  background: url('http://localhost/store/public/img/upload/default.png') center / 100% no-repeat;
 
   &_input{
     @include wh(200px, 200px);
     // @include content-box;
-    background: url('http://localhost/store/public/img/anonimo.png') center / 100% no-repeat;
+    background: url('http://localhost/store/public/img/upload/default.png') center / 100% no-repeat;
     margin: 50px 0 10px;
     position: relative;
     cursor: pointer;

@@ -5,7 +5,7 @@
     }
 
     public function addUser($arr){
-      $this->db->query('INSERT INTO reg_users(name, first_name, tel, email, password, img) VALUES ($1, $2 , $3, $4, $5, $6)');
+      $this->db->query('INSERT INTO reg_users(name, last_name, tel, email, password, img) VALUES ($1, $2 , $3, $4, $5, $6)');
       $resultado = $this->db->execute($arr);
     }
 
@@ -25,6 +25,11 @@
       $this->db->query('SELECT * FROM reg_users WHERE id=$1');
       $resultado = $this->db->resultSingle($id);
       return $resultado;
+    }
+
+    public function updateUser($data){
+      $this->db->query('UPDATE reg_users SET name=$1, last_name=$2, tel=$3, password=$4, img=$5 WHERE id=$6');
+      $resultado = $this->db->execute($data);
     }
 
     public function getFav($id){

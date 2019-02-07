@@ -24,7 +24,7 @@
   color: #E0E0E0;
   -webkit-box-shadow: 5px 5px 2px #424242;
           box-shadow: 5px 5px 2px #424242;
-  background: #272727 url("../img/trama_bk.png") center/200px repeat;
+  background: #272727 url("../img/sitio/trama_bk.png") center/200px repeat;
 }
 
 .form_black .title, .form_white .title, .form_register .title, .form_nouser .title {
@@ -222,7 +222,7 @@ nav .wrapper {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   min-width: 300px;
-  background: #E0E0E0 url("../img/trama.png") center repeat;
+  background: #E0E0E0 url("../img/sitio/trama.png") center repeat;
   overflow: hidden;
 }
 
@@ -1093,7 +1093,7 @@ nav .active:hover {
   color: #E0E0E0;
   -webkit-box-shadow: 5px 5px 2px #424242;
           box-shadow: 5px 5px 2px #424242;
-  background: #272727 url("../img/trama_bk.png") center/200px repeat;
+  background: #272727 url("../img/sitio/trama_bk.png") center/200px repeat;
 }
 
 .form_black .title, .form_white .title, .form_register .title, .form_nouser .title {
@@ -1230,6 +1230,11 @@ nav .active:hover {
   background-color: #272727;
 }
 
+.form_black.success {
+  max-width: 600px;
+  text-align: center;
+}
+
 .form_white {
   background-color: #BDBDBD;
 }
@@ -1319,13 +1324,13 @@ nav .active:hover {
   border: 1px solid #FFAB00;
   border-radius: 50%;
   overflow: hidden;
-  background: url("http://localhost/store/public/img/anonimo.png") center/100% no-repeat;
+  background: url("http://localhost/store/public/img/upload/default.png") center/100% no-repeat;
 }
 
 .photo_input {
   width: 200px;
   height: 200px;
-  background: url("http://localhost/store/public/img/anonimo.png") center/100% no-repeat;
+  background: url("http://localhost/store/public/img/upload/default.png") center/100% no-repeat;
   margin: 50px 0 10px;
   position: relative;
   cursor: pointer;
@@ -1362,7 +1367,7 @@ main {
   min-width: 300px;
   width: 100%;
   min-width: 300px;
-  background: #ECEFF1 url("../img/bases/bg.jpg") center/100px repeat;
+  background: #ECEFF1 url("../img/sitio/bg.jpg") center/100px repeat;
 }
 
 .section {
@@ -1450,7 +1455,7 @@ main {
 }
 
 .container_main .col_backImg {
-  background: black url("../img/trama_bk.png") center/200px repeat;
+  background: black url("../img/sitio/trama_bk.png") center/200px repeat;
 }
 
 @media screen and (orientation: landscape) {
@@ -1575,8 +1580,10 @@ main {
 
 .container_articles .header h2 {
   margin: 0;
-  padding: 5px;
-  background-color: rgba(236, 239, 241, 0.5);
+  padding: 5px 15px;
+  background-color: #272727;
+  border-radius: 0 8px 0 8px;
+  color: #E0E0E0;
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1;
@@ -1703,7 +1710,7 @@ main {
   content: '';
   width: 100%;
   height: 100%;
-  background: url("../img/trama_bk.png") center/220px repeat;
+  background: url("../img/sitio/trama_bk.png") center/220px repeat;
   border-radius: 0 8px;
   -webkit-box-shadow: 8px 8px 5px rgba(26, 26, 26, 0.65);
           box-shadow: 8px 8px 5px rgba(26, 26, 26, 0.65);
@@ -1928,7 +1935,7 @@ main {
   padding: 10px 5px 15px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background: black url("../img/trama_bk.png") center/200px repeat;
+  background: black url("../img/sitio/trama_bk.png") center/200px repeat;
 }
 
 @media screen and (orientation: portrait) {
@@ -2718,7 +2725,7 @@ main {
   top: 0;
   left: 0;
   z-index: -1;
-  background: url("../img/trama_bk.png") center/200px repeat;
+  background: url("../img/sitio/trama_bk.png") center/200px repeat;
   border-bottom-left-radius: 8px;
 }
 
@@ -2807,6 +2814,7 @@ main {
   max-width: 220px;
   font-weight: 600;
   height: 100%;
+  max-height: 120px;
   overflow: hidden;
   -webkit-transform-origin: 15px 20px;
           transform-origin: 15px 20px;
@@ -2997,7 +3005,7 @@ main {
   top: 0;
   left: 0;
   z-index: -1;
-  background: url("../img/trama_bk.png") center/200px repeat;
+  background: url("../img/sitio/trama_bk.png") center/200px repeat;
   border-bottom-left-radius: 8px;
 }
 
@@ -3274,6 +3282,56 @@ main {
   color: #E0E0E0;
 }
 
+.container_video {
+  width: 90%;
+  height: 96%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: auto;
+  padding: 10px;
+  background-color: black;
+  -webkit-box-shadow: 8px 6px 2px rgba(0, 0, 0, 0.6);
+          box-shadow: 8px 6px 2px rgba(0, 0, 0, 0.6);
+  color: #ECEFF1;
+}
+
+.container_video .video_player {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.container_video .frame {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  max-width: 98%;
+  height: 98%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
 .perfil {
   max-width: 800px;
 }
@@ -3537,7 +3595,7 @@ main {
   content: '';
   width: 100%;
   height: 100%;
-  background: url("../img/trama_bk.png") center/220px repeat;
+  background: url("../img/sitio/trama_bk.png") center/220px repeat;
   border-radius: 0 8px;
   position: absolute;
   top: 0;

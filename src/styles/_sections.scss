@@ -6,7 +6,7 @@ main{
   @include min-width;
   width: 100%;
   min-width: 300px;
-  background: $white-lt url('../img/bases/bg.jpg') center / 100px repeat;
+  background: $white-lt url('../img/sitio/bg.jpg') center / 100px repeat;
 }
 
 .section{
@@ -45,7 +45,7 @@ main{
       overflow: hidden;
 
       &_backImg{
-        background: black url('../img/trama_bk.png') center / 200px repeat;
+        background: black url('../img/sitio/trama_bk.png') center / 200px repeat;
       }
 
         @include mediaOrientation($landscape){
@@ -121,8 +121,11 @@ main{
         }
 
       h2{
-        @include pm(5px);
-        background-color: rgba(92.5%, 93.7%, 94.5%, 0.5);
+        @include pm(5px 15px);
+        // background-color: rgba(92.5%, 93.7%, 94.5%, 0.5);
+        background-color: $carbon;
+        border-radius: 0 8px 0 8px;
+        color: $neutro-lt;
         font-size: 1.5rem;
         font-weight: 400;
         line-height: 1;
@@ -180,7 +183,7 @@ main{
             &::before{
               content:'';
               @include wh();
-              background: url('../img/trama_bk.png') center / 220px repeat;
+              background: url('../img/sitio/trama_bk.png') center / 220px repeat;
               border-radius: 0 8px;
               // box-shadow: 6px 6px 6px black;
               box-shadow: 8px 8px 5px rgba(10%, 10%, 10%, 0.65);
@@ -359,7 +362,7 @@ main{
       @include center-flex();
       @include pm(10px 5px 15px);
       @include content-box;
-      background: black url('../img/trama_bk.png') center / 200px repeat;
+      background: black url('../img/sitio/trama_bk.png') center / 200px repeat;
 
         @include  mediaOrientation($portrait){
           @include wh(calc(46% - 3px));
@@ -849,7 +852,7 @@ main{
           top: 0;
           left: 0;
           z-index: -1;
-          background: url('../img/trama_bk.png') center / 200px repeat;
+          background: url('../img/sitio/trama_bk.png') center / 200px repeat;
           border-bottom-left-radius: 8px;
         }
 
@@ -885,6 +888,7 @@ main{
             max-width: 220px;
             font-weight: 600;
             height: 100%;
+            max-height: 120px;
             overflow: hidden;
             transform-origin: 15px 20px;
             transform: rotate(-90deg);
@@ -1008,7 +1012,7 @@ main{
         top: 0;
         left: 0;
         z-index: -1;
-        background: url('../img/trama_bk.png') center / 200px repeat;
+        background: url('../img/sitio/trama_bk.png') center / 200px repeat;
         border-bottom-left-radius: 8px;
       }
 
@@ -1164,6 +1168,40 @@ main{
       }
 
     }
+  }
+
+  &_video{
+    @include wh(96%, 90%);
+    @include center-flex();
+    @include content-box;
+    margin: auto;
+    padding: 10px;
+    background-color: black;
+    box-shadow: 8px 6px 2px rgba(0%, 0%, 0%, 0.6);
+    color: $white-lt;
+
+    .video_player{
+      @include content-box;
+      display: block;
+      width: 100%;    
+      height: 100%;
+      // padding-bottom: 50%;
+      overflow: hidden;  
+      position: relative;
+    }
+
+    .frame{
+      @include content-box;
+      max-width: 98%;
+	    height: 98%;
+	    position: absolute;
+	    top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      // object-fit: cover;
+ 
+    }
+
   }
 }
 

@@ -37,11 +37,11 @@
         
         <div class="name">
           <h2><?= $data["name"]; ?></h2>
-          <h3><?= "Other";?></h3>
+          <h3><?= $data["brand"];?></h3>
         </div>
 
         <div class="img">
-          <img src="<?= URL . "/img/store/anillo.png"?>" alt="">
+          <img src="<?= URL . "/img/store/". $data["img"]?>" alt="<?= $data["name"]; ?>">
         </div>
       </div>
 
